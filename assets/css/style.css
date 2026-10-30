@@ -1,0 +1,4290 @@
+/* ===================================================================
+   Jaipur National University (JNU) - Engineering Landing Page
+   Root Colors (Strict JNU Palette - No Yellow)
+   Archivo Headings & Montserrat Body
+=================================================================== */
+
+:root {
+  /* JNU Official University Palette */
+  --jnu-primary-navy: #112049;
+  /* Academic Deep Navy */
+  --jnu-primary-dark: #0A1430;
+  /* Dark Navy Variant */
+  --jnu-academic-blue: #163A7A;
+  /* University Royal Blue */
+  --jnu-light-blue: #1D5FCF;
+  /* Vibrant Accent Blue */
+  --jnu-secondary-crimson: #B52759;
+  /* Official Crimson / Rose */
+  --jnu-secondary-dark: #8C1D42;
+  /* Deep Crimson / Wine */
+  --jnu-accent-pink: #C61A54;
+  /* Radiant Accent Pink */
+
+  /* Surface & Border Colors */
+  --jnu-bg-light: #F7F8FC;
+  /* Clean Canvas Background */
+  --jnu-section-bg: #F1F4FB;
+  /* Soft Light Blue-Gray for Bento */
+  --jnu-card-bg: #FFFFFF;
+  /* Pure White Card */
+  --jnu-frame-border: #E6E7EE;
+  /* Frame Border Outline */
+  --jnu-frame-bg: #EEF0F6;
+  /* Form Outer Frame */
+  --jnu-input-border: #DDE2EC;
+  /* Input Outline */
+  --jnu-input-focus: #112049;
+  /* Input Active State */
+
+  /* Text Colors */
+  --jnu-text-heading: #112049;
+  /* Left Heading Color */
+  --jnu-text-body: #4A5568;
+  /* Body Text */
+  --jnu-text-muted: #6B7280;
+  /* Subdued / Secondary Text */
+  --jnu-text-light: #FFFFFF;
+  /* White Text */
+
+  /* Gradient Overlays */
+  --jnu-hero-overlay: linear-gradient(135deg, rgba(17, 32, 73, 0.88) 0%, rgba(28, 46, 92, 0.65) 45%, rgba(181, 39, 89, 0.90) 100%);
+  --jnu-badge-bg: #7A152E;
+  /* Top Right Admission Badge */
+
+  /* Typography */
+  --font-heading: 'Archivo', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+
+  /* Transitions & Shadows */
+  --jnu-shadow-sm: 0 4px 12px rgba(17, 32, 73, 0.06);
+  --jnu-shadow-md: 0 10px 25px rgba(17, 32, 73, 0.08);
+  --jnu-shadow-lg: 0 18px 40px rgba(17, 32, 73, 0.12);
+  --jnu-transition: all 0.3s ease;
+}
+
+/* Base Reset & Typography Setup */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--jnu-text-body);
+  background-color: #FFFFFF;
+}
+
+/* Archivo Headings Everywhere & All Headings Left-Aligned */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.heading-font {
+  font-family: var(--font-heading) !important;
+  font-weight: 700;
+  color: var(--jnu-text-heading);
+  text-align: left !important;
+  letter-spacing: -0.02em;
+}
+
+p,
+span,
+label,
+input,
+select,
+button,
+textarea,
+a {
+  font-family: var(--font-body);
+}
+
+a {
+  text-decoration: none;
+  transition: var(--jnu-transition);
+}
+
+/* ===================================================================
+   Header / Navigation Bar (Gradient Rounded Island Bar)
+=================================================================== */
+.jnu-header {
+  background-color: #FFFFFF;
+  padding: 12px 0 8px;
+  position: relative;
+  z-index: 100;
+}
+
+/* Gradient rounded bar matching uploaded reference image */
+.jnu-navbar-bar {
+  background: linear-gradient(90deg, #152150 0%, #2f2050 20%, #551e52 42%, #7a1c54 62%, #9f1a55 80%, #c11857 100%);
+  border-radius: 14px;
+  padding: 8px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 18px rgba(17, 32, 73, 0.12);
+  min-height: 100px;
+  gap: 12px;
+}
+
+.jnu-nav-brand-wrap {
+  display: flex;
+  align-items: center;
+  flex: 0 1 auto;
+}
+
+.jnu-nav-brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.jnu-nav-brand-img {
+  height: 55px;
+  max-height: 55px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.jnu-nav-brand:hover .jnu-nav-brand-img {
+  transform: scale(1.02);
+}
+
+/* Right Admissions Pill Button */
+.jnu-nav-cta-wrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.jnu-nav-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background-color: #07224f;
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  padding: 7px 18px 7px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.jnu-nav-pill-btn:hover {
+  background-color: #0b2d68;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Crimson Pulse Indicator Dot */
+.jnu-nav-pulse-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #d81b60;
+  box-shadow: 0 0 0 0 rgba(216, 27, 96, 0.7);
+  display: inline-block;
+  flex-shrink: 0;
+  animation: jnuDotPulse 1.8s infinite;
+}
+
+@keyframes jnuDotPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(216, 27, 96, 0.7);
+  }
+
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 6px rgba(216, 27, 96, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(216, 27, 96, 0);
+  }
+}
+
+.jnu-nav-pill-text {
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .jnu-navbar-bar {
+    padding: 6px 12px;
+    border-radius: 12px;
+    min-height: 50px;
+  }
+
+  .jnu-nav-brand-img {
+    height: 34px;
+    max-height: 34px;
+  }
+
+  .jnu-nav-pill-btn {
+    font-size: 0.74rem;
+    padding: 6px 14px 6px 10px;
+    gap: 7px;
+  }
+
+  .jnu-nav-pulse-dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .jnu-nav-pill-btn .badge-desktop {
+    display: none;
+  }
+
+  .jnu-nav-pill-btn .badge-mobile {
+    display: inline;
+  }
+
+  .jnu-navbar-bar {
+    padding: 6px 10px;
+  }
+
+  .jnu-nav-brand-img {
+    height: 28px;
+    max-height: 28px;
+  }
+}
+
+@media (min-width: 577px) {
+  .jnu-nav-pill-btn .badge-desktop {
+    display: inline;
+  }
+
+  .jnu-nav-pill-btn .badge-mobile {
+    display: none;
+  }
+}
+
+/* ===================================================================
+   Hero Section
+=================================================================== */
+.jnu-hero-section {
+  padding-top: 18px;
+  padding-bottom: 28px;
+  background-color: #FFFFFF;
+}
+
+/* Hero Banner Card (Left Side) */
+.jnu-hero-banner {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  height: 100%;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--jnu-shadow-md);
+  background-color: var(--jnu-primary-navy);
+}
+
+@media (max-width: 991px) {
+  .jnu-hero-banner {
+    min-height: 460px;
+  }
+}
+
+@media (max-width: 576px) {
+  .jnu-hero-banner {
+    min-height: 400px;
+    border-radius: 18px;
+  }
+}
+
+/* Carousel Inner / Slides */
+.jnu-hero-carousel,
+.jnu-hero-carousel .carousel-inner,
+.jnu-hero-carousel .carousel-item {
+  height: 100%;
+  min-height: inherit;
+}
+
+.jnu-slide-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+/* Dual-Tone Overlay matching exact reference image */
+.jnu-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--jnu-hero-overlay);
+  z-index: 2;
+  mix-blend-mode: multiply;
+  opacity: 0.95;
+}
+
+.jnu-hero-gradient-tint {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 15% 85%, rgba(198, 26, 84, 0.85) 0%, rgba(181, 39, 89, 0.6) 35%, rgba(17, 32, 73, 0.75) 75%, rgba(17, 32, 73, 0.9) 100%);
+  z-index: 2;
+}
+
+/* Hero Content Layers */
+.jnu-hero-content-wrap {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 28px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .jnu-hero-content-wrap {
+    padding: 18px 14px;
+  }
+}
+
+/* Top Bar inside Banner: Dots Indicator & Arrow Controls */
+.jnu-hero-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Slider Dots Indicator */
+.jnu-slider-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(17, 32, 73, 0.45);
+  backdrop-filter: blur(8px);
+  padding: 5px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.jnu-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  padding: 0;
+}
+
+.jnu-dot.active {
+  width: 22px;
+  height: 7px;
+  border-radius: 999px;
+  background-color: var(--jnu-accent-pink);
+  box-shadow: 0 0 10px rgba(198, 26, 84, 0.8);
+}
+
+/* Nav Arrow Buttons */
+.jnu-slider-arrows {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.jnu-arrow-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  color: var(--jnu-primary-navy);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--jnu-transition);
+}
+
+.jnu-arrow-btn:hover {
+  background: #FFFFFF;
+  color: var(--jnu-secondary-crimson);
+  transform: scale(1.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 576px) {
+  .jnu-arrow-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Hero Bottom Content */
+.jnu-hero-bottom {
+  margin-top: auto;
+  padding-top: 30px;
+  text-align: left !important;
+}
+
+.jnu-hero-subtag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.jnu-hero-title {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(1.45rem, 3.2vw, 2.9rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #FFFFFF !important;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  max-width: 540px;
+  text-align: left !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  word-break: break-word;
+}
+
+.jnu-hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FFFFFF;
+  color: var(--jnu-primary-navy);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: var(--jnu-transition);
+  border: 2px solid transparent;
+  max-width: 100%;
+}
+
+.jnu-hero-cta-btn i {
+  transition: transform 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.jnu-hero-cta-btn:hover {
+  background-color: #FFFFFF;
+  color: var(--jnu-secondary-crimson);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  border-color: rgba(181, 39, 89, 0.3);
+}
+
+.jnu-hero-cta-btn:hover i {
+  transform: translateX(4px);
+}
+
+@media (max-width: 576px) {
+  .jnu-hero-subtag {
+    font-size: 0.68rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    padding: 3px 10px;
+  }
+
+  .jnu-hero-title {
+    font-size: 1.35rem;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .jnu-hero-cta-btn {
+    font-size: 0.78rem;
+    padding: 8px 14px;
+    gap: 5px;
+  }
+}
+
+/* ===================================================================
+   Form Card (Right Side)
+=================================================================== */
+/* Outer Frame with soft borders matching mockup */
+.jnu-form-outer-frame {
+  background-color: var(--jnu-frame-bg);
+  border: 1px solid var(--jnu-frame-border);
+  border-radius: 22px;
+  padding: 8px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.jnu-form-card {
+  background-color: var(--jnu-card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--jnu-frame-border);
+  padding: 24px 20px;
+  box-shadow: 0 10px 30px rgba(17, 32, 73, 0.05);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 576px) {
+  .jnu-form-outer-frame {
+    padding: 6px;
+    border-radius: 16px;
+  }
+
+  .jnu-form-card {
+    padding: 16px 12px;
+    border-radius: 12px;
+  }
+}
+
+/* Form Titles */
+.jnu-form-title {
+  font-family: var(--font-heading) !important;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--jnu-primary-navy);
+  margin-bottom: 3px;
+  text-align: left !important;
+}
+
+.jnu-form-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  color: var(--jnu-text-muted);
+  margin-bottom: 16px;
+  text-align: left !important;
+}
+
+/* Form Labels */
+.jnu-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--jnu-primary-navy);
+  margin-bottom: 4px;
+  text-align: left !important;
+}
+
+/* Form Controls */
+.jnu-input,
+.jnu-select {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  color: #1F2937;
+  background-color: #FFFFFF;
+  border: 1px solid var(--jnu-input-border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  line-height: 1.4;
+  transition: var(--jnu-transition);
+}
+
+.jnu-input::placeholder {
+  color: #9CA3AF;
+  font-size: 0.8rem;
+}
+
+.jnu-input:focus,
+.jnu-select:focus {
+  outline: none;
+  border-color: var(--jnu-primary-navy);
+  box-shadow: 0 0 0 3px rgba(17, 32, 73, 0.12);
+  background-color: #FFFFFF;
+}
+
+.jnu-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23112049' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 13px 9px;
+  padding-right: 32px;
+}
+
+/* Submit CTA Button */
+.jnu-submit-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--jnu-primary-navy);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  padding: 11px 16px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(17, 32, 73, 0.25);
+  transition: var(--jnu-transition);
+  margin-top: 6px;
+}
+
+.jnu-submit-btn i {
+  transition: transform 0.3s ease;
+}
+
+.jnu-submit-btn:hover {
+  background-color: var(--jnu-secondary-crimson);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(181, 39, 89, 0.35);
+  color: #FFFFFF;
+}
+
+.jnu-submit-btn:hover i {
+  transform: translateX(4px);
+}
+
+.jnu-submit-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 576px) {
+  .jnu-submit-btn {
+    font-size: 0.8rem;
+    padding: 10px 12px;
+  }
+}
+
+/* Consent Disclaimer */
+.jnu-consent-text {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  line-height: 1.35;
+  color: var(--jnu-text-muted);
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+/* Form success message */
+.jnu-form-success {
+  display: none;
+  background: #E8F5E9;
+  border: 1px solid #C8E6C9;
+  color: #2E7D32;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 0.82rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* ===================================================================
+   Quick Highlights Bar (Below Hero, responsive)
+=================================================================== */
+.jnu-highlights-strip {
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--jnu-frame-border);
+  padding: 18px 0 28px 0;
+}
+
+.jnu-highlight-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 10px;
+  border-radius: 12px;
+  background-color: var(--jnu-bg-light);
+  border: 1px solid var(--jnu-frame-border);
+  transition: var(--jnu-transition);
+  text-align: left;
+}
+
+.jnu-highlight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--jnu-shadow-sm);
+  border-color: rgba(17, 32, 73, 0.2);
+}
+
+.jnu-highlight-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--jnu-primary-navy);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.jnu-highlight-card:nth-child(2) .jnu-highlight-icon {
+  background: var(--jnu-secondary-crimson);
+}
+
+.jnu-highlight-card:nth-child(3) .jnu-highlight-icon {
+  background: var(--jnu-accent-pink);
+}
+
+.jnu-highlight-card:nth-child(4) .jnu-highlight-icon {
+  background: var(--jnu-academic-blue);
+  color: #FFFFFF;
+}
+
+.jnu-highlight-val {
+  font-family: var(--font-heading) !important;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--jnu-primary-navy);
+  line-height: 1.2;
+  margin-bottom: 2px;
+  text-align: left !important;
+}
+
+.jnu-highlight-label {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: var(--jnu-text-muted);
+  margin-bottom: 0;
+  text-align: left !important;
+  line-height: 1.2;
+}
+
+@media (max-width: 576px) {
+  .jnu-highlight-card {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .jnu-highlight-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+
+  .jnu-highlight-val {
+    font-size: 0.95rem;
+  }
+
+  .jnu-highlight-label {
+    font-size: 0.65rem;
+  }
+}
+
+/* ===================================================================
+   Section 2: Our USPs (Eight Reasons Students Choose Us)
+=================================================================== */
+.jnu-usp-section {
+  background-color: #FFFFFF;
+  padding: 70px 0 80px 0;
+  border-top: 1px solid var(--jnu-frame-border);
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .jnu-usp-section {
+    padding: 45px 0 55px 0;
+  }
+}
+
+/* Eyebrow & Section Header */
+.jnu-usp-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--jnu-secondary-crimson);
+  margin-bottom: 8px;
+  text-align: left !important;
+}
+
+.jnu-usp-title {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.18;
+  color: var(--jnu-primary-navy);
+  margin-bottom: 0;
+  text-align: left !important;
+}
+
+.jnu-usp-tagline {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--jnu-text-muted);
+  margin-bottom: 0;
+  text-align: left !important;
+  max-width: 360px;
+}
+
+@media (max-width: 991px) {
+  .jnu-usp-tagline {
+    margin-top: 8px;
+    max-width: 100%;
+  }
+}
+
+/* Bento Card Common Base */
+.jnu-bento-card {
+  border-radius: 20px;
+  padding: 24px 22px;
+  transition: var(--jnu-transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+  text-align: left !important;
+  overflow: hidden;
+}
+
+.jnu-bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--jnu-shadow-md);
+}
+
+/* Faded Background Image Layer inside Bento Cards */
+.jnu-bento-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 0;
+  transition: transform 0.45s ease, opacity 0.45s ease;
+}
+
+/* Faded opacity tuning for white cards */
+.jnu-bento-card-white .jnu-bento-bg-img {
+  opacity: 0.07;
+  filter: grayscale(30%);
+}
+
+.jnu-bento-card-white:hover .jnu-bento-bg-img {
+  opacity: 0.14;
+  transform: scale(1.05);
+}
+
+/* Faded opacity tuning for dark navy card */
+.jnu-bento-card-dark .jnu-bento-bg-img {
+  opacity: 0.15;
+  filter: saturate(110%);
+}
+
+.jnu-bento-card-dark:hover .jnu-bento-bg-img {
+  opacity: 0.22;
+  transform: scale(1.05);
+}
+
+/* Faded opacity tuning for academic blue card */
+.jnu-bento-card-blue .jnu-bento-bg-img {
+  opacity: 0.16;
+  filter: saturate(110%);
+}
+
+.jnu-bento-card-blue:hover .jnu-bento-bg-img {
+  opacity: 0.24;
+  transform: scale(1.05);
+}
+
+/* Faded opacity tuning for crimson card */
+.jnu-bento-card-crimson .jnu-bento-bg-img {
+  opacity: 0.16;
+  filter: saturate(110%);
+}
+
+.jnu-bento-card-crimson:hover .jnu-bento-bg-img {
+  opacity: 0.24;
+  transform: scale(1.05);
+}
+
+/* Ensure all content (icons, titles, desc) sits cleanly above the background image */
+.jnu-bento-card>*:not(.jnu-bento-bg-img) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Card 1: Large Featured Dark Navy Card */
+.jnu-bento-card-dark {
+  background-color: var(--jnu-primary-navy);
+  color: #FFFFFF;
+  min-height: 340px;
+  padding: 34px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 991px) {
+  .jnu-bento-card-dark {
+    min-height: 240px;
+    padding: 26px 20px;
+  }
+}
+
+/* Card 4: Vibrant Academic Blue Card */
+.jnu-bento-card-blue {
+  background-color: var(--jnu-academic-blue);
+  color: #FFFFFF;
+  padding: 26px 24px;
+}
+
+/* Card 7: JNU Crimson Card (Replaces Yellow in reference image) */
+.jnu-bento-card-crimson {
+  background-color: var(--jnu-secondary-crimson);
+  color: #FFFFFF;
+  padding: 24px 20px;
+}
+
+/* White Standard Bento Cards (Cards 2, 3, 5, 6, 8) */
+.jnu-bento-card-white {
+  background-color: #FFFFFF;
+  border: 1px solid #27282b;
+  color: var(--jnu-text-heading);
+  padding: 22px 18px;
+}
+
+.jnu-bento-card-white:hover {
+  border-color: rgba(17, 32, 73, 0.25);
+}
+
+/* Icon Badges */
+.jnu-bento-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 22px;
+  flex-shrink: 0;
+  transition: var(--jnu-transition);
+}
+
+.jnu-bento-card:hover .jnu-bento-icon {
+  transform: scale(1.08);
+}
+
+/* Icon Badge Color Profiles */
+.icon-badge-dark {
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.icon-badge-blue {
+  background: rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.icon-badge-crimson {
+  background: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.icon-badge-white {
+  background: #EBF1FB;
+  color: var(--jnu-primary-navy);
+  border: 1px solid #DCE5F5;
+}
+
+/* Typography inside Bento Cards */
+.jnu-bento-title {
+  font-family: var(--font-heading) !important;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 6px;
+  text-align: left !important;
+}
+
+.jnu-bento-card-dark .jnu-bento-title {
+  font-size: clamp(1.4rem, 2vw, 1.85rem);
+  font-weight: 800;
+  color: #FFFFFF !important;
+  margin-bottom: 10px;
+}
+
+.jnu-bento-card-blue .jnu-bento-title,
+.jnu-bento-card-crimson .jnu-bento-title {
+  color: #FFFFFF !important;
+  font-size: 1.15rem;
+}
+
+.jnu-bento-card-white .jnu-bento-title {
+  color: var(--jnu-primary-navy) !important;
+}
+
+.jnu-bento-desc {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  line-height: 1.45;
+  margin-bottom: 0;
+  text-align: left !important;
+}
+
+.jnu-bento-card-dark .jnu-bento-desc {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.92rem;
+}
+
+.jnu-bento-card-blue .jnu-bento-desc,
+.jnu-bento-card-crimson .jnu-bento-desc {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.jnu-bento-card-white .jnu-bento-desc {
+  color: var(--jnu-text-muted);
+}
+
+@media (max-width: 576px) {
+  .jnu-bento-card {
+    padding: 18px 16px;
+    border-radius: 16px;
+  }
+
+  .jnu-bento-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+  }
+
+  .jnu-bento-title {
+    font-size: 1.02rem;
+  }
+
+  .jnu-bento-desc {
+    font-size: 0.8rem;
+  }
+}
+
+/* ===================================================================
+   Section 3: Academic Programs (Explore 26+ Programs)
+=================================================================== */
+.jnu-programs-section {
+  background-color: #FFFFFF;
+  padding: 80px 0;
+  border-top: 1px solid var(--jnu-frame-border);
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .jnu-programs-section {
+    padding: 50px 0;
+  }
+}
+
+.jnu-programs-title {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(1.85rem, 3.4vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--jnu-primary-navy);
+  margin-bottom: 36px;
+  max-width: 840px;
+  text-align: left !important;
+}
+
+.jnu-text-crimson {
+  color: var(--jnu-secondary-crimson) !important;
+}
+
+/* Left Column: Vertical Tabs */
+.jnu-tabs-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.jnu-program-tab {
+  border-radius: 20px;
+  padding: 22px 24px;
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+  cursor: pointer;
+  transition: var(--jnu-transition);
+  text-align: left !important;
+  display: block;
+  user-select: none;
+}
+
+.jnu-program-tab:hover {
+  transform: translateX(4px);
+  border-color: rgba(181, 39, 89, 0.4);
+  box-shadow: var(--jnu-shadow-sm);
+}
+
+.jnu-tab-num {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--jnu-text-muted);
+  margin-bottom: 4px;
+}
+
+.jnu-tab-title {
+  font-family: var(--font-heading) !important;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--jnu-primary-navy);
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.jnu-tab-sub {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  color: var(--jnu-text-muted);
+  margin-bottom: 0;
+}
+
+/* Active Tab */
+.jnu-program-tab.active {
+  background-color: var(--jnu-secondary-crimson);
+  border-color: var(--jnu-secondary-crimson);
+  box-shadow: 0 10px 25px rgba(181, 39, 89, 0.3);
+}
+
+.jnu-program-tab.active .jnu-tab-num {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.jnu-program-tab.active .jnu-tab-title {
+  color: #FFFFFF !important;
+}
+
+.jnu-program-tab.active .jnu-tab-sub {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Right Column: Display Card */
+.jnu-program-display-card {
+  background-color: #FFFFFF;
+  border-radius: 26px;
+  padding: 28px;
+  border: 1px solid #E8ECF5;
+  box-shadow: 0 15px 40px rgba(17, 32, 73, 0.05);
+  height: 100%;
+}
+
+@media (max-width: 576px) {
+  .jnu-program-display-card {
+    padding: 18px 14px;
+    border-radius: 20px;
+  }
+}
+
+/* Student Photo Box */
+.jnu-student-photo-box {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  min-height: 380px;
+  background-color: #F8DCE7;
+}
+
+.jnu-student-img {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+}
+
+.jnu-student-photo-box:hover .jnu-student-img {
+  transform: scale(1.04);
+}
+
+.jnu-student-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(17, 32, 73, 0.75) 0%, rgba(181, 39, 89, 0.25) 50%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+}
+
+.jnu-student-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  color: var(--jnu-primary-navy);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 767px) {
+  .jnu-student-photo-box {
+    min-height: 240px;
+    margin-bottom: 20px;
+  }
+
+  .jnu-student-img {
+    min-height: 240px;
+    max-height: 260px;
+  }
+}
+
+/* Program Content Column */
+.jnu-program-content-col {
+  padding-left: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+  .jnu-program-content-col {
+    padding-left: 0;
+  }
+}
+
+.jnu-content-title {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+  font-weight: 800;
+  color: var(--jnu-primary-navy);
+  margin-bottom: 4px;
+  text-align: left !important;
+}
+
+.jnu-content-sub {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--jnu-text-muted);
+  margin-bottom: 20px;
+  text-align: left !important;
+  line-height: 1.5;
+}
+
+.jnu-courses-label {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--jnu-primary-navy);
+  margin-bottom: 12px;
+  text-align: left !important;
+}
+
+/* Course Chips (2 cols x 3 rows) */
+.jnu-course-chip {
+  background-color: #fff0f1;
+  border: 1px solid #36383b;
+  border-radius: 12px;
+  padding: 12px 14px;
+  transition: var(--jnu-transition);
+  text-align: left !important;
+  height: 100%;
+}
+
+.jnu-course-chip:hover {
+  border-color: var(--jnu-secondary-crimson);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(17, 32, 73, 0.06);
+}
+
+.jnu-course-name {
+  font-family: var(--font-heading) !important;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--jnu-primary-navy);
+  line-height: 1.2;
+  margin-bottom: 2px;
+  text-align: left !important;
+}
+
+.jnu-course-dept {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--jnu-text-muted);
+  line-height: 1.3;
+  text-align: left !important;
+}
+
+/* Program CTA Button */
+.jnu-program-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--jnu-secondary-crimson);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(181, 39, 89, 0.3);
+  transition: var(--jnu-transition);
+  margin-top: 24px;
+  border: none;
+  width: fit-content;
+}
+
+.jnu-program-cta-btn:hover {
+  background-color: var(--jnu-secondary-dark);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(181, 39, 89, 0.4);
+}
+
+.jnu-program-cta-btn i {
+  transition: transform 0.3s ease;
+}
+
+.jnu-program-cta-btn:hover i {
+  transform: translateX(4px);
+}
+
+@media (max-width: 576px) {
+  .jnu-program-cta-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.85rem;
+    padding: 11px 20px;
+  }
+}
+
+/* ===================================================================
+   Section 4: Pedagogy (Teaching Approach)
+=================================================================== */
+.jnu-pedagogy-section {
+  background-color: #FFFFFF;
+  padding: 80px 0;
+  border-top: 1px solid var(--jnu-frame-border);
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .jnu-pedagogy-section {
+    padding: 50px 0;
+  }
+}
+
+.jnu-pedagogy-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--jnu-secondary-crimson);
+  margin-bottom: 6px;
+  text-align: left !important;
+}
+
+.jnu-pedagogy-title {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  color: var(--jnu-secondary-crimson);
+  margin-bottom: 6px;
+  line-height: 1.15;
+  text-align: left !important;
+}
+
+.jnu-pedagogy-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--jnu-text-muted);
+  margin-bottom: 40px;
+  text-align: left !important;
+  max-width: 600px;
+}
+
+/* Pedagogy Card Container */
+.jnu-pedagogy-card {
+  background-color: #FFFFFF;
+  border-radius: 22px;
+  border: 1px solid #E6E9F2;
+  box-shadow: 0 10px 30px rgba(17, 32, 73, 0.04);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: var(--jnu-transition);
+}
+
+.jnu-pedagogy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(17, 32, 73, 0.08);
+  border-color: rgba(181, 39, 89, 0.3);
+}
+
+/* Card Header Banner */
+.jnu-pedagogy-header {
+  position: relative;
+  padding: 24px 26px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  min-height: 120px;
+}
+
+.jnu-pedagogy-header.header-group-1 {
+  background-color: var(--jnu-secondary-crimson);
+  /* JNU Crimson */
+}
+
+.jnu-pedagogy-header.header-group-2 {
+  background-color: var(--jnu-primary-navy);
+  /* JNU Deep Navy */
+}
+
+.jnu-pedagogy-header.header-group-3 {
+  background-color: var(--jnu-badge-bg);
+  /* JNU Deep Maroon / Wine #7A152E */
+}
+
+.jnu-pedagogy-header-content {
+  position: relative;
+  z-index: 2;
+  text-align: left !important;
+}
+
+.jnu-group-badge {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 4px;
+}
+
+.jnu-group-title {
+  font-family: var(--font-heading) !important;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #FFFFFF !important;
+  margin-bottom: 4px;
+  line-height: 1.2;
+  text-align: left !important;
+}
+
+.jnu-group-count {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Watermark Image (In place of Letters A, B, C) */
+.jnu-pedagogy-watermark-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 55%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.22;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 25%, transparent 100%);
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 25%, transparent 100%);
+  transition: transform 0.45s ease, opacity 0.45s ease;
+}
+
+.jnu-pedagogy-card:hover .jnu-pedagogy-watermark-img {
+  transform: scale(1.08);
+  opacity: 0.32;
+}
+
+/* Watermark Letter A, B, C */
+.jnu-watermark-letter {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-heading);
+  font-size: 5.5rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.16);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+/* Card Body with Methods */
+.jnu-pedagogy-body {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex-grow: 1;
+  text-align: left !important;
+}
+
+.jnu-method-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  text-align: left !important;
+}
+
+/* Circular Number Badges */
+.jnu-method-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.jnu-method-badge.badge-group-1 {
+  background-color: var(--jnu-secondary-crimson);
+  box-shadow: 0 3px 10px rgba(181, 39, 89, 0.3);
+}
+
+.jnu-method-badge.badge-group-2 {
+  background-color: var(--jnu-primary-navy);
+  box-shadow: 0 3px 10px rgba(17, 32, 73, 0.25);
+}
+
+.jnu-method-badge.badge-group-3 {
+  background-color: var(--jnu-badge-bg);
+  box-shadow: 0 3px 10px rgba(122, 21, 46, 0.3);
+}
+
+.jnu-method-content {
+  flex-grow: 1;
+  text-align: left !important;
+}
+
+.jnu-method-title {
+  font-family: var(--font-heading) !important;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--jnu-primary-navy);
+  margin-bottom: 4px;
+  line-height: 1.25;
+  text-align: left !important;
+}
+
+.jnu-method-desc {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--jnu-text-muted);
+  margin-bottom: 0;
+  text-align: left !important;
+}
+
+@media (max-width: 576px) {
+  .jnu-pedagogy-header {
+    padding: 20px 18px;
+    min-height: 105px;
+  }
+
+  .jnu-group-title {
+    font-size: 1.2rem;
+  }
+
+  .jnu-watermark-letter {
+    font-size: 4.5rem;
+    right: 12px;
+  }
+
+  .jnu-pedagogy-body {
+    padding: 20px 16px;
+    gap: 18px;
+  }
+
+  .jnu-method-badge {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+  }
+
+  .jnu-method-title {
+    font-size: 0.98rem;
+  }
+
+  .jnu-method-desc {
+    font-size: 0.78rem;
+  }
+}
+
+/* ===================================================================
+   Section 5: Infrastructure (Spaces That Shape Ideas)
+=================================================================== */
+.jnu-infra-section {
+  background-color: #FFFFFF;
+  padding: 80px 0;
+  border-top: 1px solid var(--jnu-frame-border);
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .jnu-infra-section {
+    padding: 50px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .jnu-infra-stats {
+    gap: 16px;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+  }
+  .jnu-infra-stat-val {
+    font-size: 1.5rem;
+  }
+  .jnu-infra-stat-lbl {
+    font-size: 0.72rem;
+  }
+  .jnu-infra-feature-item {
+    padding: 8px 12px;
+  }
+  .jnu-infra-feature-icon {
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    font-size: 0.95rem;
+  }
+  .jnu-infra-feature-title {
+    font-size: 0.84rem;
+  }
+  .jnu-infra-feature-desc {
+    font-size: 0.74rem;
+  }
+}
+
+.jnu-infra-eyebrow-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.jnu-infra-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--jnu-secondary-crimson);
+  margin-bottom: 0;
+  text-align: left !important;
+}
+
+.jnu-infra-title {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(2rem, 3.4vw, 2.9rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--jnu-primary-navy);
+  margin-bottom: 14px;
+  text-align: left !important;
+}
+
+.jnu-infra-desc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--jnu-text-muted);
+  margin-bottom: 24px;
+  text-align: left !important;
+}
+
+/* Stats */
+.jnu-infra-stats {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--jnu-frame-border);
+}
+
+.jnu-infra-stat-val {
+  font-family: var(--font-heading) !important;
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--jnu-secondary-crimson);
+  line-height: 1.1;
+  margin-bottom: 2px;
+  text-align: left !important;
+}
+
+.jnu-infra-stat-val.stat-navy {
+  color: var(--jnu-primary-navy);
+}
+
+.jnu-infra-stat-lbl {
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  color: var(--jnu-text-muted);
+  margin-bottom: 0;
+  text-align: left !important;
+  white-space: nowrap;
+}
+
+/* Campus Infrastructure Features (Replaces old filter buttons) */
+.jnu-infra-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.jnu-infra-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--jnu-frame-border);
+  box-shadow: 0 4px 14px rgba(17, 32, 73, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: left !important;
+}
+
+.jnu-infra-feature-item:hover {
+  border-color: rgba(181, 39, 89, 0.35);
+  box-shadow: 0 8px 20px rgba(17, 32, 73, 0.06);
+  transform: translateX(3px);
+}
+
+.jnu-infra-feature-icon {
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(181, 39, 89, 0.09);
+  color: var(--jnu-secondary-crimson);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.jnu-infra-feature-text {
+  flex: 1 1 auto;
+  text-align: left !important;
+}
+
+.jnu-infra-feature-title {
+  font-family: var(--font-heading) !important;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--jnu-primary-navy);
+  margin-bottom: 2px;
+  line-height: 1.25;
+  text-align: left !important;
+}
+
+.jnu-infra-feature-desc {
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  color: var(--jnu-text-muted);
+  line-height: 1.4;
+  margin-bottom: 0;
+  text-align: left !important;
+}
+
+/* Numbered 10 Cards List */
+.jnu-infra-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.jnu-infra-item-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--jnu-frame-border);
+  cursor: pointer;
+  transition: var(--jnu-transition);
+  text-align: left !important;
+}
+
+.jnu-infra-item-card:hover {
+  transform: translateX(3px);
+  border-color: var(--jnu-secondary-crimson);
+  box-shadow: 0 4px 12px rgba(17, 32, 73, 0.05);
+}
+
+.jnu-infra-item-card.active {
+  background: linear-gradient(135deg, var(--jnu-secondary-crimson) 0%, var(--jnu-accent-pink) 100%);
+  color: #FFFFFF;
+  border-color: var(--jnu-secondary-crimson);
+  box-shadow: 0 6px 16px rgba(181, 39, 89, 0.28);
+}
+
+.jnu-infra-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.jnu-infra-item-num {
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(17, 32, 73, 0.08);
+  color: var(--jnu-primary-navy);
+  line-height: 1.2;
+}
+
+.jnu-infra-item-card.active .jnu-infra-item-num {
+  background: rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+}
+
+.jnu-infra-item-title {
+  font-family: var(--font-heading) !important;
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  line-height: 1.3;
+  color: var(--jnu-primary-navy);
+}
+
+.jnu-infra-item-card.active .jnu-infra-item-title {
+  color: #FFFFFF !important;
+}
+
+.jnu-infra-item-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--jnu-frame-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  color: var(--jnu-text-muted);
+  flex-shrink: 0;
+  transition: var(--jnu-transition);
+}
+
+.jnu-infra-item-card.active .jnu-infra-item-arrow {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: transparent;
+  color: #FFFFFF;
+  transform: translateX(2px);
+}
+
+/* Right Showcase Card */
+.jnu-infra-showcase-box {
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  min-height: 540px;
+  border: 1px solid var(--jnu-frame-border);
+  box-shadow: 0 15px 40px rgba(17, 32, 73, 0.08);
+  background-color: var(--jnu-primary-navy);
+}
+
+.jnu-infra-showcase-img {
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  object-fit: cover;
+  object-position: center;
+  transition: opacity 0.3s ease, transform 0.6s ease;
+}
+
+.jnu-infra-showcase-box:hover .jnu-infra-showcase-img {
+  transform: scale(1.03);
+}
+
+.jnu-infra-showcase-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(17, 32, 73, 0.94) 0%, rgba(17, 32, 73, 0.5) 45%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+  text-align: left !important;
+}
+
+.jnu-infra-showcase-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: rgba(181, 39, 89, 0.88);
+  backdrop-filter: blur(6px);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+
+.jnu-infra-showcase-title {
+  font-family: var(--font-heading) !important;
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #FFFFFF !important;
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.jnu-infra-showcase-desc {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0;
+}
+
+.jnu-infra-tagline-text {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 1.2px;
+  color: var(--jnu-text-muted);
+  line-height: 1.6;
+  text-transform: uppercase;
+  margin-top: 18px;
+}
+
+/* ===================================================================
+   Section 6: Placements (Empower Your Future)
+=================================================================== */
+.jnu-placement-section {
+  background-color: #FFFFFF;
+  padding: 80px 0;
+  border-top: 1px solid var(--jnu-frame-border);
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .jnu-placement-section {
+    padding: 50px 0;
+  }
+}
+
+/* Eyebrow with pink line */
+.jnu-placement-eyebrow-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.jnu-eyebrow-line {
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--jnu-secondary-crimson);
+  border-radius: 2px;
+}
+
+.jnu-placement-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--jnu-primary-navy);
+}
+
+.jnu-placement-title {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(2rem, 3.4vw, 2.85rem);
+  font-weight: 800;
+  line-height: 1.18;
+  color: var(--jnu-primary-navy);
+  margin-bottom: 12px;
+  text-align: left !important;
+}
+
+.jnu-placement-sub {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--jnu-text-muted);
+  margin-bottom: 0;
+  text-align: left !important;
+  max-width: 580px;
+}
+
+/* Stats Pill (Top-Right Floating) */
+.jnu-placement-stats-pill {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid var(--jnu-frame-border);
+  box-shadow: 0 10px 30px rgba(17, 32, 73, 0.05);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 480px;
+  margin-left: auto;
+}
+
+@media (max-width: 991px) {
+  .jnu-placement-stats-pill {
+    margin-left: 0;
+    margin-top: 24px;
+    max-width: 100%;
+  }
+}
+
+.jnu-stats-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.jnu-stat-icon-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(181, 39, 89, 0.1);
+  color: var(--jnu-secondary-crimson);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.jnu-stats-val {
+  font-family: var(--font-heading) !important;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--jnu-primary-navy);
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+
+.jnu-stats-label {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: var(--jnu-text-muted);
+  line-height: 1.2;
+}
+
+.jnu-stats-divider {
+  width: 1px;
+  height: 48px;
+  background-color: var(--jnu-frame-border);
+  margin: 0 12px;
+}
+
+/* Placed Student Cards */
+.jnu-placed-card {
+  background-color: #FFFFFF;
+  border-radius: 22px;
+  border: 1px solid var(--jnu-frame-border);
+  box-shadow: 0 8px 24px rgba(17, 32, 73, 0.04);
+  padding: 22px 20px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.jnu-placed-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(181, 39, 89, 0.35);
+  box-shadow: 0 14px 32px rgba(17, 32, 73, 0.08);
+}
+
+.jnu-placed-card:active {
+  transform: scale(0.985);
+}
+
+.jnu-placed-card-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.jnu-placed-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  position: relative;
+  text-align: left !important;
+  width: 100%;
+}
+
+.jnu-placed-num {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--jnu-secondary-crimson);
+  background-color: rgba(181, 39, 89, 0.1);
+  padding: 2px 8px;
+  border-radius: 6px;
+  width: fit-content;
+  margin-bottom: 6px;
+}
+
+.jnu-placed-name {
+  font-family: var(--font-heading) !important;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--jnu-primary-navy);
+  margin-bottom: 2px;
+  line-height: 1.2;
+  text-align: left !important;
+}
+
+.jnu-placed-deg {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--jnu-text-muted);
+  margin-bottom: 10px;
+  text-align: left !important;
+}
+
+.jnu-placed-company {
+  margin-bottom: 8px;
+  text-align: left !important;
+}
+
+.jnu-placed-role {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--jnu-primary-navy);
+  margin-top: 4px;
+  text-align: left !important;
+}
+
+.jnu-placed-quote {
+  position: relative;
+  margin-top: 14px;
+  margin-bottom: 8px;
+  text-align: left !important;
+}
+
+.jnu-quote-mark {
+  color: var(--jnu-secondary-crimson);
+  font-family: serif;
+  font-size: 1.2rem;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.jnu-quote-text {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: #475569;
+  font-style: normal;
+  margin-bottom: 0;
+  display: inline;
+}
+
+.jnu-placed-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(181, 39, 89, 0.3);
+  color: var(--jnu-secondary-crimson);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  margin-left: auto;
+  margin-top: auto;
+  transition: var(--jnu-transition);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.jnu-placed-card:hover .jnu-placed-arrow {
+  background-color: var(--jnu-secondary-crimson);
+  color: #FFFFFF;
+  transform: translateX(4px);
+}
+
+/* Placed Student Photo */
+.jnu-placed-photo-wrap {
+  width: 105px;
+  min-width: 105px;
+  height: 105px;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: #F1F4F9;
+}
+
+.jnu-placed-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.4s ease;
+}
+
+.jnu-placed-card:hover .jnu-placed-photo {
+  transform: scale(1.06);
+}
+
+/* Bottom Bar */
+.jnu-placement-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  gap: 16px;
+}
+
+.jnu-placement-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.jnu-p-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: rgba(17, 32, 73, 0.15);
+}
+
+.jnu-p-dot.active {
+  width: 24px;
+  height: 7px;
+  border-radius: 999px;
+  background-color: var(--jnu-secondary-crimson);
+}
+
+.jnu-placement-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--jnu-secondary-crimson);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(181, 39, 89, 0.3);
+  transition: var(--jnu-transition);
+  border: none;
+  white-space: nowrap;
+}
+
+.jnu-placement-cta-btn:hover {
+  background-color: var(--jnu-secondary-dark);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(181, 39, 89, 0.4);
+}
+
+.jnu-placement-signoff {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+  color: var(--jnu-text-muted);
+}
+
+.jnu-signoff-line {
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--jnu-secondary-crimson);
+}
+
+@media (max-width: 768px) {
+  .jnu-placement-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .jnu-placed-card {
+    padding: 16px 14px;
+    border-radius: 18px;
+  }
+
+  .jnu-placed-photo-wrap {
+    width: 90px;
+    min-width: 90px;
+    height: 90px;
+    border-radius: 12px;
+  }
+
+  .jnu-placed-name {
+    font-size: 1.05rem;
+  }
+
+  .jnu-quote-text {
+    font-size: 0.8rem;
+  }
+
+  .jnu-placement-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .jnu-stats-col {
+    padding: 0 4px;
+  }
+
+  .jnu-stats-val {
+    font-size: 1.15rem;
+  }
+
+  .jnu-stats-label {
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .jnu-placed-photo-wrap {
+    width: 82px;
+    min-width: 82px;
+    height: 82px;
+    border-radius: 12px;
+  }
+
+  .jnu-placed-name {
+    font-size: 0.98rem;
+  }
+
+  .jnu-placed-deg {
+    font-size: 0.72rem;
+    margin-bottom: 6px;
+  }
+}
+
+
+/* ===================================================================
+   Section 7: Student Testimonials (Real Stories from Our Students)
+=================================================================== */
+.jnu-testimonials-section {
+  background-color: #FFFFFF;
+  padding: 80px 0;
+  border-top: 1px solid var(--jnu-frame-border);
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .jnu-testimonials-section {
+    padding: 50px 0;
+  }
+}
+
+.jnu-testi-eyebrow-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.jnu-testi-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--jnu-primary-navy);
+}
+
+.jnu-testi-title {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(2rem, 3.4vw, 2.85rem);
+  font-weight: 800;
+  line-height: 1.18;
+  color: var(--jnu-primary-navy);
+  margin-bottom: 12px;
+  text-align: left !important;
+}
+
+.jnu-testi-sub {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--jnu-text-muted);
+  margin-bottom: 0;
+  text-align: left !important;
+  max-width: 580px;
+}
+
+.jnu-testi-top-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--jnu-primary-navy);
+  text-decoration: none;
+  transition: var(--jnu-transition);
+}
+
+.jnu-testi-top-link .link-underline {
+  border-bottom: 2px solid var(--jnu-secondary-crimson);
+  padding-bottom: 2px;
+}
+
+.jnu-testi-top-link:hover {
+  color: var(--jnu-secondary-crimson);
+}
+
+.jnu-testi-top-link:hover .link-arrow {
+  transform: translateX(4px);
+}
+
+.jnu-testi-top-link .link-arrow {
+  transition: transform 0.25s ease;
+  color: var(--jnu-secondary-crimson);
+  font-size: 1rem;
+}
+
+/* 6 Small Student Cards Grid (3x2 Layout Matching Detail Card Height) */
+.jnu-testi-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  height: 100%;
+  flex: 1 1 auto;
+}
+
+.jnu-testi-card {
+  background-color: #FFFFFF;
+  border-radius: 18px;
+  border: 1px solid var(--jnu-frame-border);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 53%;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  text-align: left !important;
+}
+
+.jnu-testi-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(181, 39, 89, 0.4);
+  box-shadow: 0 8px 24px rgba(17, 32, 73, 0.06);
+}
+
+.jnu-testi-card.active {
+  border: 1.8px solid var(--jnu-secondary-crimson);
+  background-color: rgba(181, 39, 89, 0.02);
+  box-shadow: 0 8px 25px rgba(181, 39, 89, 0.12);
+}
+
+.jnu-testi-card-thumb-wrap {
+  width: 68px;
+  min-width: 68px;
+  height: 80px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: #F1F4F9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jnu-testi-card-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.jnu-testi-card-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-width: 0;
+}
+
+.jnu-testi-card-name {
+  font-family: var(--font-heading) !important;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--jnu-primary-navy);
+  margin-bottom: 2px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left !important;
+}
+
+.jnu-testi-card-deg {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: var(--jnu-text-muted);
+  margin-bottom: 4px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left !important;
+}
+
+.jnu-testi-card-quote {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: #475569;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-align: left !important;
+}
+
+.jnu-testi-card-arrow {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(181, 39, 89, 0.35);
+  color: var(--jnu-secondary-crimson);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  margin-left: auto;
+  margin-top: auto;
+  transition: var(--jnu-transition);
+}
+
+.jnu-testi-card.active .jnu-testi-card-arrow,
+.jnu-testi-card:hover .jnu-testi-card-arrow {
+  background-color: var(--jnu-secondary-crimson);
+  border-color: var(--jnu-secondary-crimson);
+  color: #FFFFFF;
+}
+
+/* Featured Large Detail Card (Right Side) */
+.jnu-testi-detail-card {
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  border: 1px solid var(--jnu-frame-border);
+  box-shadow: 0 16px 45px rgba(17, 32, 73, 0.07);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.jnu-testi-detail-photo-wrap {
+  flex: 0 0 38%;
+  max-width: 38%;
+  position: relative;
+  background: linear-gradient(135deg, rgba(181, 39, 89, 0.06) 0%, rgba(181, 39, 89, 0.18) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.jnu-testi-detail-photo-wrap::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.45) 0%, rgba(181, 39, 89, 0.15) 70%, transparent 100%);
+  pointer-events: none;
+}
+
+.jnu-testi-detail-img {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.3s ease, transform 0.4s ease;
+  display: block;
+}
+
+.jnu-testi-detail-content {
+  flex: 0 0 62%;
+  max-width: 62%;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left !important;
+}
+
+.jnu-testi-detail-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.jnu-testi-counter {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--jnu-secondary-crimson);
+  letter-spacing: 0.5px;
+}
+
+.jnu-testi-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.jnu-testi-nav-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--jnu-frame-border);
+  background-color: #FFFFFF;
+  color: var(--jnu-primary-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  transition: var(--jnu-transition);
+  cursor: pointer;
+}
+
+.jnu-testi-nav-btn:hover {
+  background-color: var(--jnu-secondary-crimson);
+  border-color: var(--jnu-secondary-crimson);
+  color: #FFFFFF;
+}
+
+.jnu-testi-detail-name {
+  font-family: var(--font-heading) !important;
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--jnu-primary-navy);
+  margin-bottom: 3px;
+  line-height: 1.2;
+  text-align: left !important;
+}
+
+.jnu-testi-detail-deg {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--jnu-text-muted);
+  margin-bottom: 0;
+  text-align: left !important;
+}
+
+.jnu-testi-line {
+  width: 40px;
+  height: 2px;
+  background-color: var(--jnu-secondary-crimson);
+  margin: 12px 0 14px;
+  border-radius: 2px;
+}
+
+.jnu-testi-detail-quote-wrap {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+  text-align: left !important;
+}
+
+.jnu-testi-big-quote {
+  font-family: serif;
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--jnu-secondary-crimson);
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.jnu-testi-quote-full {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: #475569;
+  margin-bottom: 0;
+  text-align: left !important;
+}
+
+/* Bottom Metadata (Placed at & Role) */
+.jnu-testi-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--jnu-frame-border);
+}
+
+.jnu-testi-meta-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  text-align: left !important;
+}
+
+.jnu-testi-meta-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background-color: rgba(181, 39, 89, 0.08);
+  color: var(--jnu-secondary-crimson);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.jnu-testi-meta-label {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  color: var(--jnu-text-muted);
+  line-height: 1.2;
+}
+
+.jnu-testi-meta-val {
+  font-family: var(--font-heading) !important;
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--jnu-primary-navy);
+  line-height: 1.2;
+  text-align: left !important;
+}
+
+/* Responsive Media Queries for Testimonials */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .jnu-testi-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 12px;
+  }
+
+  .jnu-testi-card {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .jnu-testi-card-thumb-wrap {
+    width: 60px;
+    min-width: 60px;
+    height: 72px;
+  }
+
+  .jnu-testi-card-name {
+    font-size: 0.85rem;
+  }
+
+  .jnu-testi-card-deg {
+    font-size: 0.68rem;
+  }
+
+  .jnu-testi-card-quote {
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .jnu-testi-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    height: auto;
+    gap: 14px;
+  }
+
+  .jnu-testi-card {
+    height: auto;
+    padding: 12px;
+  }
+
+  .jnu-testi-detail-card {
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .jnu-testi-detail-card {
+    flex-direction: column;
+    border-radius: 20px;
+  }
+
+  .jnu-testi-detail-photo-wrap {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+    height: 250px;
+    min-height: 250px;
+    background: linear-gradient(135deg, rgba(181, 39, 89, 0.08) 0%, rgba(181, 39, 89, 0.22) 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .jnu-testi-detail-img {
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+    max-height: 250px;
+    object-fit: contain;
+    object-position: center bottom;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .jnu-testi-detail-content {
+    flex: 0 0 auto;
+    max-width: 100%;
+    padding: 22px 18px 20px;
+  }
+
+  .jnu-testi-detail-name {
+    font-size: 1.25rem;
+  }
+
+  .jnu-testi-detail-deg {
+    font-size: 0.78rem;
+  }
+
+  .jnu-testi-quote-full {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .jnu-testi-meta-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 14px;
+  }
+
+  .jnu-testi-meta-box {
+    gap: 8px;
+  }
+
+  .jnu-testi-meta-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+  }
+
+  .jnu-testi-meta-label {
+    font-size: 0.65rem;
+  }
+
+  .jnu-testi-meta-val {
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .jnu-testi-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .jnu-testi-card {
+    padding: 10px 12px;
+    border-radius: 14px;
+    gap: 10px;
+    height: auto;
+  }
+
+  .jnu-testi-card-thumb-wrap {
+    width: 58px;
+    min-width: 58px;
+    height: 68px;
+    min-height: unset;
+    border-radius: 10px;
+  }
+
+  .jnu-testi-card-name {
+    font-size: 0.88rem;
+  }
+
+  .jnu-testi-card-deg {
+    font-size: 0.7rem;
+    margin-bottom: 2px;
+  }
+
+  .jnu-testi-card-quote {
+    font-size: 0.74rem;
+    line-height: 1.35;
+    margin-bottom: 0;
+    -webkit-line-clamp: 2;
+  }
+
+  .jnu-testi-detail-photo-wrap {
+    height: 220px;
+    min-height: 220px;
+  }
+
+  .jnu-testi-detail-img {
+    max-height: 220px;
+  }
+}
+
+
+/* ==========================================
+   JNU TOP PLACEMENT RECRUITERS
+=========================================== */
+
+.jnu-recruiters-section {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+  background-color: #f7f7f7;
+  border-top: 1px solid var(--jnu-frame-border);
+}
+
+/* Section Header (100% Left Aligned) */
+
+.jnu-recruiters-eyebrow-wrap,
+.recruiters-eyebrow-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  text-align: left !important;
+}
+
+.jnu-recruiters-eyebrow,
+.recruiters-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--jnu-primary-navy);
+  margin-bottom: 0;
+}
+
+.jnu-recruiters-title,
+.recruiters-heading h2 {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(2rem, 3.4vw, 2.85rem);
+  font-weight: 800;
+  line-height: 1.18;
+  color: var(--jnu-primary-navy);
+  margin-bottom: 12px;
+  text-align: left !important;
+}
+
+.jnu-recruiters-title span,
+.recruiters-heading h2 span {
+  color: var(--jnu-secondary-crimson) !important;
+}
+
+.jnu-recruiters-sub,
+.recruiters-heading p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--jnu-text-muted);
+  margin-bottom: 0;
+  text-align: left !important;
+  max-width: 650px;
+}
+
+.recruiters-heading {
+  max-width: 100%;
+  margin: 0 0 40px 0;
+  text-align: left !important;
+}
+
+/* Marquee wrapper */
+
+.recruiters-marquee {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.recruiters-row {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  /* Soft fade at both edges */
+  -webkit-mask-image: linear-gradient(to right,
+      transparent,
+      #000 5%,
+      #000 95%,
+      transparent);
+  mask-image: linear-gradient(to right,
+      transparent,
+      #000 5%,
+      #000 95%,
+      transparent);
+}
+
+/* Each track contains two identical sets */
+
+.recruiters-track {
+  display: flex;
+  width: max-content;
+  animation: recruitersMoveLeft 38s linear infinite;
+  will-change: transform;
+}
+
+.recruiters-track.reverse {
+  animation-name: recruitersMoveRight;
+  animation-duration: 43s;
+}
+
+/* Pause when the row is hovered */
+
+.recruiters-row:hover .recruiters-track {
+  animation-play-state: paused;
+}
+
+/* Logo sets */
+
+.recruiters-set {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 20px;
+  padding-right: 20px;
+}
+
+/* Individual cards */
+
+.recruiter-card {
+  display: flex;
+  flex: 0 0 180px;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  padding: 20px;
+  overflow: hidden;
+  background: #FFFFFF;
+  border: 1px solid var(--jnu-frame-border);
+  border-radius: 18px;
+  box-shadow: 0 5px 22px rgba(17, 32, 73, 0.04);
+  transition: var(--jnu-transition);
+}
+
+.recruiter-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(181, 39, 89, 0.35);
+  box-shadow: 0 12px 28px rgba(17, 32, 73, 0.08);
+}
+
+.recruiter-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 52px;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* First row: right to left */
+
+@keyframes recruitersMoveLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Second row: left to right */
+
+@keyframes recruitersMoveRight {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Footer */
+
+.recruiters-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.recruiters-footer span {
+  width: 28px;
+  height: 2px;
+  background: var(--jnu-secondary-crimson);
+  border-radius: 2px;
+}
+
+.recruiters-footer p {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--jnu-text-muted);
+  text-transform: uppercase;
+}
+
+/* Tablet */
+
+@media (max-width: 991.98px) {
+  .jnu-recruiters-section {
+    padding: 60px 0 45px;
+  }
+
+  .recruiters-heading {
+    margin-bottom: 30px;
+  }
+
+  .recruiter-card {
+    flex-basis: 155px;
+    height: 88px;
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .recruiters-set {
+    gap: 15px;
+    padding-right: 15px;
+  }
+
+  .recruiters-marquee {
+    gap: 15px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 575.98px) {
+  .jnu-recruiters-section {
+    padding: 45px 0 35px;
+  }
+
+  .recruiters-heading {
+    padding: 0;
+    margin-bottom: 24px;
+  }
+
+  .jnu-recruiters-title,
+  .recruiters-heading h2 {
+    font-size: 1.85rem;
+    letter-spacing: -0.5px;
+  }
+
+  .jnu-recruiters-sub,
+  .recruiters-heading p {
+    font-size: 0.82rem;
+  }
+
+  .recruiters-marquee {
+    gap: 13px;
+  }
+
+  .recruiters-set {
+    gap: 12px;
+    padding-right: 12px;
+  }
+
+  .recruiter-card {
+    flex-basis: 135px;
+    height: 74px;
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .recruiter-card img {
+    max-height: 42px;
+  }
+
+  .recruiters-track {
+    animation-duration: 32s;
+  }
+
+  .recruiters-track.reverse {
+    animation-duration: 36s;
+  }
+
+  .recruiters-footer {
+    gap: 9px;
+    margin-top: 25px;
+  }
+
+  .recruiters-footer p {
+    font-size: 0.7rem;
+  }
+}
+
+/* Accessibility: respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .recruiters-track,
+  .recruiters-track.reverse {
+    animation: none;
+    transform: none;
+  }
+
+  .recruiters-row {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .recruiters-track {
+    width: max-content;
+  }
+}
+
+
+/* ==========================================
+   JNU ACADEMIC SKILLING PARTNERS
+=========================================== */
+
+.academic-partners-section {
+  --jnu-magenta: #e50051;
+  --jnu-navy: #192747;
+
+  position: relative;
+  overflow: hidden;
+  padding: 55px 0;
+  background: #ffffff;
+}
+
+/* Section heading */
+
+.academic-partners-title {
+  margin-bottom: 35px !important;
+  color: var(--jnu-navy);
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.academic-partners-title::after {
+  content: "";
+  display: block;
+  width: 55px;
+  height: 3px;
+  margin: 15px auto 0;
+  background: var(--jnu-magenta);
+  border-radius: 10px;
+}
+
+/* Marquee viewport */
+
+.academic-marquee-row {
+  width: 100%;
+  overflow: hidden;
+
+  -webkit-mask-image: linear-gradient(to right,
+      transparent,
+      #000 5%,
+      #000 95%,
+      transparent);
+
+  mask-image: linear-gradient(to right,
+      transparent,
+      #000 5%,
+      #000 95%,
+      transparent);
+}
+
+/* Moving track */
+
+.academic-marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: academicPartnersMove 35s linear infinite;
+  will-change: transform;
+}
+
+/* Pause animation on hover */
+
+.academic-marquee-row:hover .academic-marquee-track {
+  animation-play-state: paused;
+}
+
+/* Logo cards */
+
+.academic-partner-card {
+  flex: 0 0 190px;
+  height: 115px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  padding: 20px;
+
+  background: #ffffff;
+  border: 1px solid rgba(25, 39, 71, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(25, 39, 71, 0.05);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.academic-partner-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(229, 0, 81, 0.4);
+  box-shadow: 0 10px 25px rgba(25, 39, 71, 0.1);
+}
+
+/* Logo sizing */
+
+.academic-partner-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 72px;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Seamless movement: duplicate set follows original */
+
+@keyframes academicPartnersMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 991.98px) {
+  .academic-partners-section {
+    padding: 40px 0;
+  }
+
+  .academic-partner-card {
+    flex-basis: 160px;
+    height: 100px;
+    margin-right: 15px;
+    padding: 17px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 575.98px) {
+  .academic-partners-section {
+    padding: 32px 0;
+  }
+
+  .academic-partners-title {
+    padding: 0 15px;
+    font-size: 21px;
+    letter-spacing: 0.5px;
+  }
+
+  .academic-partner-card {
+    flex-basis: 135px;
+    height: 82px;
+    margin-right: 12px;
+    padding: 13px;
+    border-radius: 11px;
+  }
+
+  .academic-partner-card img {
+    max-height: 55px;
+  }
+
+  .academic-marquee-track {
+    animation-duration: 28s;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .academic-marquee-track {
+    animation: none;
+  }
+
+  .academic-marquee-row {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+/* ===================================================================
+   Section 8: FAQ Section (Frequently Asked Questions)
+=================================================================== */
+
+.jnu-faq-section {
+  position: relative;
+  background-color: #FFFFFF;
+  padding: 85px 0 95px;
+  border-bottom: 1px solid var(--jnu-frame-border);
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .jnu-faq-section {
+    padding: 55px 0 65px;
+  }
+}
+
+/* Corner ambient glows matching reference screenshot */
+.jnu-faq-glow {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(70px);
+}
+
+.jnu-faq-glow-tr {
+  top: -100px;
+  right: -100px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(181, 39, 89, 0.08) 0%, transparent 70%);
+}
+
+.jnu-faq-glow-bl {
+  bottom: -110px;
+  left: -110px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(181, 39, 89, 0.06) 0%, transparent 70%);
+}
+
+/* FAQ Eyebrow & Titles */
+.jnu-faq-eyebrow-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.jnu-faq-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--jnu-text-muted);
+}
+
+.jnu-faq-title {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(2.1rem, 3.5vw, 2.9rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--jnu-primary-navy);
+  margin-bottom: 16px;
+  text-align: left !important;
+}
+
+.jnu-faq-sub {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #475569;
+  margin-bottom: 34px;
+  max-width: 440px;
+  text-align: left !important;
+}
+
+/* Have more questions? Help Box */
+.jnu-faq-help-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 16px 20px;
+  border: 1px solid var(--jnu-frame-border);
+  border-left: 3.5px solid var(--jnu-secondary-crimson);
+  box-shadow: 0 4px 18px rgba(17, 32, 73, 0.04);
+  max-width: 420px;
+  text-align: left !important;
+  transition: all 0.25s ease;
+}
+
+.jnu-faq-help-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(17, 32, 73, 0.07);
+}
+
+.jnu-faq-help-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background-color: rgba(181, 39, 89, 0.08);
+  color: var(--jnu-secondary-crimson);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.jnu-faq-help-content {
+  flex: 1;
+}
+
+.jnu-faq-help-title {
+  font-family: var(--font-heading) !important;
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--jnu-primary-navy);
+  margin-bottom: 3px;
+  line-height: 1.25;
+  text-align: left !important;
+}
+
+.jnu-faq-help-sub {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--jnu-text-muted);
+  margin-bottom: 6px;
+  line-height: 1.35;
+  text-align: left !important;
+}
+
+.jnu-faq-help-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--jnu-secondary-crimson);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: var(--jnu-transition);
+}
+
+.jnu-faq-help-link:hover {
+  color: var(--jnu-accent-wine);
+  gap: 9px;
+}
+
+/* Accordion Right Column */
+.jnu-faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.jnu-faq-item {
+  background-color: #FFFFFF;
+  border: 1px solid var(--jnu-frame-border);
+  border-radius: 18px;
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.jnu-faq-item:hover {
+  border-color: rgba(181, 39, 89, 0.35);
+  box-shadow: 0 6px 20px rgba(17, 32, 73, 0.04);
+}
+
+.jnu-faq-item.active {
+  border-color: rgba(181, 39, 89, 0.35);
+  box-shadow: 0 8px 26px rgba(181, 39, 89, 0.08);
+}
+
+.jnu-faq-header {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.jnu-faq-header:focus {
+  outline: none;
+}
+
+.jnu-faq-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background-color: rgba(181, 39, 89, 0.08);
+  color: var(--jnu-secondary-crimson);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.jnu-faq-question {
+  flex: 1;
+  font-family: var(--font-heading) !important;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--jnu-primary-navy);
+  padding: 0 16px;
+  line-height: 1.35;
+  text-align: left !important;
+}
+
+.jnu-faq-toggle-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(181, 39, 89, 0.45);
+  color: var(--jnu-secondary-crimson);
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.jnu-faq-item.active .jnu-faq-toggle-icon {
+  background-color: var(--jnu-secondary-crimson);
+  border-color: var(--jnu-secondary-crimson);
+  color: #FFFFFF;
+}
+
+.jnu-faq-body {
+  padding: 0 24px 22px 74px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #475569;
+  text-align: left !important;
+}
+
+@media (max-width: 575px) {
+  .jnu-faq-header {
+    padding: 14px 14px;
+  }
+
+  .jnu-faq-badge {
+    width: 32px;
+    height: 32px;
+    font-size: 0.78rem;
+  }
+
+  .jnu-faq-question {
+    font-size: 0.88rem;
+    padding: 0 10px;
+  }
+
+  .jnu-faq-toggle-icon {
+    width: 26px;
+    height: 26px;
+    font-size: 0.9rem;
+  }
+
+  .jnu-faq-body {
+    padding: 0 16px 18px 56px;
+    font-size: 0.82rem;
+  }
+}
+
+/* ===================================================================
+   Footer Section
+=================================================================== */
+
+.jnu-footer {
+  position: relative;
+  background: linear-gradient(145deg, #08163b 0%, #520d4e 50%, #c61857 100%);
+  padding: 60px 0 45px;
+  color: #FFFFFF;
+  text-align: center;
+  overflow: hidden;
+}
+
+.jnu-footer-logo-wrap {
+  margin-bottom: 22px;
+}
+
+.jnu-footer-logo-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  padding: 10px 26px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+}
+
+.jnu-footer-logo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.jnu-footer-logo {
+  height: 44px;
+  max-height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+.jnu-footer-desc {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 720px;
+  margin: 0 auto 18px;
+  text-align: center !important;
+}
+
+.jnu-footer-links {
+  margin-bottom: 12px;
+}
+
+.jnu-footer-link {
+  font-family: var(--font-heading);
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  letter-spacing: 0.2px;
+}
+
+.jnu-footer-link:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+  opacity: 0.88;
+}
+
+.jnu-footer-copyright {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 0;
+  text-align: center !important;
+  letter-spacing: 0.3px;
+}
+
+/* Modal styling matching JNU palette */
+.jnu-modal .modal-content {
+  border-radius: 20px;
+  border: 1px solid var(--jnu-frame-border);
+  box-shadow: 0 20px 50px rgba(17, 32, 73, 0.18);
+}
+
+.jnu-modal .modal-header {
+  border-bottom: 1px solid var(--jnu-frame-border);
+  padding: 18px 24px;
+}
+
+.jnu-modal .modal-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--jnu-primary-navy);
+}
+
+.jnu-modal .modal-body {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #475569;
+  padding: 24px;
+  text-align: left !important;
+}
+
+@media (max-width: 768px) {
+  .jnu-footer {
+    padding: 45px 0 35px;
+  }
+
+  .jnu-footer-logo {
+    height: 36px;
+    max-height: 36px;
+  }
+
+  .jnu-footer-logo-card {
+    padding: 8px 20px;
+  }
+
+  .jnu-footer-desc {
+    font-size: 0.88rem;
+    padding: 0 15px;
+  }
+}
+
+
+/* =========================================
+   JNU STATISTICS SECTION (Refined & Responsive)
+========================================= */
+
+.jnu-stats-section {
+  padding: 10px 0 35px;
+  background-color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.jnu-stats-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(105deg,
+      rgba(17, 32, 73, 0.93) 0%,
+      rgba(50, 22, 60, 0.91) 32%,
+      rgba(122, 21, 46, 0.91) 68%,
+      rgba(181, 39, 89, 0.93) 100%), url("../images/campus-bg.jpg") center/cover no-repeat;
+  box-shadow: 0 10px 30px rgba(17, 32, 73, 0.12);
+  padding: 30px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Faded campus architectural texture overlay */
+.jnu-stats-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../images/campus-bg.jpg") center/cover no-repeat;
+  opacity: 0.15;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Ambient glow */
+.jnu-stats-wrapper::after {
+  content: "";
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(181, 39, 89, 0.35) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.jnu-stats-wrapper .row {
+  position: relative;
+  z-index: 2;
+}
+
+.jnu-stat-col {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Desktop Dividers: elegant vertical lines between items */
+@media (min-width: 992px) {
+  .jnu-stat-col:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: linear-gradient(to bottom,
+        transparent,
+        rgba(255, 255, 255, 0.22) 20%,
+        rgba(255, 255, 255, 0.22) 80%,
+        transparent);
+  }
+}
+
+/* Tablet Dividers (3 per row) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .jnu-stat-col:not(:nth-child(3n))::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  .jnu-stat-col:nth-child(-n+3) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+}
+
+/* Mobile Dividers (2 per row = 3 balanced rows) */
+@media (max-width: 575.98px) {
+  .jnu-stat-col:nth-child(odd)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  .jnu-stat-col:nth-child(-n+4) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+}
+
+.jnu-stat-item {
+  padding: 10px 8px;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.25s ease;
+}
+
+.jnu-stat-item:hover {
+  transform: translateY(-2px);
+}
+
+/* Stat Counter Number */
+.jnu-stat-item h2.jnu-counter {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(2rem, 3.2vw, 2.9rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 6px;
+  color: #FFFFFF;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Stat Label */
+.jnu-stat-item p {
+  font-family: var(--font-body) !important;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+/* Tablet adjustments */
+@media (max-width: 991.98px) {
+  .jnu-stats-wrapper {
+    padding: 24px 14px;
+    border-radius: 18px;
+  }
+
+  .jnu-stat-item {
+    padding: 16px 8px;
+  }
+
+  .jnu-stat-item h2.jnu-counter {
+    font-size: 2.3rem;
+  }
+
+  .jnu-stat-item p {
+    font-size: 0.82rem;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 575.98px) {
+  .jnu-stats-section {
+    padding: 6px 0 24px;
+  }
+
+  .jnu-stats-wrapper {
+    padding: 14px 8px;
+    border-radius: 16px;
+  }
+
+  .jnu-stat-item {
+    padding: 14px 6px;
+    min-height: 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .jnu-stat-item h2.jnu-counter {
+    font-size: 1.85rem;
+    margin-bottom: 3px;
+    letter-spacing: -0.5px;
+  }
+
+  .jnu-stat-item p {
+    font-size: 0.74rem;
+    letter-spacing: 0.2px;
+  }
+}
+
+/* Remove forced left alignment in statistics section */
+#jnu-stats .jnu-stat-item h2,
+#jnu-stats .jnu-stat-item p {
+  text-align: center !important;
+}
+
+/* ===================================================================
+   LIGHTWEIGHT & MOBILE-OPTIMIZED ANIMATIONS (EVERY SECTION)
+=================================================================== */
+
+/* Scroll-triggered Reveal Animations - Non-blocking & Butter Smooth */
+.jnu-reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.jnu-revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Ensure above-the-fold Hero Section is immediately visible without wait */
+.jnu-hero-section .jnu-reveal {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Stagger Delays for Cards & Grids */
+.jnu-delay-1 { transition-delay: 0.08s; }
+.jnu-delay-2 { transition-delay: 0.16s; }
+.jnu-delay-3 { transition-delay: 0.24s; }
+.jnu-delay-4 { transition-delay: 0.32s; }
+.jnu-delay-5 { transition-delay: 0.40s; }
+.jnu-delay-6 { transition-delay: 0.48s; }
+
+/* Micro-interaction: Tactile touch feedback on mobile for all interactive cards */
+@media (hover: hover) {
+  .jnu-bento-card:hover,
+  .jnu-placed-card:hover,
+  .jnu-testi-card:hover,
+  .jnu-infra-item-card:hover,
+  .jnu-program-pill:hover,
+  .jnu-faq-item:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@media (hover: none) {
+  .jnu-bento-card:active,
+  .jnu-placed-card:active,
+  .jnu-testi-card:active,
+  .jnu-infra-item-card:active,
+  .jnu-program-pill:active,
+  .jnu-faq-item:active {
+    transform: scale(0.985);
+    transition: transform 0.12s ease;
+  }
+}
+
+/* Subtle Floating Shimmer for Hero Form Card */
+.jnu-form-card {
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.jnu-form-card:hover {
+  box-shadow: 0 16px 45px rgba(17, 32, 73, 0.12);
+}
+
+/* Subtle Shimmer for High-Priority Action Buttons */
+.jnu-hero-cta-btn,
+.jnu-form-submit-btn,
+.jnu-placement-cta-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.jnu-hero-cta-btn::after,
+.jnu-form-submit-btn::after,
+.jnu-placement-cta-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.22) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  transition: left 0.75s ease;
+  pointer-events: none;
+}
+
+.jnu-hero-cta-btn:hover::after,
+.jnu-form-submit-btn:hover::after,
+.jnu-placement-cta-btn:hover::after {
+  left: 120%;
+}
+
+/* Section Header Eyebrow Line subtle expand on reveal */
+.jnu-eyebrow-line {
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.jnu-revealed .jnu-eyebrow-line {
+  width: 28px !important;
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .jnu-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .jnu-nav-pulse-dot {
+    animation: none !important;
+  }
+}
