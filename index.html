@@ -1497,15 +1497,8 @@
 
       </div>
 
-      <!-- Bottom Bar: Dots, CTA Button, JNU Signoff -->
+      <!-- Bottom Bar: CTA Button & JNU Signoff -->
       <div class="jnu-placement-bottom-bar jnu-reveal">
-        <!-- Dots -->
-        <div class="jnu-placement-dots">
-          <!-- <span class="jnu-p-dot active"></span>
-          <span class="jnu-p-dot"></span>
-          <span class="jnu-p-dot"></span> -->
-        </div>
-
         <!-- CTA Button -->
         <div>
           <a href="#admission-form-section" class="jnu-placement-cta-btn">
@@ -1625,7 +1618,31 @@
        Section 7: Student Testimonials (Real Stories from Our Students)
   =================================================================== -->
   <section class="jnu-testimonials-section" id="testimonials">
-    <div class="container-fluid px-3 px-md-4 px-lg-5">
+    <!-- Attractive Ambient Curved Waves Graphic Background -->
+    <div class="jnu-testi-bg-graphic" aria-hidden="true">
+      <svg class="jnu-testi-svg-curve" viewBox="0 0 1440 680" fill="none" preserveAspectRatio="none">
+        <path d="M720 0 C 850 120, 1100 240, 1440 280 L 1440 0 Z" fill="url(#testi-grad-1)" opacity="0.06"/>
+        <path d="M480 0 C 650 180, 800 360, 1440 500 L 1440 0 Z" fill="url(#testi-grad-2)" opacity="0.04"/>
+        <path d="M680 0 C 780 150, 920 320, 1100 680" stroke="url(#testi-grad-stroke)" stroke-width="80" stroke-linecap="round" opacity="0.07"/>
+        <defs>
+          <linearGradient id="testi-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#B52759"/>
+            <stop offset="100%" stop-color="#112049"/>
+          </linearGradient>
+          <linearGradient id="testi-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#7A152E"/>
+            <stop offset="100%" stop-color="#B52759"/>
+          </linearGradient>
+          <linearGradient id="testi-grad-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#B52759"/>
+            <stop offset="50%" stop-color="#7A152E"/>
+            <stop offset="100%" stop-color="#112049"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <div class="container-fluid px-3 px-md-4 px-lg-5 position-relative" style="z-index: 2;">
 
       <!-- Section Header Row -->
       <div class="row align-items-end mb-4 mb-lg-5 jnu-reveal">
@@ -1635,7 +1652,7 @@
             <span class="jnu-testi-eyebrow">STUDENT TESTIMONIALS</span>
           </div>
           <h2 class="jnu-testi-title">
-            <span class="jnu-text-crimson">Real Stories</span> from Our Students
+            <span class="jnu-text-crimson">Real Stories</span><br class="d-none d-sm-inline"> from Our Students
           </h2>
           <p class="jnu-testi-sub">
             Hear from our students who turned their ambitions into successful careers with the right learning,
@@ -1650,166 +1667,221 @@
         </div>
       </div>
 
-      <!-- Main Layout: 6 Student Cards (Left) + Featured Detail Card (Right) -->
+      <!-- 6 Testimonial Cards Grid (3x2 Desktop, 2x3 Tablet, 1-col Mobile) -->
       <div class="row g-4 align-items-stretch">
 
-        <!-- Left Column: 6 Small Student Cards in 3x2 Grid (Equal Height Matching Right Card) -->
-        <div class="col-12 col-xl-7 col-lg-7 order-2 order-lg-1 d-flex flex-column jnu-reveal jnu-delay-1">
-          <div class="jnu-testi-cards-grid">
-
-            <!-- Card 01: Pratika Gupta (Active by default) -->
-            <div class="jnu-testi-card active" data-testi-id="1">
-              <div class="jnu-testi-card-thumb-wrap">
-                <img src="assets/images/testi-student-1.jpg" alt="Pratika Gupta" class="jnu-testi-card-thumb">
-              </div>
-              <div class="jnu-testi-card-content">
-                <div>
-                  <h3 class="jnu-testi-card-name">Pratika Gupta</h3>
-                  <p class="jnu-testi-card-deg">B.Tech Biotechnology</p>
-                  <p class="jnu-testi-card-quote">"My journey at JNU has been transformative..."</p>
-                </div>
-                <div class="jnu-testi-card-arrow"><i class="bi bi-arrow-right"></i></div>
+        <!-- Card 1: Pratika Gupta (White Card) -->
+        <div class="col-12 col-md-6 col-lg-4 d-flex jnu-reveal jnu-delay-1">
+          <div class="jnu-story-card jnu-story-card-white w-100">
+            <div class="jnu-story-card-top">
+              <svg class="jnu-story-quote-svg" width="28" height="22" viewBox="0 0 28 22" fill="currentColor" aria-hidden="true">
+                <path d="M12.2 0H6.8C3.1 0 0 3.1 0 6.9c0 3.1 2.1 5.7 5 6.6C4.4 16.2 2.6 18.7 0 20.3l1.8 1.7C6.1 19.4 9.5 14.8 11.2 8.5c.7-2.6 1-5.4 1-8.5zm15.8 0h-5.4C18.9 0 15.8 3.1 15.8 6.9c0 3.1 2.1 5.7 5 6.6-.6 2.7-2.4 5.2-5 6.8l1.8 1.7c4.3-2.6 7.7-7.2 9.4-13.5.7-2.6 1-5.4 1-8.5z"/>
+              </svg>
+              <div class="jnu-story-stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
               </div>
             </div>
-
-            <!-- Card 02: Tarun Sharma -->
-            <div class="jnu-testi-card" data-testi-id="2">
-              <div class="jnu-testi-card-thumb-wrap">
-                <img src="assets/images/testi-student-2.jpg" alt="Tarun Sharma" class="jnu-testi-card-thumb">
-              </div>
-              <div class="jnu-testi-card-content">
-                <div>
-                  <h3 class="jnu-testi-card-name">Tarun Sharma</h3>
-                  <p class="jnu-testi-card-deg">B.Tech Computer Science</p>
-                  <p class="jnu-testi-card-quote">"JNU helped me enhance my technical skills..."</p>
+            <p class="jnu-story-text">
+              "My journey at JNU has been transformative. The curriculum, mentorship and industry exposure helped me gain real-world skills and confidence."
+            </p>
+            <div class="jnu-story-author-row">
+              <div class="jnu-story-author-info">
+                <div class="jnu-story-avatar-wrap">
+                  <img src="assets/images/testi-student-1.jpg" alt="Pratika Gupta" class="jnu-story-avatar">
                 </div>
-                <div class="jnu-testi-card-arrow"><i class="bi bi-arrow-right"></i></div>
-              </div>
-            </div>
-
-            <!-- Card 03: Mohd. Burhan -->
-            <div class="jnu-testi-card" data-testi-id="3">
-              <div class="jnu-testi-card-thumb-wrap">
-                <img src="assets/images/testi-student-3.jpg" alt="Mohd. Burhan" class="jnu-testi-card-thumb">
-              </div>
-              <div class="jnu-testi-card-content">
-                <div>
-                  <h3 class="jnu-testi-card-name">Mohd. Burhan</h3>
-                  <p class="jnu-testi-card-deg">B.Tech Computer Science</p>
-                  <p class="jnu-testi-card-quote">"A supportive environment to grow and learn..."</p>
+                <div class="jnu-story-meta">
+                  <h3 class="jnu-story-name">Pratika Gupta</h3>
+                  <p class="jnu-story-deg">B.Tech Biotechnology</p>
                 </div>
-                <div class="jnu-testi-card-arrow"><i class="bi bi-arrow-right"></i></div>
               </div>
+              <a href="#admission-form-section" class="jnu-story-arrow-btn" aria-label="Explore Pratika's Story">
+                <i class="bi bi-arrow-right"></i>
+              </a>
             </div>
-
-            <!-- Card 04: Sneha Gupta -->
-            <div class="jnu-testi-card" data-testi-id="4">
-              <div class="jnu-testi-card-thumb-wrap">
-                <img src="assets/images/testi-student-4.jpg" alt="Sneha Gupta" class="jnu-testi-card-thumb">
-              </div>
-              <div class="jnu-testi-card-content">
-                <div>
-                  <h3 class="jnu-testi-card-name">Sneha Gupta</h3>
-                  <p class="jnu-testi-card-deg">B.Tech IT</p>
-                  <p class="jnu-testi-card-quote">"The exposure and guidance at JNU helped..."</p>
-                </div>
-                <div class="jnu-testi-card-arrow"><i class="bi bi-arrow-right"></i></div>
-              </div>
-            </div>
-
-            <!-- Card 05: Aditya Singh -->
-            <div class="jnu-testi-card" data-testi-id="5">
-              <div class="jnu-testi-card-thumb-wrap">
-                <img src="assets/images/testi-student-5.jpg" alt="Aditya Singh" class="jnu-testi-card-thumb">
-              </div>
-              <div class="jnu-testi-card-content">
-                <div>
-                  <h3 class="jnu-testi-card-name">Aditya Singh</h3>
-                  <p class="jnu-testi-card-deg">MBA</p>
-                  <p class="jnu-testi-card-quote">"JNU provided the right platform to shape my career..."</p>
-                </div>
-                <div class="jnu-testi-card-arrow"><i class="bi bi-arrow-right"></i></div>
-              </div>
-            </div>
-
-            <!-- Card 06: Neha Kapoor -->
-            <div class="jnu-testi-card" data-testi-id="6">
-              <div class="jnu-testi-card-thumb-wrap">
-                <img src="assets/images/testi-student-6.jpg" alt="Neha Kapoor" class="jnu-testi-card-thumb">
-              </div>
-              <div class="jnu-testi-card-content">
-                <div>
-                  <h3 class="jnu-testi-card-name">Neha Kapoor</h3>
-                  <p class="jnu-testi-card-deg">B.Tech ECE</p>
-                  <p class="jnu-testi-card-quote">"The skills and opportunities at JNU made..."</p>
-                </div>
-                <div class="jnu-testi-card-arrow"><i class="bi bi-arrow-right"></i></div>
-              </div>
-            </div>
-
           </div>
         </div>
 
-        <!-- Right Column: Featured Large Detail Card -->
-        <div class="col-12 col-xl-5 col-lg-5 order-1 order-lg-2 d-flex flex-column jnu-reveal jnu-delay-2">
-          <div class="jnu-testi-detail-card" id="testiDetailCard">
-            <!-- Left Side: Photo -->
-            <div class="jnu-testi-detail-photo-wrap">
-              <img src="assets/images/testi-featured-pratika.jpg" alt="Featured Student" class="jnu-testi-detail-img"
-                id="testiDetailImg">
+        <!-- Card 2: Tarun Sharma (Navy Gradient Featured Card) -->
+        <div class="col-12 col-md-6 col-lg-4 d-flex jnu-reveal jnu-delay-2">
+          <div class="jnu-story-card jnu-story-card-navy w-100">
+            <div class="jnu-story-card-watermark"></div>
+            <div class="jnu-story-card-inner">
+              <div class="jnu-story-card-top">
+                <svg class="jnu-story-quote-svg" width="28" height="22" viewBox="0 0 28 22" fill="currentColor" aria-hidden="true">
+                  <path d="M12.2 0H6.8C3.1 0 0 3.1 0 6.9c0 3.1 2.1 5.7 5 6.6C4.4 16.2 2.6 18.7 0 20.3l1.8 1.7C6.1 19.4 9.5 14.8 11.2 8.5c.7-2.6 1-5.4 1-8.5zm15.8 0h-5.4C18.9 0 15.8 3.1 15.8 6.9c0 3.1 2.1 5.7 5 6.6-.6 2.7-2.4 5.2-5 6.8l1.8 1.7c4.3-2.6 7.7-7.2 9.4-13.5.7-2.6 1-5.4 1-8.5z"/>
+                </svg>
+                <div class="jnu-story-stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+              <p class="jnu-story-text">
+                JNU gave me the right platform to enhance my technical skills, explore new opportunities and grow as a professional. The supportive faculty and practical exposure made all the difference.
+              </p>
+              <div class="jnu-story-author-row">
+                <div class="jnu-story-author-info">
+                  <div class="jnu-story-avatar-wrap">
+                    <img src="assets/images/testi-student-2.jpg" alt="Tarun Sharma" class="jnu-story-avatar">
+                  </div>
+                  <div class="jnu-story-meta">
+                    <h3 class="jnu-story-name">Tarun Sharma</h3>
+                    <p class="jnu-story-deg">B.Tech Computer Science</p>
+                  </div>
+                </div>
+                <a href="#admission-form-section" class="jnu-story-arrow-btn" aria-label="Explore Tarun's Story">
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <!-- Right Side: Content -->
-            <div class="jnu-testi-detail-content">
-              <div>
-                <!-- Top Counter & Navigation -->
-                <div class="jnu-testi-detail-top">
-                  <span class="jnu-testi-counter" id="testiCounter">01 / 06</span>
-                  <div class="jnu-testi-nav-group">
-                    <button type="button" class="jnu-testi-nav-btn" id="testiPrevBtn" aria-label="Previous Testimonial">
-                      <i class="bi bi-arrow-left"></i>
-                    </button>
-                    <button type="button" class="jnu-testi-nav-btn" id="testiNextBtn" aria-label="Next Testimonial">
-                      <i class="bi bi-arrow-right"></i>
-                    </button>
-                  </div>
+        <!-- Card 3: Mohd. Burhan (White Card) -->
+        <div class="col-12 col-md-6 col-lg-4 d-flex jnu-reveal jnu-delay-3">
+          <div class="jnu-story-card jnu-story-card-white w-100">
+            <div class="jnu-story-card-top">
+              <svg class="jnu-story-quote-svg" width="28" height="22" viewBox="0 0 28 22" fill="currentColor" aria-hidden="true">
+                <path d="M12.2 0H6.8C3.1 0 0 3.1 0 6.9c0 3.1 2.1 5.7 5 6.6C4.4 16.2 2.6 18.7 0 20.3l1.8 1.7C6.1 19.4 9.5 14.8 11.2 8.5c.7-2.6 1-5.4 1-8.5zm15.8 0h-5.4C18.9 0 15.8 3.1 15.8 6.9c0 3.1 2.1 5.7 5 6.6-.6 2.7-2.4 5.2-5 6.8l1.8 1.7c4.3-2.6 7.7-7.2 9.4-13.5.7-2.6 1-5.4 1-8.5z"/>
+              </svg>
+              <div class="jnu-story-stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <p class="jnu-story-text">
+              The global certification programs and workshops at JNU helped me build skills beyond the classroom and prepared me for international opportunities.
+            </p>
+            <div class="jnu-story-author-row">
+              <div class="jnu-story-author-info">
+                <div class="jnu-story-avatar-wrap">
+                  <img src="assets/images/testi-student-3.jpg" alt="Mohd. Burhan" class="jnu-story-avatar">
                 </div>
-
-                <!-- Student Name & Degree -->
-                <h3 class="jnu-testi-detail-name" id="testiDetailName">Ms. Pratika Gupta</h3>
-                <p class="jnu-testi-detail-deg" id="testiDetailDeg">B.Tech Biotechnology</p>
-                <div class="jnu-testi-line"></div>
-
-                <!-- Detailed Quote -->
-                <div class="jnu-testi-detail-quote-wrap">
-                  <span class="jnu-testi-big-quote">“</span>
-                  <p class="jnu-testi-quote-full" id="testiDetailQuote">
-                    As a B.Tech Biotechnology student at JNU, my journey has been transformative. The comprehensive
-                    curriculum and supportive faculty have deepened my understanding of biotechnology. Workshops,
-                    industrial visits, and extracurricular activities have bridged theory with practice and boosted my
-                    confidence, preparing me for future challenges in the field.
-                  </p>
+                <div class="jnu-story-meta">
+                  <h3 class="jnu-story-name">Mohd. Burhan</h3>
+                  <p class="jnu-story-deg">B.Tech Computer Science</p>
                 </div>
               </div>
+              <a href="#admission-form-section" class="jnu-story-arrow-btn" aria-label="Explore Mohd. Burhan's Story">
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
 
-              <!-- Bottom Placed At & Role -->
-              <div class="jnu-testi-meta-row">
-                <div class="jnu-testi-meta-box">
-                  <div class="jnu-testi-meta-icon"><i class="bi bi-building"></i></div>
-                  <div>
-                    <div class="jnu-testi-meta-label">Placed at</div>
-                    <div class="jnu-testi-meta-val" id="testiDetailCompany">Deloitte.</div>
-                  </div>
+        <!-- Card 4: Sneha Gupta (White Card) -->
+        <div class="col-12 col-md-6 col-lg-4 d-flex jnu-reveal jnu-delay-1">
+          <div class="jnu-story-card jnu-story-card-white w-100">
+            <div class="jnu-story-card-top">
+              <svg class="jnu-story-quote-svg" width="28" height="22" viewBox="0 0 28 22" fill="currentColor" aria-hidden="true">
+                <path d="M12.2 0H6.8C3.1 0 0 3.1 0 6.9c0 3.1 2.1 5.7 5 6.6C4.4 16.2 2.6 18.7 0 20.3l1.8 1.7C6.1 19.4 9.5 14.8 11.2 8.5c.7-2.6 1-5.4 1-8.5zm15.8 0h-5.4C18.9 0 15.8 3.1 15.8 6.9c0 3.1 2.1 5.7 5 6.6-.6 2.7-2.4 5.2-5 6.8l1.8 1.7c4.3-2.6 7.7-7.2 9.4-13.5.7-2.6 1-5.4 1-8.5z"/>
+              </svg>
+              <div class="jnu-story-stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <p class="jnu-story-text">
+              The exposure and guidance at JNU helped me discover my strengths and build a clear career path. The learning environment is truly supportive.
+            </p>
+            <div class="jnu-story-author-row">
+              <div class="jnu-story-author-info">
+                <div class="jnu-story-avatar-wrap">
+                  <img src="assets/images/testi-student-4.jpg" alt="Sneha Gupta" class="jnu-story-avatar">
                 </div>
-                <div class="jnu-testi-meta-box">
-                  <div class="jnu-testi-meta-icon"><i class="bi bi-briefcase"></i></div>
-                  <div>
-                    <div class="jnu-testi-meta-label">Role</div>
-                    <div class="jnu-testi-meta-val" id="testiDetailRole">Consultant</div>
-                  </div>
+                <div class="jnu-story-meta">
+                  <h3 class="jnu-story-name">Sneha Gupta</h3>
+                  <p class="jnu-story-deg">B.Tech IT</p>
                 </div>
               </div>
+              <a href="#admission-form-section" class="jnu-story-arrow-btn" aria-label="Explore Sneha's Story">
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
 
+        <!-- Card 5: Aditya Singh (White Card) -->
+        <div class="col-12 col-md-6 col-lg-4 d-flex jnu-reveal jnu-delay-2">
+          <div class="jnu-story-card jnu-story-card-white w-100">
+            <div class="jnu-story-card-top">
+              <svg class="jnu-story-quote-svg" width="28" height="22" viewBox="0 0 28 22" fill="currentColor" aria-hidden="true">
+                <path d="M12.2 0H6.8C3.1 0 0 3.1 0 6.9c0 3.1 2.1 5.7 5 6.6C4.4 16.2 2.6 18.7 0 20.3l1.8 1.7C6.1 19.4 9.5 14.8 11.2 8.5c.7-2.6 1-5.4 1-8.5zm15.8 0h-5.4C18.9 0 15.8 3.1 15.8 6.9c0 3.1 2.1 5.7 5 6.6-.6 2.7-2.4 5.2-5 6.8l1.8 1.7c4.3-2.6 7.7-7.2 9.4-13.5.7-2.6 1-5.4 1-8.5z"/>
+              </svg>
+              <div class="jnu-story-stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <p class="jnu-story-text">
+              JNU provided the right platform to shape my leadership and analytical skills. The MBA program helped me connect theory with real business challenges.
+            </p>
+            <div class="jnu-story-author-row">
+              <div class="jnu-story-author-info">
+                <div class="jnu-story-avatar-wrap">
+                  <img src="assets/images/testi-student-5.jpg" alt="Aditya Singh" class="jnu-story-avatar">
+                </div>
+                <div class="jnu-story-meta">
+                  <h3 class="jnu-story-name">Aditya Singh</h3>
+                  <p class="jnu-story-deg">MBA</p>
+                </div>
+              </div>
+              <a href="#admission-form-section" class="jnu-story-arrow-btn" aria-label="Explore Aditya's Story">
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Neha Kapoor (Crimson Gradient Featured Card) -->
+        <div class="col-12 col-md-6 col-lg-4 d-flex jnu-reveal jnu-delay-3">
+          <div class="jnu-story-card jnu-story-card-crimson w-100">
+            <div class="jnu-story-card-watermark"></div>
+            <div class="jnu-story-card-inner">
+              <div class="jnu-story-card-top">
+                <svg class="jnu-story-quote-svg" width="28" height="22" viewBox="0 0 28 22" fill="currentColor" aria-hidden="true">
+                  <path d="M12.2 0H6.8C3.1 0 0 3.1 0 6.9c0 3.1 2.1 5.7 5 6.6C4.4 16.2 2.6 18.7 0 20.3l1.8 1.7C6.1 19.4 9.5 14.8 11.2 8.5c.7-2.6 1-5.4 1-8.5zm15.8 0h-5.4C18.9 0 15.8 3.1 15.8 6.9c0 3.1 2.1 5.7 5 6.6-.6 2.7-2.4 5.2-5 6.8l1.8 1.7c4.3-2.6 7.7-7.2 9.4-13.5.7-2.6 1-5.4 1-8.5z"/>
+                </svg>
+                <div class="jnu-story-stars">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+              </div>
+              <p class="jnu-story-text">
+                The skills, opportunities and industry interactions at JNU have prepared me to take on future challenges with confidence.
+              </p>
+              <div class="jnu-story-author-row">
+                <div class="jnu-story-author-info">
+                  <div class="jnu-story-avatar-wrap">
+                    <img src="assets/images/testi-student-6.jpg" alt="Neha Kapoor" class="jnu-story-avatar">
+                  </div>
+                  <div class="jnu-story-meta">
+                    <h3 class="jnu-story-name">Neha Kapoor</h3>
+                    <p class="jnu-story-deg">B.Tech ECE</p>
+                  </div>
+                </div>
+                <a href="#admission-form-section" class="jnu-story-arrow-btn" aria-label="Explore Neha's Story">
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>

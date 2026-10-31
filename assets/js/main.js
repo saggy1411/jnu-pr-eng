@@ -1,9 +1,14 @@
 /**
  * Jaipur National University (JNU) - Engineering Landing Page JS
+ * Optimized, modular, performant & mobile-friendly
  */
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Initialize Bootstrap Carousel for Hero Banner
+  'use strict';
+
+  // ===================================================================
+  // 1. Hero Carousel Slider & Custom Controls
+  // ===================================================================
   const heroCarouselEl = document.querySelector('#jnuHeroCarousel');
   const dots = document.querySelectorAll('.jnu-dot');
   const prevBtn = document.querySelector('#heroPrevBtn');
@@ -48,7 +53,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Handle Form Submission with Validation
+  // ===================================================================
+  // 2. Admission Form Submission & Validation
+  // ===================================================================
   const admissionForm = document.getElementById('admissionInquiryForm');
   const formSuccess = document.getElementById('formSuccessMsg');
 
@@ -63,13 +70,11 @@ document.addEventListener('DOMContentLoaded', function () {
       const city = document.getElementById('city').value.trim();
       const programme = document.getElementById('programme').value;
 
-      // Simple Validation
       if (!fullName || !mobileNumber || !email || !state || !city || !programme) {
         alert('Please fill in all the required fields before submitting.');
         return;
       }
 
-      // Basic Phone validation
       const phoneRegex = /^[0-9]{10}$/;
       const cleanedPhone = mobileNumber.replace(/\D/g, '').slice(-10);
       if (cleanedPhone.length !== 10) {
@@ -77,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      // Form submission feedback
       const submitBtn = document.getElementById('formSubmitBtn');
       const originalText = submitBtn.innerHTML;
       submitBtn.disabled = true;
@@ -87,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
         admissionForm.reset();
-        
+
         if (formSuccess) {
           formSuccess.style.display = 'block';
           formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -102,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ===================================================================
-  // Program Section Tabs Switcher
+  // 3. Academic Programs Tabs Switcher
   // ===================================================================
   const programTabs = document.querySelectorAll('.jnu-program-tab');
   const contentTitle = document.getElementById('programContentTitle');
@@ -167,11 +171,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const data = programData[tabKey];
         if (!data) return;
 
-        // Update active class
         programTabs.forEach(t => t.classList.remove('active'));
         this.classList.add('active');
 
-        // Animate content update
         const displayCard = document.querySelector('.jnu-program-display-card');
         if (displayCard) {
           displayCard.style.opacity = '0.5';
@@ -187,7 +189,6 @@ document.addEventListener('DOMContentLoaded', function () {
             programCtaBtn.innerHTML = `<span>${data.btnText}</span> <i class="bi bi-arrow-right"></i>`;
           }
 
-          // Rebuild courses grid
           let coursesHtml = '';
           data.courses.forEach(c => {
             coursesHtml += `
@@ -210,10 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ===================================================================
-  // Infrastructure Section 10 Cards Interactive Preview
-  // ===================================================================
-  // ===================================================================
-  // Section 5: Infrastructure Dynamic Showcase
+  // 4. Infrastructure Dynamic Showcase
   // ===================================================================
   const infraItems = document.querySelectorAll('.jnu-infra-item-card');
   const showcaseImg = document.getElementById('infraShowcaseImg');
@@ -291,11 +289,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const data = infraData[id];
         if (!data) return;
 
-        // Active class
         infraItems.forEach(c => c.classList.remove('active'));
         this.classList.add('active');
 
-        // Smooth update
         showcaseImg.style.opacity = '0.3';
         setTimeout(() => {
           showcaseImg.src = data.image;
@@ -309,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ===================================================================
-  // Form CTA Links (Navbar, Placements CTA, FAQ) -> Smooth Scroll
+  // 5. Global CTA Links (Form Anchors) -> Smooth Scroll with Focus
   // ===================================================================
   const formLinks = document.querySelectorAll('a[href="#admission-form-section"]');
   const heroFormSection = document.getElementById('admission-form-section');
@@ -319,11 +315,9 @@ document.addEventListener('DOMContentLoaded', function () {
     formLinks.forEach(link => {
       link.addEventListener('click', function (e) {
         e.preventDefault();
-        
-        // Smooth scroll cleanly to the hero admission inquiry form
+
         heroFormSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-        // Gentle highlight animation on form card
         const formCard = document.querySelector('.jnu-form-card');
         if (formCard) {
           formCard.style.transition = 'box-shadow 0.4s ease, border-color 0.4s ease';
@@ -335,7 +329,6 @@ document.addEventListener('DOMContentLoaded', function () {
           }, 1600);
         }
 
-        // Focus without forcing secondary scroll jumping
         if (fullNameInput) {
           setTimeout(() => {
             fullNameInput.focus({ preventScroll: true });
@@ -346,147 +339,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ===================================================================
-  // Testimonials Section: Interactive Student Card & Detail Switcher
-  // ===================================================================
-  const testiCards = document.querySelectorAll('.jnu-testi-card');
-  const testiDetailImg = document.getElementById('testiDetailImg');
-  const testiCounter = document.getElementById('testiCounter');
-  const testiDetailName = document.getElementById('testiDetailName');
-  const testiDetailDeg = document.getElementById('testiDetailDeg');
-  const testiDetailQuote = document.getElementById('testiDetailQuote');
-  const testiDetailCompany = document.getElementById('testiDetailCompany');
-  const testiDetailRole = document.getElementById('testiDetailRole');
-  const testiPrevBtn = document.getElementById('testiPrevBtn');
-  const testiNextBtn = document.getElementById('testiNextBtn');
-
-  const testiData = {
-    '1': {
-      counter: '01 / 06',
-      name: 'Ms. Pratika Gupta',
-      degree: 'B.Tech Biotechnology',
-      quote: 'As a B.Tech Biotechnology student at JNU, my journey has been transformative. The comprehensive curriculum and supportive faculty have deepened my understanding of biotechnology. Workshops, industrial visits, and extracurricular activities have bridged theory with practice and boosted my confidence, preparing me for future challenges in the field.',
-      company: 'Deloitte.',
-      role: 'Consultant',
-      image: 'assets/images/testi-featured-pratika.jpg'
-    },
-    '2': {
-      counter: '02 / 06',
-      name: 'Mr. Tarun Sharma',
-      degree: 'B.Tech Computer Science',
-      quote: 'JNU helped me enhance my technical skills and provided industry exposure from day one. Working in specialized AI and Cloud laboratories gave me the confidence to build real-world software architectures. The professors mentored me personally for competitive hackathons and coding tournaments.',
-      company: 'Google',
-      role: 'Software Engineer',
-      image: 'assets/images/testi-student-2.jpg'
-    },
-    '3': {
-      counter: '03 / 06',
-      name: 'Mr. Mohd. Burhan',
-      degree: 'B.Tech Computer Science',
-      quote: 'A supportive environment to grow and learn through hands-on hackathons, research projects, and mentorship. The coding culture and guidance from professors shaped my career path completely and opened doors to leading global tech innovators.',
-      company: 'Microsoft',
-      role: 'Cloud Architect',
-      image: 'assets/images/testi-student-3.jpg'
-    },
-    '4': {
-      counter: '04 / 06',
-      name: 'Ms. Sneha Gupta',
-      degree: 'B.Tech IT',
-      quote: 'The exposure and guidance at JNU helped me bridge the gap between classroom theory and real corporate environments. The mock interviews, corporate mentorship sessions, and placement bootcamps were game-changers that gave me clarity and confidence.',
-      company: 'Amazon',
-      role: 'Product Analyst',
-      image: 'assets/images/testi-student-4.jpg'
-    },
-    '5': {
-      counter: '05 / 06',
-      name: 'Mr. Aditya Singh',
-      degree: 'MBA',
-      quote: 'JNU provided the right platform, people and opportunities to shape my career. The dual emphasis on business analytics and engineering management prepared me to lead cross-functional tech teams and solve high-impact industrial problems.',
-      company: 'Accenture',
-      role: 'Technology Analyst',
-      image: 'assets/images/testi-student-5.jpg'
-    },
-    '6': {
-      counter: '06 / 06',
-      name: 'Ms. Neha Kapoor',
-      degree: 'B.Tech ECE',
-      quote: 'The skills and opportunities at JNU made my transition into the global corporate world smooth and rewarding. Working in advanced VLSI and IoT labs gave me a distinct edge in high-stakes interviews with multinational engineering leaders.',
-      company: 'IBM',
-      role: 'Data Analyst',
-      image: 'assets/images/testi-student-6.jpg'
-    }
-  };
-
-  let currentTestiId = 1;
-  const totalTestis = 6;
-
-  function setTestimonial(id) {
-    const data = testiData[id];
-    if (!data) return;
-
-    currentTestiId = parseInt(id, 10);
-
-    // Update active state on small cards
-    testiCards.forEach(c => {
-      if (c.getAttribute('data-testi-id') === String(id)) {
-        c.classList.add('active');
-      } else {
-        c.classList.remove('active');
-      }
-    });
-
-    // Animate detail card content
-    if (testiDetailImg) {
-      testiDetailImg.style.opacity = '0.3';
-      testiDetailImg.style.transform = 'scale(0.97)';
-    }
-
-    setTimeout(() => {
-      if (testiDetailImg) {
-        testiDetailImg.src = data.image;
-        testiDetailImg.style.opacity = '1';
-        testiDetailImg.style.transform = 'scale(1)';
-      }
-      if (testiCounter) testiCounter.textContent = data.counter;
-      if (testiDetailName) testiDetailName.textContent = data.name;
-      if (testiDetailDeg) testiDetailDeg.textContent = data.degree;
-      if (testiDetailQuote) testiDetailQuote.textContent = data.quote;
-      if (testiDetailCompany) testiDetailCompany.textContent = data.company;
-      if (testiDetailRole) testiDetailRole.textContent = data.role;
-    }, 180);
-  }
-
-  if (testiCards.length) {
-    testiCards.forEach(card => {
-      card.addEventListener('click', function () {
-        const id = this.getAttribute('data-testi-id');
-        setTestimonial(id);
-      });
-    });
-
-    if (testiPrevBtn) {
-      testiPrevBtn.addEventListener('click', function () {
-        let prevId = currentTestiId - 1;
-        if (prevId < 1) prevId = totalTestis;
-        setTestimonial(prevId);
-      });
-    }
-
-    if (testiNextBtn) {
-      testiNextBtn.addEventListener('click', function () {
-        let nextId = currentTestiId + 1;
-        if (nextId > totalTestis) nextId = 1;
-        setTestimonial(nextId);
-      });
-    }
-  }
-
-  // ===================================================================
-  // FAQ Section: Accordion Active State & Plus/Minus Toggle
+  // 6. FAQ Section: Accordion Plus/Minus Toggle
   // ===================================================================
   const faqAccordion = document.getElementById('jnuFaqAccordion');
   if (faqAccordion) {
     const faqCollapses = faqAccordion.querySelectorAll('.accordion-collapse');
-    
+
     faqCollapses.forEach(collapseEl => {
       collapseEl.addEventListener('show.bs.collapse', function () {
         const item = this.closest('.jnu-faq-item');
@@ -511,100 +369,85 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
-});
 
+  // ===================================================================
+  // 7. Statistics Section: Smooth Animated Counters
+  // ===================================================================
+  const statsSection = document.querySelector('#jnu-stats');
+  const counters = document.querySelectorAll('.jnu-counter');
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    const statsSection = document.querySelector("#jnu-stats");
-    const counters = document.querySelectorAll(".jnu-counter");
-
-    if (!statsSection || !counters.length) return;
-
+  if (statsSection && counters.length) {
     let hasAnimated = false;
 
     function startCounters() {
+      if (hasAnimated) return;
+      hasAnimated = true;
 
-        if (hasAnimated) return;
-        hasAnimated = true;
+      counters.forEach(counter => {
+        const target = Number(counter.dataset.target);
+        const suffix = counter.dataset.suffix || '';
+        const duration = 2000;
+        const startTime = performance.now();
 
-        counters.forEach(counter => {
+        function updateCounter(currentTime) {
+          const progress = Math.min((currentTime - startTime) / duration, 1);
+          // Ease-out quartic
+          const easedProgress = 1 - Math.pow(1 - progress, 4);
+          const currentValue = Math.floor(target * easedProgress);
 
-            const target = Number(counter.dataset.target);
-            const suffix = counter.dataset.suffix || "";
-            const duration = 2200;
-            const startTime = performance.now();
+          counter.textContent = currentValue.toLocaleString('en-IN') + suffix;
 
-            function updateCounter(currentTime) {
-
-                const progress = Math.min(
-                    (currentTime - startTime) / duration,
-                    1
-                );
-
-                // Smooth ease-out animation
-                const easedProgress = 1 - Math.pow(1 - progress, 4);
-
-                const currentValue = Math.floor(
-                    target * easedProgress
-                );
-
-                counter.textContent =
-                    currentValue.toLocaleString("en-IN") + suffix;
-
-                if (progress < 1) {
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    counter.textContent =
-                        target.toLocaleString("en-IN") + suffix;
-                }
-            }
-
+          if (progress < 1) {
             requestAnimationFrame(updateCounter);
-
-        });
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-                startCounters();
-                observer.unobserve(statsSection);
-            }
-
-        });
-
-    }, {
-        threshold: 0.15
-    });
-
-    observer.observe(statsSection);
-
-    // ===================================================================
-    // Scroll Reveal Animations for All Sections (Mobile & Desktop)
-    // ===================================================================
-    const revealElements = document.querySelectorAll('.jnu-reveal');
-    if (revealElements.length) {
-        if ('IntersectionObserver' in window) {
-            const revealObserver = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('jnu-revealed');
-                        obs.unobserve(entry.target);
-                    }
-                });
-            }, {
-                rootMargin: '0px 0px 80px 0px',
-                threshold: 0.01
-            });
-
-            revealElements.forEach(el => revealObserver.observe(el));
-        } else {
-            // Immediate fallback if IntersectionObserver not available
-            revealElements.forEach(el => el.classList.add('jnu-revealed'));
+          } else {
+            counter.textContent = target.toLocaleString('en-IN') + suffix;
+          }
         }
+
+        requestAnimationFrame(updateCounter);
+      });
     }
+
+    if ('IntersectionObserver' in window) {
+      const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            startCounters();
+            statsObserver.unobserve(statsSection);
+          }
+        });
+      }, {
+        threshold: 0.05
+      });
+
+      statsObserver.observe(statsSection);
+    } else {
+      startCounters();
+    }
+  }
+
+  // ===================================================================
+  // 8. Scroll Reveal Animations (Non-blocking, High Performance)
+  // ===================================================================
+  const revealElements = document.querySelectorAll('.jnu-reveal');
+  if (revealElements.length) {
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('jnu-revealed');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {
+        rootMargin: '0px 0px 80px 0px',
+        threshold: 0.01
+      });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+    } else {
+      revealElements.forEach(el => el.classList.add('jnu-revealed'));
+    }
+  }
 
 });

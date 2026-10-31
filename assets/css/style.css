@@ -99,8 +99,7 @@ h6,
 .h3,
 .h4,
 .h5,
-.h6,
-.heading-font {
+.h6 {
   font-family: var(--font-heading) !important;
   font-weight: 700;
   color: var(--jnu-text-heading);
@@ -143,7 +142,7 @@ a {
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 4px 18px rgba(17, 32, 73, 0.12);
-  min-height: 100px;
+  min-height: 76px;
   gap: 12px;
 }
 
@@ -359,7 +358,7 @@ a {
 .jnu-hero-gradient-tint {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 15% 85%, rgba(198, 26, 84, 0.85) 0%, rgba(181, 39, 89, 0.6) 35%, rgba(17, 32, 73, 0.75) 75%, rgba(17, 32, 73, 0.9) 100%);
+  /* background: radial-gradient(circle at 15% 85%, rgba(198, 26, 84, 0.85) 0%, rgba(181, 39, 89, 0.6) 35%, rgba(17, 32, 73, 0.75) 75%, rgba(17, 32, 73, 0.9) 100%); */
   z-index: 2;
 }
 
@@ -732,100 +731,6 @@ a {
   font-size: 0.82rem;
   text-align: center;
   margin-top: 10px;
-}
-
-/* ===================================================================
-   Quick Highlights Bar (Below Hero, responsive)
-=================================================================== */
-.jnu-highlights-strip {
-  background-color: #FFFFFF;
-  border-top: 1px solid var(--jnu-frame-border);
-  padding: 18px 0 28px 0;
-}
-
-.jnu-highlight-card {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 10px;
-  border-radius: 12px;
-  background-color: var(--jnu-bg-light);
-  border: 1px solid var(--jnu-frame-border);
-  transition: var(--jnu-transition);
-  text-align: left;
-}
-
-.jnu-highlight-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--jnu-shadow-sm);
-  border-color: rgba(17, 32, 73, 0.2);
-}
-
-.jnu-highlight-icon {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: var(--jnu-primary-navy);
-  color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  flex-shrink: 0;
-}
-
-.jnu-highlight-card:nth-child(2) .jnu-highlight-icon {
-  background: var(--jnu-secondary-crimson);
-}
-
-.jnu-highlight-card:nth-child(3) .jnu-highlight-icon {
-  background: var(--jnu-accent-pink);
-}
-
-.jnu-highlight-card:nth-child(4) .jnu-highlight-icon {
-  background: var(--jnu-academic-blue);
-  color: #FFFFFF;
-}
-
-.jnu-highlight-val {
-  font-family: var(--font-heading) !important;
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--jnu-primary-navy);
-  line-height: 1.2;
-  margin-bottom: 2px;
-  text-align: left !important;
-}
-
-.jnu-highlight-label {
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  color: var(--jnu-text-muted);
-  margin-bottom: 0;
-  text-align: left !important;
-  line-height: 1.2;
-}
-
-@media (max-width: 576px) {
-  .jnu-highlight-card {
-    padding: 8px;
-    gap: 8px;
-  }
-
-  .jnu-highlight-icon {
-    width: 32px;
-    height: 32px;
-    font-size: 0.9rem;
-    border-radius: 8px;
-  }
-
-  .jnu-highlight-val {
-    font-size: 0.95rem;
-  }
-
-  .jnu-highlight-label {
-    font-size: 0.65rem;
-  }
 }
 
 /* ===================================================================
@@ -1572,22 +1477,6 @@ a {
   opacity: 0.32;
 }
 
-/* Watermark Letter A, B, C */
-.jnu-watermark-letter {
-  position: absolute;
-  right: 18px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: var(--font-heading);
-  font-size: 5.5rem;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.16);
-  line-height: 1;
-  pointer-events: none;
-  user-select: none;
-  z-index: 1;
-}
-
 /* Card Body with Methods */
 .jnu-pedagogy-body {
   padding: 28px 24px;
@@ -1670,11 +1559,6 @@ a {
     font-size: 1.2rem;
   }
 
-  .jnu-watermark-letter {
-    font-size: 4.5rem;
-    right: 12px;
-  }
-
   .jnu-pedagogy-body {
     padding: 20px 16px;
     gap: 18px;
@@ -1717,24 +1601,30 @@ a {
     margin-bottom: 18px;
     padding-bottom: 14px;
   }
+
   .jnu-infra-stat-val {
     font-size: 1.5rem;
   }
+
   .jnu-infra-stat-lbl {
     font-size: 0.72rem;
   }
+
   .jnu-infra-feature-item {
     padding: 8px 12px;
   }
+
   .jnu-infra-feature-icon {
     width: 32px;
     min-width: 32px;
     height: 32px;
     font-size: 0.95rem;
   }
+
   .jnu-infra-feature-title {
     font-size: 0.84rem;
   }
+
   .jnu-infra-feature-desc {
     font-size: 0.74rem;
   }
@@ -2345,26 +2235,6 @@ a {
   gap: 16px;
 }
 
-.jnu-placement-dots {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.jnu-p-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: rgba(17, 32, 73, 0.15);
-}
-
-.jnu-p-dot.active {
-  width: 24px;
-  height: 7px;
-  border-radius: 999px;
-  background-color: var(--jnu-secondary-crimson);
-}
-
 .jnu-placement-cta-btn {
   display: inline-flex;
   align-items: center;
@@ -2474,64 +2344,86 @@ a {
 /* ===================================================================
    Section 7: Student Testimonials (Real Stories from Our Students)
 =================================================================== */
+
 .jnu-testimonials-section {
-  background-color: #FFFFFF;
-  padding: 80px 0;
-  border-top: 1px solid var(--jnu-frame-border);
   position: relative;
+  overflow: hidden;
+  padding: 85px 0 95px;
+  /* background-color: #FFFFFF; */
+  border-top: 1px solid #ffffff;
 }
 
-@media (max-width: 768px) {
-  .jnu-testimonials-section {
-    padding: 50px 0;
-  }
+/* Background Curve & Ambient Graphic */
+.jnu-testi-bg-graphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  /* background: 
+    radial-gradient(circle at 92% 12%, rgba(181, 39, 89, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 8% 88%, rgba(17, 32, 73, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 55% 45%, rgba(181, 39, 89, 0.02) 0%, transparent 60%); */
 }
 
+.jnu-testi-svg-curve {
+  position: absolute;
+  top: 0;
+  right: -5%;
+  width: 110%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Eyebrow & Titles */
 .jnu-testi-eyebrow-wrap {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
+  gap: 10px;
+  margin-bottom: 12px;
 }
 
 .jnu-testi-eyebrow {
   font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 1.6px;
+  color: var(--jnu-secondary-crimson);
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--jnu-primary-navy);
 }
 
 .jnu-testi-title {
   font-family: var(--font-heading) !important;
-  font-size: clamp(2rem, 3.4vw, 2.85rem);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
   font-weight: 800;
-  line-height: 1.18;
   color: var(--jnu-primary-navy);
-  margin-bottom: 12px;
+  line-height: 1.18;
+  margin-bottom: 14px;
   text-align: left !important;
 }
 
 .jnu-testi-sub {
   font-family: var(--font-body);
-  font-size: 0.9rem;
-  line-height: 1.5;
+  font-size: 0.95rem;
   color: var(--jnu-text-muted);
+  line-height: 1.6;
+  max-width: 620px;
   margin-bottom: 0;
   text-align: left !important;
-  max-width: 580px;
 }
 
 .jnu-testi-top-link {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--jnu-primary-navy);
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--jnu-primary-navy);
-  text-decoration: none;
   transition: var(--jnu-transition);
 }
 
@@ -2540,74 +2432,97 @@ a {
   padding-bottom: 2px;
 }
 
-.jnu-testi-top-link:hover {
+.jnu-testi-top-link .link-arrow {
   color: var(--jnu-secondary-crimson);
+  transition: transform 0.25s ease;
 }
 
 .jnu-testi-top-link:hover .link-arrow {
-  transform: translateX(4px);
+  transform: translateX(5px);
 }
 
-.jnu-testi-top-link .link-arrow {
-  transition: transform 0.25s ease;
-  color: var(--jnu-secondary-crimson);
-  font-size: 1rem;
+/* ==========================================
+   Story Cards (Unified Base + Variations)
+=========================================== */
+
+.jnu-story-card {
+  border-radius: 24px;
+  padding: 30px 26px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+  text-align: left !important;
+  box-shadow: 0 10px 30px rgba(17, 32, 73, 0.05);
 }
 
-/* 6 Small Student Cards Grid (3x2 Layout Matching Detail Card Height) */
-.jnu-testi-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 16px;
-  width: 100%;
-  height: 100%;
+.jnu-story-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Card Top: Quote Icon + Rating Stars */
+.jnu-story-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.jnu-story-quote-svg {
+  width: 26px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.jnu-story-stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.82rem;
+  color: #FFB800;
+}
+
+/* Testimonial Quote Text */
+.jnu-story-text {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.62;
+  margin-bottom: 24px;
   flex: 1 1 auto;
 }
 
-.jnu-testi-card {
-  background-color: #FFFFFF;
-  border-radius: 18px;
-  border: 1px solid var(--jnu-frame-border);
-  padding: 12px;
+/* Card Bottom Author Row */
+.jnu-story-author-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.jnu-story-author-info {
   display: flex;
   align-items: center;
   gap: 12px;
-  height: 53%;
-  width: 100%;
-  box-sizing: border-box;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  position: relative;
-  text-align: left !important;
+  min-width: 0;
 }
 
-.jnu-testi-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(181, 39, 89, 0.4);
-  box-shadow: 0 8px 24px rgba(17, 32, 73, 0.06);
-}
-
-.jnu-testi-card.active {
-  border: 1.8px solid var(--jnu-secondary-crimson);
-  background-color: rgba(181, 39, 89, 0.02);
-  box-shadow: 0 8px 25px rgba(181, 39, 89, 0.12);
-}
-
-.jnu-testi-card-thumb-wrap {
-  width: 68px;
-  min-width: 68px;
-  height: 80px;
-  border-radius: 12px;
+.jnu-story-avatar-wrap {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 50%;
   overflow: hidden;
-  flex-shrink: 0;
-  background-color: #F1F4F9;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #F1F4F9;
+  flex-shrink: 0;
 }
 
-.jnu-testi-card-thumb {
+.jnu-story-avatar {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -2615,20 +2530,14 @@ a {
   display: block;
 }
 
-.jnu-testi-card-content {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+.jnu-story-meta {
   min-width: 0;
 }
 
-.jnu-testi-card-name {
+.jnu-story-name {
   font-family: var(--font-heading) !important;
-  font-size: 0.92rem;
+  font-size: 0.96rem;
   font-weight: 700;
-  color: var(--jnu-primary-navy);
   margin-bottom: 2px;
   line-height: 1.2;
   white-space: nowrap;
@@ -2637,425 +2546,372 @@ a {
   text-align: left !important;
 }
 
-.jnu-testi-card-deg {
+.jnu-story-deg {
   font-family: var(--font-body);
   font-size: 0.72rem;
-  color: var(--jnu-text-muted);
-  margin-bottom: 4px;
-  line-height: 1.2;
+  display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: left !important;
+  line-height: 1.2;
 }
 
-.jnu-testi-card-quote {
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  line-height: 1.35;
-  color: #475569;
-  margin-bottom: 4px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-align: left !important;
-}
-
-.jnu-testi-card-arrow {
-  width: 24px;
-  height: 24px;
+.jnu-story-arrow-btn {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
   border-radius: 50%;
-  border: 1px solid rgba(181, 39, 89, 0.35);
-  color: var(--jnu-secondary-crimson);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.72rem;
-  margin-left: auto;
-  margin-top: auto;
-  transition: var(--jnu-transition);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
-.jnu-testi-card.active .jnu-testi-card-arrow,
-.jnu-testi-card:hover .jnu-testi-card-arrow {
-  background-color: var(--jnu-secondary-crimson);
-  border-color: var(--jnu-secondary-crimson);
-  color: #FFFFFF;
-}
+/* ==========================================
+   Style 1: Crisp White Card (Cards 1, 3, 4, 5)
+=========================================== */
 
-/* Featured Large Detail Card (Right Side) */
-.jnu-testi-detail-card {
+.jnu-story-card-white {
   background-color: #FFFFFF;
-  border-radius: 24px;
   border: 1px solid var(--jnu-frame-border);
-  box-shadow: 0 16px 45px rgba(17, 32, 73, 0.07);
-  overflow: hidden;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
 }
 
-.jnu-testi-detail-photo-wrap {
-  flex: 0 0 38%;
-  max-width: 38%;
-  position: relative;
-  background: linear-gradient(135deg, rgba(181, 39, 89, 0.06) 0%, rgba(181, 39, 89, 0.18) 100%);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+.jnu-story-card-white:hover {
+  border-color: rgba(181, 39, 89, 0.35);
+  box-shadow: 0 18px 40px rgba(181, 39, 89, 0.12);
+}
+
+.jnu-story-card-white .jnu-story-quote-svg {
+  color: var(--jnu-secondary-crimson);
+}
+
+.jnu-story-card-white .jnu-story-text {
+  color: #475569;
+}
+
+.jnu-story-card-white .jnu-story-avatar-wrap {
+  border: 2px solid #F1F4F9;
+}
+
+.jnu-story-card-white .jnu-story-name {
+  color: var(--jnu-primary-navy);
+}
+
+.jnu-story-card-white .jnu-story-deg {
+  color: var(--jnu-text-muted);
+}
+
+.jnu-story-card-white .jnu-story-arrow-btn {
+  background-color: rgba(181, 39, 89, 0.08);
+  color: var(--jnu-secondary-crimson);
+}
+
+.jnu-story-card-white:hover .jnu-story-arrow-btn {
+  background-color: var(--jnu-secondary-crimson);
+  color: #FFFFFF;
+  transform: translateX(2px);
+}
+
+/* Fourth Card - Sneha Gupta */
+.jnu-story-card-crimson {
+  background: linear-gradient(135deg, #7A152E 0%, #9C1B46 45%, #B52759 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 16px 42px rgba(181, 39, 89, 0.3);
   overflow: hidden;
 }
 
-.jnu-testi-detail-photo-wrap::before {
-  content: '';
+.jnu-story-card-crimson:hover {
+  box-shadow: 0 22px 50px rgba(181, 39, 89, 0.42);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.jnu-story-card-crimson .jnu-story-card-watermark {
   position: absolute;
-  top: -20%;
-  left: -20%;
-  width: 140%;
-  height: 140%;
-  background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.45) 0%, rgba(181, 39, 89, 0.15) 70%, transparent 100%);
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  background: url('../images/campus-building-watermark.jpg') no-repeat right center / cover;
+  opacity: 0.18;
+  mix-blend-mode: luminosity;
   pointer-events: none;
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 25%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 25%, transparent 100%);
 }
 
-.jnu-testi-detail-img {
-  width: auto;
-  max-width: 100%;
-  height: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  object-position: center bottom;
+.jnu-story-card-crimson .jnu-story-card-inner {
   position: relative;
   z-index: 1;
-  transition: opacity 0.3s ease, transform 0.4s ease;
-  display: block;
-}
-
-.jnu-testi-detail-content {
-  flex: 0 0 62%;
-  max-width: 62%;
-  padding: 28px 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  text-align: left !important;
+  height: 100%;
 }
 
-.jnu-testi-detail-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 12px;
-}
-
-.jnu-testi-counter {
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--jnu-secondary-crimson);
-  letter-spacing: 0.5px;
-}
-
-.jnu-testi-nav-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.jnu-testi-nav-btn {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 1px solid var(--jnu-frame-border);
-  background-color: #FFFFFF;
-  color: var(--jnu-primary-navy);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.82rem;
-  transition: var(--jnu-transition);
-  cursor: pointer;
-}
-
-.jnu-testi-nav-btn:hover {
-  background-color: var(--jnu-secondary-crimson);
-  border-color: var(--jnu-secondary-crimson);
+.jnu-story-card-crimson .jnu-story-quote-svg {
   color: #FFFFFF;
 }
 
-.jnu-testi-detail-name {
-  font-family: var(--font-heading) !important;
-  font-size: 1.45rem;
-  font-weight: 800;
-  color: var(--jnu-primary-navy);
-  margin-bottom: 3px;
-  line-height: 1.2;
-  text-align: left !important;
+.jnu-story-card-crimson .jnu-story-text {
+  color: rgba(255, 255, 255, 0.95);
 }
 
-.jnu-testi-detail-deg {
-  font-family: var(--font-body);
-  font-size: 0.82rem;
-  color: var(--jnu-text-muted);
-  margin-bottom: 0;
-  text-align: left !important;
+.jnu-story-card-crimson .jnu-story-avatar-wrap {
+  border: 2px solid rgba(255, 255, 255, 0.35);
 }
 
-.jnu-testi-line {
-  width: 40px;
-  height: 2px;
-  background-color: var(--jnu-secondary-crimson);
-  margin: 12px 0 14px;
-  border-radius: 2px;
+.jnu-story-card-crimson .jnu-story-name {
+  color: #FFFFFF;
 }
 
-.jnu-testi-detail-quote-wrap {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 18px;
-  text-align: left !important;
+.jnu-story-card-crimson .jnu-story-deg {
+  color: rgba(255, 255, 255, 0.8);
 }
 
-.jnu-testi-big-quote {
-  font-family: serif;
-  font-size: 2.2rem;
-  line-height: 1;
+.jnu-story-card-crimson .jnu-story-arrow-btn {
+  background-color: rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+  backdrop-filter: blur(4px);
+}
+
+.jnu-story-card-crimson:hover .jnu-story-arrow-btn {
+  background-color: #FFFFFF;
   color: var(--jnu-secondary-crimson);
-  font-weight: 900;
-  flex-shrink: 0;
+  transform: scale(1.08) translateX(2px);
 }
 
-.jnu-testi-quote-full {
-  font-family: var(--font-body);
-  font-size: 0.84rem;
-  line-height: 1.55;
-  color: #475569;
-  margin-bottom: 0;
-  text-align: left !important;
+/* ==========================================
+   Style 2: Navy Gradient Featured Card (Card 2)
+=========================================== */
+
+.jnu-story-card-navy {
+  background: linear-gradient(135deg, #0d1a3a 0%, #15163e 42%, #52142e 85%, #8B1B42 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 42px rgba(13, 26, 58, 0.28);
+  overflow: hidden;
 }
 
-/* Bottom Metadata (Placed at & Role) */
-.jnu-testi-meta-row {
+.jnu-story-card-navy:hover {
+  box-shadow: 0 22px 50px rgba(13, 26, 58, 0.38);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.jnu-story-card-navy .jnu-story-card-watermark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  background: url('../images/campus-building-watermark.jpg') no-repeat right center / cover;
+  opacity: 0.17;
+  mix-blend-mode: luminosity;
+  pointer-events: none;
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 25%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 25%, transparent 100%);
+}
+
+.jnu-story-card-navy .jnu-story-card-inner {
+  position: relative;
+  z-index: 1;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-  gap: 16px;
-  padding-top: 16px;
-  border-top: 1px solid var(--jnu-frame-border);
+  height: 100%;
 }
 
-.jnu-testi-meta-box {
+.jnu-story-card-navy .jnu-story-quote-svg {
+  color: #FFFFFF;
+  opacity: 0.95;
+}
+
+.jnu-story-card-navy .jnu-story-text {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.jnu-story-card-navy .jnu-story-avatar-wrap {
+  border: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.jnu-story-card-navy .jnu-story-name {
+  color: #FFFFFF;
+}
+
+.jnu-story-card-navy .jnu-story-deg {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.jnu-story-card-navy .jnu-story-arrow-btn {
+  background-color: var(--jnu-secondary-crimson);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(181, 39, 89, 0.45);
+}
+
+.jnu-story-card-navy:hover .jnu-story-arrow-btn {
+  background-color: #d12e67;
+  transform: scale(1.08) translateX(2px);
+}
+
+/* ==========================================
+   Style 3: Crimson Gradient Featured Card (Card 6)
+=========================================== */
+
+.jnu-story-card-crimson {
+  background: linear-gradient(135deg, #7A152E 0%, #9C1B46 45%, #B52759 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 16px 42px rgba(181, 39, 89, 0.3);
+  overflow: hidden;
+}
+
+.jnu-story-card-crimson:hover {
+  box-shadow: 0 22px 50px rgba(181, 39, 89, 0.42);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.jnu-story-card-crimson .jnu-story-card-watermark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  background: url('../images/campus-building-watermark.jpg') no-repeat right center / cover;
+  opacity: 0.18;
+  mix-blend-mode: luminosity;
+  pointer-events: none;
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 25%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 25%, transparent 100%);
+}
+
+.jnu-story-card-crimson .jnu-story-card-inner {
+  position: relative;
+  z-index: 1;
   display: flex;
-  align-items: center;
-  gap: 10px;
-  flex: 1;
-  text-align: left !important;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
-.jnu-testi-meta-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background-color: rgba(181, 39, 89, 0.08);
+.jnu-story-card-crimson .jnu-story-quote-svg {
+  color: #FFFFFF;
+}
+
+.jnu-story-card-crimson .jnu-story-text {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.jnu-story-card-crimson .jnu-story-avatar-wrap {
+  border: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.jnu-story-card-crimson .jnu-story-name {
+  color: #FFFFFF;
+}
+
+.jnu-story-card-crimson .jnu-story-deg {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.jnu-story-card-crimson .jnu-story-arrow-btn {
+  background-color: rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+  backdrop-filter: blur(4px);
+}
+
+.jnu-story-card-crimson:hover .jnu-story-arrow-btn {
+  background-color: #FFFFFF;
   color: var(--jnu-secondary-crimson);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  flex-shrink: 0;
+  transform: scale(1.08) translateX(2px);
 }
 
-.jnu-testi-meta-label {
-  font-family: var(--font-body);
-  font-size: 0.68rem;
-  color: var(--jnu-text-muted);
-  line-height: 1.2;
-}
+/* ==========================================
+   Responsive Media Queries for Story Cards
+=========================================== */
 
-.jnu-testi-meta-val {
-  font-family: var(--font-heading) !important;
-  font-size: 0.96rem;
-  font-weight: 800;
-  color: var(--jnu-primary-navy);
-  line-height: 1.2;
-  text-align: left !important;
-}
-
-/* Responsive Media Queries for Testimonials */
 @media (max-width: 1199px) and (min-width: 992px) {
-  .jnu-testi-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    gap: 12px;
+  .jnu-story-card {
+    padding: 24px 20px 20px;
   }
 
-  .jnu-testi-card {
-    padding: 10px;
-    gap: 10px;
+  .jnu-story-text {
+    font-size: 0.84rem;
+    line-height: 1.55;
+    margin-bottom: 20px;
   }
 
-  .jnu-testi-card-thumb-wrap {
-    width: 60px;
-    min-width: 60px;
-    height: 72px;
+  .jnu-story-name {
+    font-size: 0.92rem;
   }
 
-  .jnu-testi-card-name {
-    font-size: 0.85rem;
-  }
-
-  .jnu-testi-card-deg {
-    font-size: 0.68rem;
-  }
-
-  .jnu-testi-card-quote {
+  .jnu-story-deg {
     font-size: 0.68rem;
   }
 }
 
 @media (max-width: 991px) {
-  .jnu-testi-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    height: auto;
-    gap: 14px;
+  .jnu-testimonials-section {
+    padding: 70px 0 80px;
   }
 
-  .jnu-testi-card {
-    height: auto;
-    padding: 12px;
-  }
-
-  .jnu-testi-detail-card {
-    height: auto;
+  .jnu-story-card {
+    padding: 24px 20px 20px;
   }
 }
 
 @media (max-width: 768px) {
-  .jnu-testi-detail-card {
-    flex-direction: column;
+  .jnu-testimonials-section {
+    padding: 60px 0 70px;
+  }
+
+  .jnu-story-card {
     border-radius: 20px;
+    padding: 22px 18px 18px;
   }
 
-  .jnu-testi-detail-photo-wrap {
-    flex: 0 0 auto;
-    width: 100%;
-    max-width: 100%;
-    height: 250px;
-    min-height: 250px;
-    background: linear-gradient(135deg, rgba(181, 39, 89, 0.08) 0%, rgba(181, 39, 89, 0.22) 100%);
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    border-radius: 20px 20px 0 0;
+  .jnu-story-text {
+    font-size: 0.86rem;
+    line-height: 1.55;
+    margin-bottom: 20px;
   }
 
-  .jnu-testi-detail-img {
-    width: auto;
-    max-width: 100%;
-    height: 100%;
-    max-height: 250px;
-    object-fit: contain;
-    object-position: center bottom;
-    display: block;
-    margin: 0 auto;
+  .jnu-story-avatar-wrap {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
   }
 
-  .jnu-testi-detail-content {
-    flex: 0 0 auto;
-    max-width: 100%;
-    padding: 22px 18px 20px;
+  .jnu-story-name {
+    font-size: 0.92rem;
   }
 
-  .jnu-testi-detail-name {
-    font-size: 1.25rem;
+  .jnu-story-deg {
+    font-size: 0.7rem;
   }
 
-  .jnu-testi-detail-deg {
-    font-size: 0.78rem;
-  }
-
-  .jnu-testi-quote-full {
-    font-size: 0.82rem;
-    line-height: 1.5;
-  }
-
-  .jnu-testi-meta-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding-top: 14px;
-  }
-
-  .jnu-testi-meta-box {
-    gap: 8px;
-  }
-
-  .jnu-testi-meta-icon {
-    width: 32px;
-    height: 32px;
-    font-size: 0.95rem;
-    border-radius: 8px;
-  }
-
-  .jnu-testi-meta-label {
-    font-size: 0.65rem;
-  }
-
-  .jnu-testi-meta-val {
-    font-size: 0.88rem;
+  .jnu-story-arrow-btn {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    font-size: 0.85rem;
   }
 }
 
 @media (max-width: 575.98px) {
-  .jnu-testi-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
+  .jnu-testimonials-section {
+    padding: 50px 0 60px;
   }
 
-  .jnu-testi-card {
-    padding: 10px 12px;
-    border-radius: 14px;
-    gap: 10px;
-    height: auto;
+  .jnu-story-card {
+    border-radius: 18px;
+    padding: 20px 16px 16px;
   }
 
-  .jnu-testi-card-thumb-wrap {
-    width: 58px;
-    min-width: 58px;
-    height: 68px;
-    min-height: unset;
-    border-radius: 10px;
-  }
-
-  .jnu-testi-card-name {
-    font-size: 0.88rem;
-  }
-
-  .jnu-testi-card-deg {
-    font-size: 0.7rem;
-    margin-bottom: 2px;
-  }
-
-  .jnu-testi-card-quote {
-    font-size: 0.74rem;
-    line-height: 1.35;
-    margin-bottom: 0;
-    -webkit-line-clamp: 2;
-  }
-
-  .jnu-testi-detail-photo-wrap {
-    height: 220px;
-    min-height: 220px;
-  }
-
-  .jnu-testi-detail-img {
-    max-height: 220px;
+  .jnu-story-text {
+    font-size: 0.84rem;
   }
 }
-
 
 /* ==========================================
    JNU TOP PLACEMENT RECRUITERS
@@ -3071,8 +2927,7 @@ a {
 
 /* Section Header (100% Left Aligned) */
 
-.jnu-recruiters-eyebrow-wrap,
-.recruiters-eyebrow-wrap {
+.jnu-recruiters-eyebrow-wrap {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -3080,8 +2935,7 @@ a {
   text-align: left !important;
 }
 
-.jnu-recruiters-eyebrow,
-.recruiters-eyebrow {
+.jnu-recruiters-eyebrow {
   display: inline-block;
   font-family: var(--font-heading);
   font-size: 0.78rem;
@@ -3092,8 +2946,7 @@ a {
   margin-bottom: 0;
 }
 
-.jnu-recruiters-title,
-.recruiters-heading h2 {
+.jnu-recruiters-title {
   font-family: var(--font-heading) !important;
   font-size: clamp(2rem, 3.4vw, 2.85rem);
   font-weight: 800;
@@ -3103,13 +2956,11 @@ a {
   text-align: left !important;
 }
 
-.jnu-recruiters-title span,
-.recruiters-heading h2 span {
+.jnu-recruiters-title span {
   color: var(--jnu-secondary-crimson) !important;
 }
 
-.jnu-recruiters-sub,
-.recruiters-heading p {
+.jnu-recruiters-sub {
   font-family: var(--font-body);
   font-size: 0.9rem;
   line-height: 1.5;
@@ -3117,12 +2968,6 @@ a {
   margin-bottom: 0;
   text-align: left !important;
   max-width: 650px;
-}
-
-.recruiters-heading {
-  max-width: 100%;
-  margin: 0 0 40px 0;
-  text-align: left !important;
 }
 
 /* Marquee wrapper */
@@ -3272,10 +3117,6 @@ a {
     padding: 60px 0 45px;
   }
 
-  .recruiters-heading {
-    margin-bottom: 30px;
-  }
-
   .recruiter-card {
     flex-basis: 155px;
     height: 88px;
@@ -3300,19 +3141,12 @@ a {
     padding: 45px 0 35px;
   }
 
-  .recruiters-heading {
-    padding: 0;
-    margin-bottom: 24px;
-  }
-
-  .jnu-recruiters-title,
-  .recruiters-heading h2 {
+  .jnu-recruiters-title {
     font-size: 1.85rem;
     letter-spacing: -0.5px;
   }
 
-  .jnu-recruiters-sub,
-  .recruiters-heading p {
+  .jnu-recruiters-sub {
     font-size: 0.82rem;
   }
 
@@ -3640,11 +3474,11 @@ a {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  background-color: #FFFFFF;
+  background-color:#e9e7ea;
   border-radius: 16px;
   padding: 16px 20px;
   border: 1px solid var(--jnu-frame-border);
-  border-left: 3.5px solid var(--jnu-secondary-crimson);
+  border-left: 3.5px solid #0a0a0a;
   box-shadow: 0 4px 18px rgba(17, 32, 73, 0.04);
   max-width: 420px;
   text-align: left !important;
@@ -3660,8 +3494,8 @@ a {
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background-color: rgba(181, 39, 89, 0.08);
-  color: var(--jnu-secondary-crimson);
+  background-color:rgb(0 0 0 / 8%);
+  color: #131213;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3686,7 +3520,7 @@ a {
 .jnu-faq-help-sub {
   font-family: var(--font-body);
   font-size: 0.8rem;
-  color: var(--jnu-text-muted);
+  color: #000000;
   margin-bottom: 6px;
   line-height: 1.35;
   text-align: left !important;
@@ -3699,7 +3533,7 @@ a {
   font-family: var(--font-body);
   font-size: 0.82rem;
   font-weight: 700;
-  color: var(--jnu-secondary-crimson);
+  color: #50353e;
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: var(--jnu-transition);
@@ -3755,7 +3589,7 @@ a {
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background-color: rgba(181, 39, 89, 0.08);
+  background-color:rgba(79 73 75 / 11%);
   color: var(--jnu-secondary-crimson);
   display: flex;
   align-items: center;
@@ -3979,11 +3813,7 @@ a {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  background: linear-gradient(105deg,
-      rgba(17, 32, 73, 0.93) 0%,
-      rgba(50, 22, 60, 0.91) 32%,
-      rgba(122, 21, 46, 0.91) 68%,
-      rgba(181, 39, 89, 0.93) 100%), url("../images/campus-bg.jpg") center/cover no-repeat;
+  background: linear-gradient(105deg, rgba(17, 27, 55, 0.94) 0%, rgba(46, 25, 53, 0.92) 35%, rgba(122, 21, 46, 0.92) 70%, rgba(181, 39, 89, 0.94) 100%), url("../images/campus-bg.jpg") center/cover no-repeat;
   box-shadow: 0 10px 30px rgba(17, 32, 73, 0.12);
   padding: 30px 16px;
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -4193,31 +4023,50 @@ a {
 }
 
 /* Stagger Delays for Cards & Grids */
-.jnu-delay-1 { transition-delay: 0.08s; }
-.jnu-delay-2 { transition-delay: 0.16s; }
-.jnu-delay-3 { transition-delay: 0.24s; }
-.jnu-delay-4 { transition-delay: 0.32s; }
-.jnu-delay-5 { transition-delay: 0.40s; }
-.jnu-delay-6 { transition-delay: 0.48s; }
+.jnu-delay-1 {
+  transition-delay: 0.08s;
+}
+
+.jnu-delay-2 {
+  transition-delay: 0.16s;
+}
+
+.jnu-delay-3 {
+  transition-delay: 0.24s;
+}
+
+.jnu-delay-4 {
+  transition-delay: 0.32s;
+}
+
+.jnu-delay-5 {
+  transition-delay: 0.40s;
+}
+
+.jnu-delay-6 {
+  transition-delay: 0.48s;
+}
 
 /* Micro-interaction: Tactile touch feedback on mobile for all interactive cards */
 @media (hover: hover) {
+
   .jnu-bento-card:hover,
   .jnu-placed-card:hover,
-  .jnu-testi-card:hover,
+  .jnu-story-card:hover,
   .jnu-infra-item-card:hover,
-  .jnu-program-pill:hover,
+  .jnu-course-chip:hover,
   .jnu-faq-item:hover {
     transform: translateY(-4px);
   }
 }
 
 @media (hover: none) {
+
   .jnu-bento-card:active,
   .jnu-placed-card:active,
-  .jnu-testi-card:active,
+  .jnu-story-card:active,
   .jnu-infra-item-card:active,
-  .jnu-program-pill:active,
+  .jnu-course-chip:active,
   .jnu-faq-item:active {
     transform: scale(0.985);
     transition: transform 0.12s ease;
@@ -4235,7 +4084,7 @@ a {
 
 /* Subtle Shimmer for High-Priority Action Buttons */
 .jnu-hero-cta-btn,
-.jnu-form-submit-btn,
+.jnu-submit-btn,
 .jnu-placement-cta-btn {
   position: relative;
   overflow: hidden;
@@ -4243,7 +4092,7 @@ a {
 }
 
 .jnu-hero-cta-btn::after,
-.jnu-form-submit-btn::after,
+.jnu-submit-btn::after,
 .jnu-placement-cta-btn::after {
   content: '';
   position: absolute;
@@ -4251,19 +4100,17 @@ a {
   left: -60%;
   width: 40%;
   height: 200%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.22) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.22) 50%,
+      rgba(255, 255, 255, 0) 100%);
   transform: rotate(25deg);
   transition: left 0.75s ease;
   pointer-events: none;
 }
 
 .jnu-hero-cta-btn:hover::after,
-.jnu-form-submit-btn:hover::after,
+.jnu-submit-btn:hover::after,
 .jnu-placement-cta-btn:hover::after {
   left: 120%;
 }
@@ -4284,7 +4131,9 @@ a {
     transform: none !important;
     transition: none !important;
   }
+
   .jnu-nav-pulse-dot {
     animation: none !important;
   }
 }
+
