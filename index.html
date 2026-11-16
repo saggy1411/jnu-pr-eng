@@ -380,158 +380,174 @@
        Section 2: Our USPs (Eight Reasons Students Choose Us)
   =================================================================== -->
   <section class="jnu-usp-section" id="why-choose-us">
-    <div class="container-fluid px-3 px-md-4 px-lg-5">
+    <!-- Top-Right Ambient Background Graphic Waves -->
+    <div class="jnu-usp-bg-waves" aria-hidden="true">
+      <svg viewBox="0 0 520 220" fill="none" preserveAspectRatio="none">
+        <path d="M 0,160 C 140,190 280,60 520,15" stroke="var(--navy-blue)" stroke-width="1.2" opacity="0.14"/>
+        <path d="M 0,185 C 160,210 300,90 520,40" stroke="var(--navy-blue)" stroke-width="1" opacity="0.10"/>
+        <path d="M 0,210 C 180,230 320,120 520,68" stroke="var(--navy-blue)" stroke-width="1" opacity="0.07"/>
+        <path d="M 40,220 C 200,240 340,145 520,95" stroke="var(--navy-blue)" stroke-width="0.8" opacity="0.05"/>
+      </svg>
+    </div>
+
+    <div class="container-fluid px-3 px-md-4 px-lg-5 position-relative" style="z-index: 2;">
 
       <!-- Section Header -->
       <div class="row align-items-end mb-4 mb-lg-5 jnu-reveal">
         <div class="col-12 col-lg-7">
-          <span class="jnu-usp-eyebrow">OUR USPS</span>
-          <h2 class="jnu-usp-title">Eight reasons students<br class="d-none d-sm-inline"> choose us</h2>
+          <div class="jnu-usp-eyebrow-wrap">
+            <span class="jnu-usp-dash"></span>
+            <span class="jnu-usp-eyebrow">WHY CHOOSE JNU</span>
+          </div>
+          <h2 class="jnu-usp-title">Eight reasons students choose us</h2>
         </div>
-        <div class="col-12 col-lg-5 mt-2 mt-lg-0">
-          <p class="jnu-usp-tagline">
-            Everything a student needs, from the first lecture to the first job.
-          </p>
+        <div class="col-12 col-lg-5 mt-3 mt-lg-0">
+          <div class="jnu-usp-tagline-wrap">
+            <span class="jnu-usp-divider"></span>
+            <p class="jnu-usp-tagline">
+              Everything a student needs, from the first lecture to the first job.
+            </p>
+          </div>
         </div>
       </div>
 
-      <!-- Bento Grid Top Row (Card 1 on left, Cards 2, 3, 4 on right) -->
+      <!-- Bento Grid Row 1 (Card 1: 50% Col-6, Card 2: 25% Col-3, Card 3: 25% Col-3) -->
       <div class="row g-3 g-lg-4 mb-3 mb-lg-4 align-items-stretch">
 
-        <!-- Left Column: Card 1 (Large Featured Dark Navy Card) -->
-        <div class="col-12 col-lg-5 jnu-reveal jnu-delay-1">
-          <div class="jnu-bento-card jnu-bento-card-dark">
+        <!-- Card 1: Industry Supported Program (Large Featured Dark Navy Card) -->
+        <div class="col-12 col-lg-6 d-flex jnu-reveal jnu-delay-1">
+          <div class="jnu-bento-card jnu-bento-card-dark w-100">
             <div class="jnu-bento-bg-img" style="background-image: url('assets/images/usp-industry.jpg');"></div>
             <div class="jnu-bento-icon icon-badge-dark">
               <i class="bi bi-bullseye"></i>
             </div>
-            <div>
-              <h3 class="jnu-bento-title">Industry Supported<br>Program</h3>
-              <p class="jnu-bento-desc">Curriculum shaped with industry partners.</p>
+            <div class="jnu-bento-bottom">
+              <h3 class="jnu-bento-title">Industry Supported<br class="d-none d-sm-inline"> Program</h3>
+              <p class="jnu-bento-desc">Industry-driven curriculum and real-world exposure.</p>
+              <span class="jnu-bento-accent-line line-white"></span>
             </div>
           </div>
         </div>
 
-        <!-- Right Column: Cards 2, 3 (Top Row) & Card 4 (Middle Wide Row) -->
-        <div class="col-12 col-lg-7 jnu-reveal jnu-delay-2">
-          <div class="d-flex flex-column h-100 justify-content-between gap-3 gap-lg-4">
-
-            <!-- Cards 2 & 3 in 2 Columns -->
-            <div class="row g-3 g-lg-4">
-              <!-- Card 2 -->
-              <div class="col-12 col-sm-6">
-                <div class="jnu-bento-card jnu-bento-card-white">
-                  <div class="jnu-bento-bg-img" style="background-image: url('assets/images/usp-internship.jpg');">
-                  </div>
-                  <div class="jnu-bento-icon icon-badge-white">
-                    <i class="bi bi-briefcase"></i>
-                  </div>
-                  <div>
-                    <h4 class="jnu-bento-title">Mandatory Industrial<br class="d-none d-xl-inline"> Internship</h4>
-                    <p class="jnu-bento-desc">Real workplace experience built into the degree.</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card 3 -->
-              <div class="col-12 col-sm-6">
-                <div class="jnu-bento-card jnu-bento-card-white">
-                  <div class="jnu-bento-bg-img" style="background-image: url('assets/images/usp-certification.jpg');">
-                  </div>
-                  <div class="jnu-bento-icon icon-badge-white">
-                    <i class="bi bi-award"></i>
-                  </div>
-                  <div>
-                    <h4 class="jnu-bento-title">Global Certification</h4>
-                    <p class="jnu-bento-desc">Credentials recognised beyond campus.</p>
-                  </div>
-                </div>
-              </div>
+        <!-- Card 2: Mandatory Industrial Internship (White Card) -->
+        <div class="col-12 col-sm-6 col-lg-3 d-flex jnu-reveal jnu-delay-2">
+          <div class="jnu-bento-card jnu-bento-card-white w-100">
+            <div class="jnu-bento-bg-img" style="background-image: url('assets/images/usp-internship.jpg');"></div>
+            <div class="jnu-bento-icon icon-badge-white">
+              <i class="bi bi-briefcase"></i>
             </div>
-
-            <!-- Card 4 (Spans Full Width of Right Column) -->
-            <div class="jnu-bento-card jnu-bento-card-blue">
-              <div class="jnu-bento-bg-img" style="background-image: url('assets/images/usp-alumni.jpg');"></div>
-              <div class="jnu-bento-icon icon-badge-blue">
-                <i class="bi bi-globe2"></i>
-              </div>
-              <div>
-                <h4 class="jnu-bento-title">Global Alumni Network</h4>
-                <p class="jnu-bento-desc">Connections across cities and industries.</p>
-              </div>
+            <div class="jnu-bento-bottom">
+              <h4 class="jnu-bento-title">Mandatory Industrial<br class="d-none d-sm-inline"> Internship</h4>
+              <p class="jnu-bento-desc">Real workplace experience built into the degree.</p>
+              <span class="jnu-bento-accent-line line-navy"></span>
             </div>
+          </div>
+        </div>
 
+        <!-- Card 3: Global Certification (White Card) -->
+        <div class="col-12 col-sm-6 col-lg-3 d-flex jnu-reveal jnu-delay-3">
+          <div class="jnu-bento-card jnu-bento-card-white w-100">
+            <div class="jnu-bento-bg-img" style="background-image: url('assets/images/usp-certification.jpg');"></div>
+            <div class="jnu-bento-icon icon-badge-white">
+              <i class="bi bi-award"></i>
+            </div>
+            <div class="jnu-bento-bottom">
+              <h4 class="jnu-bento-title">Global Certification</h4>
+              <p class="jnu-bento-desc">Credentials recognised beyond campus.</p>
+              <span class="jnu-bento-accent-line line-navy"></span>
+            </div>
           </div>
         </div>
 
       </div>
 
-      <!-- Bento Grid Bottom Row (Cards 5, 6, 7, 8 in 4 Columns) -->
-      <div class="row g-3 g-lg-4 jnu-reveal jnu-delay-1">
+      <!-- Bento Grid Row 2 (Cards 4, 5, 6, 7: 4 equal 25% Col-3 cards) -->
+      <div class="row g-3 g-lg-4 mb-3 mb-lg-4 align-items-stretch">
 
-        <!-- Card 5 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="jnu-bento-card jnu-bento-card-white">
-            <div class="jnu-bento-bg-img" style="background-image: url('assets/images/usp-curriculum.jpg');"></div>
+        <!-- Card 4: Global Alumni Network (White Card) -->
+        <div class="col-12 col-sm-6 col-lg-3 d-flex jnu-reveal jnu-delay-1">
+          <div class="jnu-bento-card jnu-bento-card-white w-100">
+            <div class="jnu-bento-bg-img" style="background-image: url('assets/images/usp-alumni.jpg');"></div>
             <div class="jnu-bento-icon icon-badge-white">
-              <i class="bi bi-book"></i>
+              <i class="bi bi-globe2"></i>
             </div>
-            <div>
-              <h4 class="jnu-bento-title">NEP Based Curriculum</h4>
-              <p class="jnu-bento-desc">Flexible, multidisciplinary learning.</p>
+            <div class="jnu-bento-bottom">
+              <h4 class="jnu-bento-title">Global Alumni<br class="d-none d-sm-inline"> Network</h4>
+              <p class="jnu-bento-desc">Connections across cities and industries.</p>
+              <span class="jnu-bento-accent-line line-navy"></span>
             </div>
           </div>
         </div>
 
-        <!-- Card 6 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="jnu-bento-card jnu-bento-card-white">
-            <div class="jnu-bento-bg-img" style="background-image: url('assets/images/usp-handson.jpg');"></div>
+        <!-- Card 5: NEP Based Curriculum (White Card) -->
+        <div class="col-12 col-sm-6 col-lg-3 d-flex jnu-reveal jnu-delay-2">
+          <div class="jnu-bento-card jnu-bento-card-white w-100">
+            <div class="jnu-bento-bg-img" style="background-image: url('assets/images/usp-curriculum.jpg');"></div>
             <div class="jnu-bento-icon icon-badge-white">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              <i class="bi bi-book"></i>
+            </div>
+            <div class="jnu-bento-bottom">
+              <h4 class="jnu-bento-title">NEP Based<br class="d-none d-sm-inline"> Curriculum</h4>
+              <p class="jnu-bento-desc">Flexible, mutidisciplinary learning.</p>
+              <span class="jnu-bento-accent-line line-navy"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Hands-on Learning (Dark Navy Featured Card) -->
+        <div class="col-12 col-sm-6 col-lg-3 d-flex jnu-reveal jnu-delay-3">
+          <div class="jnu-bento-card jnu-bento-card-dark w-100">
+            <div class="jnu-bento-bg-img" style="background-image: url('assets/images/usp-handson.jpg');"></div>
+            <div class="jnu-bento-icon icon-badge-dark">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <path d="M10 2v7.31L4.69 19.92A2 2 0 0 0 6.47 23h11.06a2 2 0 0 0 1.78-3.08L14 9.31V2" />
                 <line x1="8.5" y1="2" x2="15.5" y2="2" />
                 <line x1="7" y1="16" x2="17" y2="16" />
               </svg>
             </div>
-            <div>
-              <h4 class="jnu-bento-title">Hands on Learning</h4>
+            <div class="jnu-bento-bottom">
+              <h4 class="jnu-bento-title">Hands-on<br class="d-none d-sm-inline"> Learning</h4>
               <p class="jnu-bento-desc">Labs, projects and practice over theory.</p>
+              <span class="jnu-bento-accent-line line-white"></span>
             </div>
           </div>
         </div>
 
-        <!-- Card 7 (Placement Opportunities - Styled in JNU Crimson, NO YELLOW) -->
-        <div class="col-12 col-sm-6 col-lg-3">
-          <a href="#admission-form-section" style="text-decoration:none;display:block;height:100%;color:inherit;">
-            <div class="jnu-bento-card jnu-bento-card-crimson">
-              <div class="jnu-bento-bg-img" style="background-image: url('assets/images/usp-placement.jpg');"></div>
-              <div class="jnu-bento-icon icon-badge-crimson">
-                <i class="bi bi-graph-up-arrow"></i>
-              </div>
-              <div>
-                <h4 class="jnu-bento-title">Placement Opportunities</h4>
-                <p class="jnu-bento-desc">Dedicated support from skills to offers.</p>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <!-- Card 8 -->
-        <div class="col-12 col-sm-6 col-lg-3">
-          <div class="jnu-bento-card jnu-bento-card-white">
-            <div class="jnu-bento-bg-img" style="background-image: url('assets/images/usp-research.jpg');"></div>
+        <!-- Card 7: Placement Opportunities (White Card) -->
+        <div class="col-12 col-sm-6 col-lg-3 d-flex jnu-reveal jnu-delay-4">
+          <div class="jnu-bento-card jnu-bento-card-white w-100">
+            <div class="jnu-bento-bg-img" style="background-image: url('assets/images/usp-placement.jpg');"></div>
             <div class="jnu-bento-icon icon-badge-white">
-              <i class="bi bi-lightbulb"></i>
+              <i class="bi bi-graph-up"></i>
             </div>
-            <div>
-              <h4 class="jnu-bento-title">New Age Research &amp; Innovation</h4>
-              <p class="jnu-bento-desc">Space to explore emerging ideas.</p>
+            <div class="jnu-bento-bottom">
+              <h4 class="jnu-bento-title">Placement<br class="d-none d-sm-inline"> Opportunities</h4>
+              <p class="jnu-bento-desc">Dedicated support from skills to offers.</p>
+              <span class="jnu-bento-accent-line line-navy"></span>
             </div>
           </div>
         </div>
 
+      </div>
+
+      <!-- Bento Grid Row 3: Card 8 (Full Width Sleek Horizontal Card) -->
+      <div class="row g-3 g-lg-4 jnu-reveal jnu-delay-1">
+        <div class="col-12">
+          <div class="jnu-bento-card jnu-bento-card-horizontal jnu-bento-card-white">
+            <div class="jnu-bento-bg-img jnu-bento-bg-img-horizontal" style="background-image: url('assets/images/usp-research.jpg');"></div>
+            <div class="jnu-bento-h-content">
+              <div class="jnu-bento-icon icon-badge-white mb-0 me-3">
+                <i class="bi bi-lightbulb"></i>
+              </div>
+              <span class="jnu-bento-h-divider d-none d-sm-inline-block"></span>
+              <div class="jnu-bento-h-text">
+                <h4 class="jnu-bento-title">Research &amp; Innovation</h4>
+                <p class="jnu-bento-desc">Space to explore emerging ideas and build impactful solutions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -1381,7 +1397,7 @@
                       <div class="jnu-placed-company">
                         <div class="d-flex align-items-center">
                           <span
-                            style="font-weight:800;font-size:1.2rem;color:#112049;font-family:'Archivo',sans-serif;letter-spacing:-0.5px;">amazon</span>
+                            style="font-weight:800;font-size:1.2rem;color:#07224f;font-family:'Archivo',sans-serif;letter-spacing:-0.5px;">amazon</span>
                           <svg width="22" height="9" viewBox="0 0 40 15" class="ms-1">
                             <path d="M2 3 Q20 16 36 6" fill="none" stroke="#FF9900" stroke-width="2.5"
                               stroke-linecap="round" />
@@ -1626,17 +1642,17 @@
         <path d="M680 0 C 780 150, 920 320, 1100 680" stroke="url(#testi-grad-stroke)" stroke-width="80" stroke-linecap="round" opacity="0.07"/>
         <defs>
           <linearGradient id="testi-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#B52759"/>
-            <stop offset="100%" stop-color="#112049"/>
+            <stop offset="0%" stop-color="#c51857"/>
+            <stop offset="100%" stop-color="#07224f"/>
           </linearGradient>
           <linearGradient id="testi-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#7A152E"/>
-            <stop offset="100%" stop-color="#B52759"/>
+            <stop offset="0%" stop-color="#d81b60"/>
+            <stop offset="100%" stop-color="#c51857"/>
           </linearGradient>
           <linearGradient id="testi-grad-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#B52759"/>
-            <stop offset="50%" stop-color="#7A152E"/>
-            <stop offset="100%" stop-color="#112049"/>
+            <stop offset="0%" stop-color="#c51857"/>
+            <stop offset="50%" stop-color="#d81b60"/>
+            <stop offset="100%" stop-color="#07224f"/>
           </linearGradient>
         </defs>
       </svg>

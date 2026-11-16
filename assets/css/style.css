@@ -5,61 +5,49 @@
 =================================================================== */
 
 :root {
-  /* JNU Official University Palette */
-  --jnu-primary-navy: #112049;
-  /* Academic Deep Navy */
-  --jnu-primary-dark: #0A1430;
-  /* Dark Navy Variant */
-  --jnu-academic-blue: #163A7A;
-  /* University Royal Blue */
-  --jnu-light-blue: #1D5FCF;
-  /* Vibrant Accent Blue */
-  --jnu-secondary-crimson: #B52759;
-  /* Official Crimson / Rose */
-  --jnu-secondary-dark: #8C1D42;
-  /* Deep Crimson / Wine */
-  --jnu-accent-pink: #C61A54;
-  /* Radiant Accent Pink */
-
-  /* Surface & Border Colors */
-  --jnu-bg-light: #F7F8FC;
-  /* Clean Canvas Background */
-  --jnu-section-bg: #F1F4FB;
-  /* Soft Light Blue-Gray for Bento */
-  --jnu-card-bg: #FFFFFF;
-  /* Pure White Card */
-  --jnu-frame-border: #E6E7EE;
-  /* Frame Border Outline */
-  --jnu-frame-bg: #EEF0F6;
-  /* Form Outer Frame */
-  --jnu-input-border: #DDE2EC;
-  /* Input Outline */
-  --jnu-input-focus: #112049;
-  /* Input Active State */
-
-  /* Text Colors */
-  --jnu-text-heading: #112049;
-  /* Left Heading Color */
-  --jnu-text-body: #4A5568;
-  /* Body Text */
-  --jnu-text-muted: #6B7280;
-  /* Subdued / Secondary Text */
-  --jnu-text-light: #FFFFFF;
-  /* White Text */
-
-  /* Gradient Overlays */
-  --jnu-hero-overlay: linear-gradient(135deg, rgba(17, 32, 73, 0.88) 0%, rgba(28, 46, 92, 0.65) 45%, rgba(181, 39, 89, 0.90) 100%);
-  --jnu-badge-bg: #7A152E;
-  /* Top Right Admission Badge */
-
-  /* Typography */
+  /* User Defined Official Palette */
+  --navy-blue: #07224f;
+  --navy-dark: #051736;
+  --navy-light: #0d387c;
+  --berry-pink: #c51857;
+  --badge-pink: #d81b60;
+  --card-outer-gray: #e1e4e8;
+  --card-radius: 20px;
   --font-heading: 'Archivo', sans-serif;
   --font-body: 'Montserrat', sans-serif;
 
+  /* Aliased / Derived Variables for Theme Consistency */
+  --jnu-primary-navy: var(--navy-blue);
+  --jnu-primary-dark: var(--navy-dark);
+  --jnu-academic-blue: var(--navy-light);
+  --jnu-light-blue: var(--navy-light);
+  --jnu-secondary-crimson: var(--berry-pink);
+  --jnu-secondary-dark: #9e1445;
+  --jnu-accent-pink: var(--badge-pink);
+  --jnu-badge-bg: var(--badge-pink);
+
+  /* Surface & Border Colors */
+  --jnu-bg-light: #F7F8FC;
+  --jnu-section-bg: #F1F4FB;
+  --jnu-card-bg: #FFFFFF;
+  --jnu-frame-border: var(--card-outer-gray);
+  --jnu-frame-bg: #F4F6F9;
+  --jnu-input-border: var(--card-outer-gray);
+  --jnu-input-focus: var(--navy-blue);
+
+  /* Text Colors */
+  --jnu-text-heading: var(--navy-blue);
+  --jnu-text-body: #4A5568;
+  --jnu-text-muted: #6B7280;
+  --jnu-text-light: #FFFFFF;
+
+  /* Gradient Overlays */
+  --jnu-hero-overlay: linear-gradient(135deg, rgba(5, 23, 54, 0.90) 0%, rgba(7, 34, 79, 0.72) 45%, rgba(197, 24, 87, 0.92) 100%);
+
   /* Transitions & Shadows */
-  --jnu-shadow-sm: 0 4px 12px rgba(17, 32, 73, 0.06);
-  --jnu-shadow-md: 0 10px 25px rgba(17, 32, 73, 0.08);
-  --jnu-shadow-lg: 0 18px 40px rgba(17, 32, 73, 0.12);
+  --jnu-shadow-sm: 0 4px 12px rgba(7, 34, 79, 0.06);
+  --jnu-shadow-md: 0 10px 25px rgba(7, 34, 79, 0.08);
+  --jnu-shadow-lg: 0 18px 40px rgba(7, 34, 79, 0.12);
   --jnu-transition: all 0.3s ease;
 }
 
@@ -86,6 +74,32 @@ body {
   color: var(--jnu-text-body);
   background-color: #FFFFFF;
 }
+
+/* ===================================================================
+   Global Container Fluid Side Spacing Enhancement
+   Balanced, responsive breathing room across side areas of landing page
+=================================================================== */
+.container-fluid {
+  max-width: 1600px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: clamp(30px, 4.5vw, 68px) !important;
+  padding-right: clamp(30px, 4.5vw, 68px) !important;
+}
+
+.container-fluid.px-0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  max-width: 100% !important;
+}
+
+@media (min-width: 1400px) {
+  .container-fluid:not(.px-0) {
+    padding-left: 72px !important;
+    padding-right: 72px !important;
+  }
+}
+
 
 /* Archivo Headings Everywhere & All Headings Left-Aligned */
 h1,
@@ -135,13 +149,13 @@ a {
 
 /* Gradient rounded bar matching uploaded reference image */
 .jnu-navbar-bar {
-  background: linear-gradient(90deg, #152150 0%, #2f2050 20%, #551e52 42%, #7a1c54 62%, #9f1a55 80%, #c11857 100%);
+  background: linear-gradient(90deg, #051736 0%, #07224f 24%, #2b1842 46%, #6a164a 68%, #c51857 90%, #d81b60 100%);
   border-radius: 14px;
   padding: 8px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 4px 18px rgba(17, 32, 73, 0.12);
+  box-shadow: 0 4px 18px rgba(7, 34, 79, 0.12);
   min-height: 76px;
   gap: 12px;
 }
@@ -198,7 +212,7 @@ a {
 }
 
 .jnu-nav-pill-btn:hover {
-  background-color: #0b2d68;
+  background-color: #0d387c;
   color: #FFFFFF;
   transform: translateY(-1px);
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.3);
@@ -358,7 +372,7 @@ a {
 .jnu-hero-gradient-tint {
   position: absolute;
   inset: 0;
-  /* background: radial-gradient(circle at 15% 85%, rgba(198, 26, 84, 0.85) 0%, rgba(181, 39, 89, 0.6) 35%, rgba(17, 32, 73, 0.75) 75%, rgba(17, 32, 73, 0.9) 100%); */
+  /* background: radial-gradient(circle at 15% 85%, rgba(198, 26, 84, 0.85) 0%, rgba(197, 24, 87, 0.6) 35%, rgba(7, 34, 79, 0.75) 75%, rgba(7, 34, 79, 0.9) 100%); */
   z-index: 2;
 }
 
@@ -395,7 +409,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(17, 32, 73, 0.45);
+  background: rgba(7, 34, 79, 0.45);
   backdrop-filter: blur(8px);
   padding: 5px 9px;
   border-radius: 999px;
@@ -526,7 +540,7 @@ a {
   color: var(--jnu-secondary-crimson);
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-  border-color: rgba(181, 39, 89, 0.3);
+  border-color: rgba(197, 24, 87, 0.3);
 }
 
 .jnu-hero-cta-btn:hover i {
@@ -573,7 +587,7 @@ a {
   border-radius: 16px;
   border: 1px solid var(--jnu-frame-border);
   padding: 24px 20px;
-  box-shadow: 0 10px 30px rgba(17, 32, 73, 0.05);
+  box-shadow: 0 10px 30px rgba(7, 34, 79, 0.05);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -647,14 +661,14 @@ a {
 .jnu-select:focus {
   outline: none;
   border-color: var(--jnu-primary-navy);
-  box-shadow: 0 0 0 3px rgba(17, 32, 73, 0.12);
+  box-shadow: 0 0 0 3px rgba(7, 34, 79, 0.12);
   background-color: #FFFFFF;
 }
 
 .jnu-select {
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23112049' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2307224f' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 13px 9px;
@@ -678,7 +692,7 @@ a {
   border-radius: 999px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(17, 32, 73, 0.25);
+  box-shadow: 0 4px 16px rgba(7, 34, 79, 0.25);
   transition: var(--jnu-transition);
   margin-top: 6px;
 }
@@ -690,7 +704,7 @@ a {
 .jnu-submit-btn:hover {
   background-color: var(--jnu-secondary-crimson);
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(181, 39, 89, 0.35);
+  box-shadow: 0 8px 22px rgba(197, 24, 87, 0.35);
   color: #FFFFFF;
 }
 
@@ -735,12 +749,14 @@ a {
 
 /* ===================================================================
    Section 2: Our USPs (Eight Reasons Students Choose Us)
+   Matches Exact Reference Design with Archivo / Montserrat Typography
 =================================================================== */
 .jnu-usp-section {
   background-color: #FFFFFF;
-  padding: 70px 0 80px 0;
-  border-top: 1px solid var(--jnu-frame-border);
+  padding: 68px 0 78px 0;
+  border-top: 1px solid var(--card-outer-gray, #e1e4e8);
   position: relative;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
@@ -749,173 +765,183 @@ a {
   }
 }
 
-/* Eyebrow & Section Header */
+/* Background Wavy Lines Graphic (Top Right) */
+.jnu-usp-bg-waves {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 520px;
+  height: 240px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.85;
+}
+
+.jnu-usp-bg-waves svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Eyebrow with leading dash */
+.jnu-usp-eyebrow-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.jnu-usp-dash {
+  width: 24px;
+  height: 4px;
+  background-color: var(--navy-blue, #07224f);
+  border-radius: 2px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
 .jnu-usp-eyebrow {
   display: inline-block;
-  font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-family: var(--font-heading, 'Archivo', sans-serif);
+  font-size: 0.82rem;
   font-weight: 700;
-  letter-spacing: 1.6px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--jnu-secondary-crimson);
-  margin-bottom: 8px;
+  color: var(--navy-blue, #07224f);
+  margin-bottom: 0;
   text-align: left !important;
 }
 
 .jnu-usp-title {
-  font-family: var(--font-heading) !important;
+  font-family: var(--font-heading, 'Archivo', sans-serif) !important;
   font-size: clamp(1.85rem, 3.2vw, 2.75rem);
   font-weight: 800;
-  line-height: 1.18;
-  color: var(--jnu-primary-navy);
+  line-height: 1.15;
+  color: var(--navy-blue, #07224f);
   margin-bottom: 0;
   text-align: left !important;
+}
+
+.jnu-usp-tagline-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.jnu-usp-divider {
+  width: 1.5px;
+  height: 38px;
+  background-color: var(--card-outer-gray, #e1e4e8);
+  flex-shrink: 0;
+  display: inline-block;
 }
 
 .jnu-usp-tagline {
-  font-family: var(--font-body);
+  font-family: var(--font-body, 'Montserrat', sans-serif);
   font-size: 0.92rem;
   line-height: 1.5;
-  color: var(--jnu-text-muted);
+  color: #5A6578;
   margin-bottom: 0;
   text-align: left !important;
-  max-width: 360px;
+  max-width: 380px;
 }
 
 @media (max-width: 991px) {
-  .jnu-usp-tagline {
-    margin-top: 8px;
-    max-width: 100%;
+  .jnu-usp-tagline-wrap {
+    margin-top: 10px;
   }
 }
 
-/* Bento Card Common Base */
+/* ===================================================================
+   Bento Cards Grid
+=================================================================== */
 .jnu-bento-card {
-  border-radius: 20px;
+  border-radius: var(--card-radius, 20px);
   padding: 24px 22px;
-  transition: var(--jnu-transition);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  min-height: 245px;
   position: relative;
   text-align: left !important;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .jnu-bento-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--jnu-shadow-md);
 }
 
-/* Faded Background Image Layer inside Bento Cards */
+/* Card Background Faded Image (aligned right with left fade mask) */
 .jnu-bento-bg-img {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  right: 0;
+  width: 62%;
   height: 100%;
   background-size: cover;
-  background-position: center;
+  background-position: right center;
   background-repeat: no-repeat;
   pointer-events: none;
-  z-index: 0;
-  transition: transform 0.45s ease, opacity 0.45s ease;
-}
-
-/* Faded opacity tuning for white cards */
-.jnu-bento-card-white .jnu-bento-bg-img {
-  opacity: 0.07;
-  filter: grayscale(30%);
-}
-
-.jnu-bento-card-white:hover .jnu-bento-bg-img {
-  opacity: 0.14;
-  transform: scale(1.05);
-}
-
-/* Faded opacity tuning for dark navy card */
-.jnu-bento-card-dark .jnu-bento-bg-img {
-  opacity: 0.15;
-  filter: saturate(110%);
-}
-
-.jnu-bento-card-dark:hover .jnu-bento-bg-img {
-  opacity: 0.22;
-  transform: scale(1.05);
-}
-
-/* Faded opacity tuning for academic blue card */
-.jnu-bento-card-blue .jnu-bento-bg-img {
-  opacity: 0.16;
-  filter: saturate(110%);
-}
-
-.jnu-bento-card-blue:hover .jnu-bento-bg-img {
-  opacity: 0.24;
-  transform: scale(1.05);
-}
-
-/* Faded opacity tuning for crimson card */
-.jnu-bento-card-crimson .jnu-bento-bg-img {
-  opacity: 0.16;
-  filter: saturate(110%);
-}
-
-.jnu-bento-card-crimson:hover .jnu-bento-bg-img {
-  opacity: 0.24;
-  transform: scale(1.05);
-}
-
-/* Ensure all content (icons, titles, desc) sits cleanly above the background image */
-.jnu-bento-card>*:not(.jnu-bento-bg-img) {
-  position: relative;
   z-index: 1;
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0.85) 75%, rgba(0, 0, 0, 1) 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0.85) 75%, rgba(0, 0, 0, 1) 100%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
 }
 
-/* Card 1: Large Featured Dark Navy Card */
-.jnu-bento-card-dark {
-  background-color: var(--jnu-primary-navy);
-  color: #FFFFFF;
-  min-height: 340px;
-  padding: 34px 28px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-@media (max-width: 991px) {
-  .jnu-bento-card-dark {
-    min-height: 240px;
-    padding: 26px 20px;
-  }
-}
-
-/* Card 4: Vibrant Academic Blue Card */
-.jnu-bento-card-blue {
-  background-color: var(--jnu-academic-blue);
-  color: #FFFFFF;
-  padding: 26px 24px;
-}
-
-/* Card 7: JNU Crimson Card (Replaces Yellow in reference image) */
-.jnu-bento-card-crimson {
-  background-color: var(--jnu-secondary-crimson);
-  color: #FFFFFF;
-  padding: 24px 20px;
-}
-
-/* White Standard Bento Cards (Cards 2, 3, 5, 6, 8) */
+/* White Bento Cards (Cards 2, 3, 4, 5, 7, 8) */
 .jnu-bento-card-white {
   background-color: #FFFFFF;
-  border: 1px solid #27282b;
-  color: var(--jnu-text-heading);
-  padding: 22px 18px;
+  border: 1px solid var(--card-outer-gray, #e1e4e8);
+  box-shadow: 0 4px 18px rgba(7, 34, 79, 0.04);
 }
 
 .jnu-bento-card-white:hover {
-  border-color: rgba(17, 32, 73, 0.25);
+  border-color: rgba(7, 34, 79, 0.22);
+  box-shadow: 0 12px 30px rgba(7, 34, 79, 0.08);
 }
 
-/* Icon Badges */
+.jnu-bento-card-white .jnu-bento-bg-img {
+  opacity: 0.24;
+  filter: contrast(105%) saturate(105%);
+}
+
+.jnu-bento-card-white:hover .jnu-bento-bg-img {
+  opacity: 0.35;
+  transform: scale(1.04);
+}
+
+/* Dark Navy Featured Bento Cards (Card 1 & Card 6) */
+.jnu-bento-card-dark {
+  background: linear-gradient(135deg, #07224f 0%, #051736 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 26px rgba(5, 23, 54, 0.18);
+  color: #FFFFFF;
+}
+
+.jnu-bento-card-dark:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 16px 36px rgba(5, 23, 54, 0.28);
+}
+
+.jnu-bento-card-dark .jnu-bento-bg-img {
+  opacity: 0.48;
+  filter: contrast(115%) saturate(110%);
+}
+
+.jnu-bento-card-dark:hover .jnu-bento-bg-img {
+  opacity: 0.60;
+  transform: scale(1.04);
+}
+
+/* Card Content Layering */
+.jnu-bento-card>*:not(.jnu-bento-bg-img) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Squircle Icon Badges */
 .jnu-bento-icon {
   width: 44px;
   height: 44px;
@@ -924,43 +950,36 @@ a {
   align-items: center;
   justify-content: center;
   font-size: 1.25rem;
-  margin-bottom: 22px;
   flex-shrink: 0;
-  transition: var(--jnu-transition);
+  transition: transform 0.3s ease;
 }
 
 .jnu-bento-card:hover .jnu-bento-icon {
   transform: scale(1.08);
 }
 
-/* Icon Badge Color Profiles */
-.icon-badge-dark {
-  background: rgba(255, 255, 255, 0.12);
-  color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+.icon-badge-white {
+  background: #EBF2FA;
+  color: var(--navy-blue, #07224f);
+  border: 1px solid #DCE7F5;
 }
 
-.icon-badge-blue {
-  background: rgba(255, 255, 255, 0.18);
+.icon-badge-dark {
+  background: rgba(255, 255, 255, 0.15);
   color: #FFFFFF;
   border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(4px);
 }
 
-.icon-badge-crimson {
-  background: rgba(255, 255, 255, 0.2);
-  color: #FFFFFF;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-}
-
-.icon-badge-white {
-  background: #EBF1FB;
-  color: var(--jnu-primary-navy);
-  border: 1px solid #DCE5F5;
+/* Card Bottom Block */
+.jnu-bento-bottom {
+  margin-top: auto;
+  padding-top: 18px;
 }
 
 /* Typography inside Bento Cards */
 .jnu-bento-title {
-  font-family: var(--font-heading) !important;
+  font-family: var(--font-heading, 'Archivo', sans-serif) !important;
   font-size: 1.12rem;
   font-weight: 700;
   line-height: 1.25;
@@ -968,47 +987,112 @@ a {
   text-align: left !important;
 }
 
+.jnu-bento-card-white .jnu-bento-title {
+  color: var(--navy-blue, #07224f) !important;
+}
+
 .jnu-bento-card-dark .jnu-bento-title {
-  font-size: clamp(1.4rem, 2vw, 1.85rem);
+  font-size: clamp(1.28rem, 1.8vw, 1.55rem);
   font-weight: 800;
   color: #FFFFFF !important;
-  margin-bottom: 10px;
-}
-
-.jnu-bento-card-blue .jnu-bento-title,
-.jnu-bento-card-crimson .jnu-bento-title {
-  color: #FFFFFF !important;
-  font-size: 1.15rem;
-}
-
-.jnu-bento-card-white .jnu-bento-title {
-  color: var(--jnu-primary-navy) !important;
 }
 
 .jnu-bento-desc {
-  font-family: var(--font-body);
+  font-family: var(--font-body, 'Montserrat', sans-serif);
   font-size: 0.84rem;
   line-height: 1.45;
   margin-bottom: 0;
   text-align: left !important;
 }
 
-.jnu-bento-card-dark .jnu-bento-desc {
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 0.92rem;
-}
-
-.jnu-bento-card-blue .jnu-bento-desc,
-.jnu-bento-card-crimson .jnu-bento-desc {
-  color: rgba(255, 255, 255, 0.9);
-}
-
 .jnu-bento-card-white .jnu-bento-desc {
-  color: var(--jnu-text-muted);
+  color: #5A6578;
 }
 
-@media (max-width: 576px) {
+.jnu-bento-card-dark .jnu-bento-desc {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* Accent Underline Bar */
+.jnu-bento-accent-line {
+  display: block;
+  width: 34px;
+  height: 3.5px;
+  border-radius: 2px;
+  margin-top: 14px;
+}
+
+.jnu-bento-accent-line.line-navy {
+  background-color: var(--navy-blue, #07224f);
+}
+
+.jnu-bento-accent-line.line-white {
+  background-color: #FFFFFF;
+}
+
+/* Card 8: Full Width Sleek Horizontal Strip */
+.jnu-bento-card-horizontal {
+  min-height: 84px;
+  padding: 16px 28px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jnu-bento-bg-img-horizontal {
+  width: 48%;
+  opacity: 0.28;
+}
+
+.jnu-bento-card-horizontal:hover .jnu-bento-bg-img-horizontal {
+  opacity: 0.40;
+}
+
+.jnu-bento-h-content {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.jnu-bento-h-divider {
+  width: 1.5px;
+  height: 34px;
+  background-color: var(--card-outer-gray, #e1e4e8);
+  margin: 0 20px;
+  flex-shrink: 0;
+}
+
+.jnu-bento-h-text {
+  text-align: left;
+}
+
+.jnu-bento-h-text .jnu-bento-title {
+  margin-bottom: 2px;
+  font-size: 1.15rem;
+}
+
+.jnu-bento-h-text .jnu-bento-desc {
+  font-size: 0.86rem;
+  color: #5A6578;
+}
+
+/* Mobile & Tablet Adjustments */
+@media (max-width: 991px) {
   .jnu-bento-card {
+    min-height: 220px;
+    padding: 20px 18px;
+  }
+
+  .jnu-bento-card-horizontal {
+    padding: 16px 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .jnu-bento-card {
+    min-height: 200px;
     padding: 18px 16px;
     border-radius: 16px;
   }
@@ -1017,15 +1101,36 @@ a {
     width: 38px;
     height: 38px;
     font-size: 1.1rem;
-    margin-bottom: 16px;
+    border-radius: 10px;
   }
 
   .jnu-bento-title {
-    font-size: 1.02rem;
+    font-size: 1.05rem;
   }
 
   .jnu-bento-desc {
     font-size: 0.8rem;
+  }
+
+  .jnu-bento-card-horizontal {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px 16px;
+    min-height: auto;
+  }
+
+  .jnu-bento-h-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .jnu-bento-h-divider {
+    display: none !important;
+  }
+
+  .jnu-bento-bg-img-horizontal {
+    width: 65%;
   }
 }
 
@@ -1081,7 +1186,7 @@ a {
 
 .jnu-program-tab:hover {
   transform: translateX(4px);
-  border-color: rgba(181, 39, 89, 0.4);
+  border-color: rgba(197, 24, 87, 0.4);
   box-shadow: var(--jnu-shadow-sm);
 }
 
@@ -1112,9 +1217,9 @@ a {
 
 /* Active Tab */
 .jnu-program-tab.active {
-  background-color: var(--jnu-secondary-crimson);
-  border-color: var(--jnu-secondary-crimson);
-  box-shadow: 0 10px 25px rgba(181, 39, 89, 0.3);
+  background-color: #0b2858eb;
+  border-color: #686f7c;
+  box-shadow: 0 10px 25px #63738d;
 }
 
 .jnu-program-tab.active .jnu-tab-num {
@@ -1134,8 +1239,8 @@ a {
   background-color: #FFFFFF;
   border-radius: 26px;
   padding: 28px;
-  border: 1px solid #E8ECF5;
-  box-shadow: 0 15px 40px rgba(17, 32, 73, 0.05);
+  border: 1px solid #e1e4e8;
+  box-shadow: 0 15px 40px rgba(7, 34, 79, 0.05);
   height: 100%;
 }
 
@@ -1172,7 +1277,7 @@ a {
 .jnu-student-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(17, 32, 73, 0.75) 0%, rgba(181, 39, 89, 0.25) 50%, transparent 100%);
+  background: linear-gradient(to top, rgba(7, 34, 79, 0.75) 0%, rgba(197, 24, 87, 0.25) 50%, transparent 100%);
   display: flex;
   align-items: flex-end;
   padding: 18px;
@@ -1250,7 +1355,7 @@ a {
 
 /* Course Chips (2 cols x 3 rows) */
 .jnu-course-chip {
-  background-color: #fff0f1;
+  background-color: #ededed;
   border: 1px solid #36383b;
   border-radius: 12px;
   padding: 12px 14px;
@@ -1262,7 +1367,7 @@ a {
 .jnu-course-chip:hover {
   border-color: var(--jnu-secondary-crimson);
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(17, 32, 73, 0.06);
+  box-shadow: 0 4px 14px rgba(7, 34, 79, 0.06);
 }
 
 .jnu-course-name {
@@ -1295,7 +1400,7 @@ a {
   font-weight: 700;
   padding: 12px 28px;
   border-radius: 999px;
-  box-shadow: 0 6px 20px rgba(181, 39, 89, 0.3);
+  box-shadow: 0 6px 20px rgba(197, 24, 87, 0.3);
   transition: var(--jnu-transition);
   margin-top: 24px;
   border: none;
@@ -1306,7 +1411,7 @@ a {
   background-color: var(--jnu-secondary-dark);
   color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(181, 39, 89, 0.4);
+  box-shadow: 0 8px 25px rgba(197, 24, 87, 0.4);
 }
 
 .jnu-program-cta-btn i {
@@ -1377,8 +1482,8 @@ a {
 .jnu-pedagogy-card {
   background-color: #FFFFFF;
   border-radius: 22px;
-  border: 1px solid #E6E9F2;
-  box-shadow: 0 10px 30px rgba(17, 32, 73, 0.04);
+  border: 1px solid #e1e4e8;
+  box-shadow: 0 10px 30px rgba(7, 34, 79, 0.04);
   overflow: hidden;
   height: 100%;
   display: flex;
@@ -1388,8 +1493,8 @@ a {
 
 .jnu-pedagogy-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 16px 36px rgba(17, 32, 73, 0.08);
-  border-color: rgba(181, 39, 89, 0.3);
+  box-shadow: 0 16px 36px rgba(7, 34, 79, 0.08);
+  border-color: rgba(197, 24, 87, 0.3);
 }
 
 /* Card Header Banner */
@@ -1416,7 +1521,7 @@ a {
 
 .jnu-pedagogy-header.header-group-3 {
   background-color: var(--jnu-badge-bg);
-  /* JNU Deep Maroon / Wine #7A152E */
+  /* JNU Deep Maroon / Wine #d81b60 */
 }
 
 .jnu-pedagogy-header-content {
@@ -1512,17 +1617,17 @@ a {
 
 .jnu-method-badge.badge-group-1 {
   background-color: var(--jnu-secondary-crimson);
-  box-shadow: 0 3px 10px rgba(181, 39, 89, 0.3);
+  box-shadow: 0 3px 10px rgba(197, 24, 87, 0.3);
 }
 
 .jnu-method-badge.badge-group-2 {
   background-color: var(--jnu-primary-navy);
-  box-shadow: 0 3px 10px rgba(17, 32, 73, 0.25);
+  box-shadow: 0 3px 10px rgba(7, 34, 79, 0.25);
 }
 
 .jnu-method-badge.badge-group-3 {
   background-color: var(--jnu-badge-bg);
-  box-shadow: 0 3px 10px rgba(122, 21, 46, 0.3);
+  box-shadow: 0 3px 10px rgba(216, 27, 96, 0.3);
 }
 
 .jnu-method-content {
@@ -1718,14 +1823,14 @@ a {
   border-radius: 14px;
   background-color: #FFFFFF;
   border: 1px solid var(--jnu-frame-border);
-  box-shadow: 0 4px 14px rgba(17, 32, 73, 0.03);
+  box-shadow: 0 4px 14px rgba(7, 34, 79, 0.03);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-align: left !important;
 }
 
 .jnu-infra-feature-item:hover {
-  border-color: rgba(181, 39, 89, 0.35);
-  box-shadow: 0 8px 20px rgba(17, 32, 73, 0.06);
+  border-color: rgba(197, 24, 87, 0.35);
+  box-shadow: 0 8px 20px rgba(7, 34, 79, 0.06);
   transform: translateX(3px);
 }
 
@@ -1734,7 +1839,7 @@ a {
   min-width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: rgba(181, 39, 89, 0.09);
+  background: rgba(197, 24, 87, 0.09);
   color: var(--jnu-secondary-crimson);
   display: flex;
   align-items: center;
@@ -1793,14 +1898,14 @@ a {
 .jnu-infra-item-card:hover {
   transform: translateX(3px);
   border-color: var(--jnu-secondary-crimson);
-  box-shadow: 0 4px 12px rgba(17, 32, 73, 0.05);
+  box-shadow: 0 4px 12px rgba(7, 34, 79, 0.05);
 }
 
 .jnu-infra-item-card.active {
   background: linear-gradient(135deg, var(--jnu-secondary-crimson) 0%, var(--jnu-accent-pink) 100%);
   color: #FFFFFF;
   border-color: var(--jnu-secondary-crimson);
-  box-shadow: 0 6px 16px rgba(181, 39, 89, 0.28);
+  box-shadow: 0 6px 16px rgba(197, 24, 87, 0.28);
 }
 
 .jnu-infra-item-left {
@@ -1815,7 +1920,7 @@ a {
   font-weight: 700;
   padding: 3px 8px;
   border-radius: 6px;
-  background: rgba(17, 32, 73, 0.08);
+  background: rgba(7, 34, 79, 0.08);
   color: var(--jnu-primary-navy);
   line-height: 1.2;
 }
@@ -1867,7 +1972,7 @@ a {
   height: 100%;
   min-height: 540px;
   border: 1px solid var(--jnu-frame-border);
-  box-shadow: 0 15px 40px rgba(17, 32, 73, 0.08);
+  box-shadow: 0 15px 40px rgba(7, 34, 79, 0.08);
   background-color: var(--jnu-primary-navy);
 }
 
@@ -1887,7 +1992,7 @@ a {
 .jnu-infra-showcase-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(17, 32, 73, 0.94) 0%, rgba(17, 32, 73, 0.5) 45%, transparent 100%);
+  background: linear-gradient(to top, rgba(7, 34, 79, 0.94) 0%, rgba(7, 34, 79, 0.5) 45%, transparent 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1905,7 +2010,7 @@ a {
   letter-spacing: 1.2px;
   text-transform: uppercase;
   color: #FFFFFF;
-  background: rgba(181, 39, 89, 0.88);
+  background: rgba(197, 24, 87, 0.88);
   backdrop-filter: blur(6px);
   padding: 5px 12px;
   border-radius: 999px;
@@ -2006,7 +2111,7 @@ a {
   background-color: #FFFFFF;
   border-radius: 20px;
   border: 1px solid var(--jnu-frame-border);
-  box-shadow: 0 10px 30px rgba(17, 32, 73, 0.05);
+  box-shadow: 0 10px 30px rgba(7, 34, 79, 0.05);
   padding: 16px 24px;
   display: flex;
   align-items: center;
@@ -2036,7 +2141,7 @@ a {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: rgba(181, 39, 89, 0.1);
+  background-color: rgba(197, 24, 87, 0.1);
   color: var(--jnu-secondary-crimson);
   display: flex;
   align-items: center;
@@ -2073,7 +2178,7 @@ a {
   background-color: #FFFFFF;
   border-radius: 22px;
   border: 1px solid var(--jnu-frame-border);
-  box-shadow: 0 8px 24px rgba(17, 32, 73, 0.04);
+  box-shadow: 0 8px 24px rgba(7, 34, 79, 0.04);
   padding: 22px 20px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   height: 100%;
@@ -2084,8 +2189,8 @@ a {
 
 .jnu-placed-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(181, 39, 89, 0.35);
-  box-shadow: 0 14px 32px rgba(17, 32, 73, 0.08);
+  border-color: rgba(197, 24, 87, 0.35);
+  box-shadow: 0 14px 32px rgba(7, 34, 79, 0.08);
 }
 
 .jnu-placed-card:active {
@@ -2116,7 +2221,7 @@ a {
   font-size: 0.72rem;
   font-weight: 700;
   color: var(--jnu-secondary-crimson);
-  background-color: rgba(181, 39, 89, 0.1);
+  background-color: rgba(197, 24, 87, 0.1);
   padding: 2px 8px;
   border-radius: 6px;
   width: fit-content;
@@ -2184,7 +2289,7 @@ a {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 1px solid rgba(181, 39, 89, 0.3);
+  border: 1px solid rgba(197, 24, 87, 0.3);
   color: var(--jnu-secondary-crimson);
   display: flex;
   align-items: center;
@@ -2246,7 +2351,7 @@ a {
   font-weight: 700;
   padding: 12px 28px;
   border-radius: 999px;
-  box-shadow: 0 6px 20px rgba(181, 39, 89, 0.3);
+  box-shadow: 0 6px 20px rgba(197, 24, 87, 0.3);
   transition: var(--jnu-transition);
   border: none;
   white-space: nowrap;
@@ -2256,7 +2361,7 @@ a {
   background-color: var(--jnu-secondary-dark);
   color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(181, 39, 89, 0.4);
+  box-shadow: 0 8px 25px rgba(197, 24, 87, 0.4);
 }
 
 .jnu-placement-signoff {
@@ -2364,9 +2469,9 @@ a {
   z-index: 0;
   overflow: hidden;
   /* background: 
-    radial-gradient(circle at 92% 12%, rgba(181, 39, 89, 0.06) 0%, transparent 45%),
-    radial-gradient(circle at 8% 88%, rgba(17, 32, 73, 0.04) 0%, transparent 40%),
-    radial-gradient(circle at 55% 45%, rgba(181, 39, 89, 0.02) 0%, transparent 60%); */
+    radial-gradient(circle at 92% 12%, rgba(197, 24, 87, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 8% 88%, rgba(7, 34, 79, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 55% 45%, rgba(197, 24, 87, 0.02) 0%, transparent 60%); */
 }
 
 .jnu-testi-svg-curve {
@@ -2455,7 +2560,7 @@ a {
   position: relative;
   transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
   text-align: left !important;
-  box-shadow: 0 10px 30px rgba(17, 32, 73, 0.05);
+  box-shadow: 0 10px 30px rgba(7, 34, 79, 0.05);
 }
 
 .jnu-story-card:hover {
@@ -2581,8 +2686,8 @@ a {
 }
 
 .jnu-story-card-white:hover {
-  border-color: rgba(181, 39, 89, 0.35);
-  box-shadow: 0 18px 40px rgba(181, 39, 89, 0.12);
+  border-color: rgba(197, 24, 87, 0.35);
+  box-shadow: 0 18px 40px rgba(197, 24, 87, 0.12);
 }
 
 .jnu-story-card-white .jnu-story-quote-svg {
@@ -2606,7 +2711,7 @@ a {
 }
 
 .jnu-story-card-white .jnu-story-arrow-btn {
-  background-color: rgba(181, 39, 89, 0.08);
+  background-color: rgba(197, 24, 87, 0.08);
   color: var(--jnu-secondary-crimson);
 }
 
@@ -2618,14 +2723,14 @@ a {
 
 /* Fourth Card - Sneha Gupta */
 .jnu-story-card-crimson {
-  background: linear-gradient(135deg, #7A152E 0%, #9C1B46 45%, #B52759 100%);
+  background: linear-gradient(135deg, #8c133e 0%, #c51857 50%, #d81b60 100%);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 16px 42px rgba(181, 39, 89, 0.3);
+  box-shadow: 0 16px 42px rgba(197, 24, 87, 0.3);
   overflow: hidden;
 }
 
 .jnu-story-card-crimson:hover {
-  box-shadow: 0 22px 50px rgba(181, 39, 89, 0.42);
+  box-shadow: 0 22px 50px rgba(197, 24, 87, 0.42);
   border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -2689,7 +2794,7 @@ a {
 =========================================== */
 
 .jnu-story-card-navy {
-  background: linear-gradient(135deg, #0d1a3a 0%, #15163e 42%, #52142e 85%, #8B1B42 100%);
+  background: linear-gradient(135deg, #051736 0%, #07224f 45%, #44173d 82%, #c51857 100%);
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 16px 42px rgba(13, 26, 58, 0.28);
   overflow: hidden;
@@ -2747,7 +2852,7 @@ a {
 .jnu-story-card-navy .jnu-story-arrow-btn {
   background-color: var(--jnu-secondary-crimson);
   color: #FFFFFF;
-  box-shadow: 0 4px 14px rgba(181, 39, 89, 0.45);
+  box-shadow: 0 4px 14px rgba(197, 24, 87, 0.45);
 }
 
 .jnu-story-card-navy:hover .jnu-story-arrow-btn {
@@ -2760,14 +2865,14 @@ a {
 =========================================== */
 
 .jnu-story-card-crimson {
-  background: linear-gradient(135deg, #7A152E 0%, #9C1B46 45%, #B52759 100%);
+  background: linear-gradient(135deg, #8c133e 0%, #c51857 50%, #d81b60 100%);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 16px 42px rgba(181, 39, 89, 0.3);
+  box-shadow: 0 16px 42px rgba(197, 24, 87, 0.3);
   overflow: hidden;
 }
 
 .jnu-story-card-crimson:hover {
-  box-shadow: 0 22px 50px rgba(181, 39, 89, 0.42);
+  box-shadow: 0 22px 50px rgba(197, 24, 87, 0.42);
   border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -3040,14 +3145,14 @@ a {
   background: #FFFFFF;
   border: 1px solid var(--jnu-frame-border);
   border-radius: 18px;
-  box-shadow: 0 5px 22px rgba(17, 32, 73, 0.04);
+  box-shadow: 0 5px 22px rgba(7, 34, 79, 0.04);
   transition: var(--jnu-transition);
 }
 
 .recruiter-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(181, 39, 89, 0.35);
-  box-shadow: 0 12px 28px rgba(17, 32, 73, 0.08);
+  border-color: rgba(197, 24, 87, 0.35);
+  box-shadow: 0 12px 28px rgba(7, 34, 79, 0.08);
 }
 
 .recruiter-card img {
@@ -3421,7 +3526,7 @@ a {
   right: -100px;
   width: 360px;
   height: 360px;
-  background: radial-gradient(circle, rgba(181, 39, 89, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(197, 24, 87, 0.08) 0%, transparent 70%);
 }
 
 .jnu-faq-glow-bl {
@@ -3429,7 +3534,7 @@ a {
   left: -110px;
   width: 380px;
   height: 380px;
-  background: radial-gradient(circle, rgba(181, 39, 89, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(197, 24, 87, 0.06) 0%, transparent 70%);
 }
 
 /* FAQ Eyebrow & Titles */
@@ -3479,7 +3584,7 @@ a {
   padding: 16px 20px;
   border: 1px solid var(--jnu-frame-border);
   border-left: 3.5px solid #0a0a0a;
-  box-shadow: 0 4px 18px rgba(17, 32, 73, 0.04);
+  box-shadow: 0 4px 18px rgba(7, 34, 79, 0.04);
   max-width: 420px;
   text-align: left !important;
   transition: all 0.25s ease;
@@ -3487,7 +3592,7 @@ a {
 
 .jnu-faq-help-box:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(17, 32, 73, 0.07);
+  box-shadow: 0 8px 24px rgba(7, 34, 79, 0.07);
 }
 
 .jnu-faq-help-icon {
@@ -3560,13 +3665,13 @@ a {
 }
 
 .jnu-faq-item:hover {
-  border-color: rgba(181, 39, 89, 0.35);
-  box-shadow: 0 6px 20px rgba(17, 32, 73, 0.04);
+  border-color: rgba(197, 24, 87, 0.35);
+  box-shadow: 0 6px 20px rgba(7, 34, 79, 0.04);
 }
 
 .jnu-faq-item.active {
-  border-color: rgba(181, 39, 89, 0.35);
-  box-shadow: 0 8px 26px rgba(181, 39, 89, 0.08);
+  border-color: rgba(197, 24, 87, 0.35);
+  box-shadow: 0 8px 26px rgba(197, 24, 87, 0.08);
 }
 
 .jnu-faq-header {
@@ -3615,7 +3720,7 @@ a {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 1.5px solid rgba(181, 39, 89, 0.45);
+  border: 1.5px solid rgba(197, 24, 87, 0.45);
   color: var(--jnu-secondary-crimson);
   background-color: #FFFFFF;
   display: flex;
@@ -3675,7 +3780,7 @@ a {
 
 .jnu-footer {
   position: relative;
-  background: linear-gradient(145deg, #08163b 0%, #520d4e 50%, #c61857 100%);
+  background: linear-gradient(145deg, #051736 0%, #07224f 35%, #5a1548 68%, #c51857 100%);
   padding: 60px 0 45px;
   color: #FFFFFF;
   text-align: center;
@@ -3754,7 +3859,7 @@ a {
 .jnu-modal .modal-content {
   border-radius: 20px;
   border: 1px solid var(--jnu-frame-border);
-  box-shadow: 0 20px 50px rgba(17, 32, 73, 0.18);
+  box-shadow: 0 20px 50px rgba(7, 34, 79, 0.18);
 }
 
 .jnu-modal .modal-header {
@@ -3813,8 +3918,8 @@ a {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  background: linear-gradient(105deg, rgba(17, 27, 55, 0.94) 0%, rgba(46, 25, 53, 0.92) 35%, rgba(122, 21, 46, 0.92) 70%, rgba(181, 39, 89, 0.94) 100%), url("../images/campus-bg.jpg") center/cover no-repeat;
-  box-shadow: 0 10px 30px rgba(17, 32, 73, 0.12);
+  background: linear-gradient(105deg, rgba(5, 23, 54, 0.95) 0%, rgba(7, 34, 79, 0.94) 28%, rgba(90, 18, 62, 0.92) 65%, rgba(197, 24, 87, 0.94) 100%), url("../images/campus-bg.jpg") center/cover no-repeat;
+  box-shadow: 0 10px 30px rgba(7, 34, 79, 0.12);
   padding: 30px 16px;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -3839,7 +3944,7 @@ a {
   right: -10%;
   width: 320px;
   height: 320px;
-  background: radial-gradient(circle, rgba(181, 39, 89, 0.35) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(197, 24, 87, 0.35) 0%, transparent 70%);
   pointer-events: none;
   z-index: 1;
 }
@@ -4079,7 +4184,7 @@ a {
 }
 
 .jnu-form-card:hover {
-  box-shadow: 0 16px 45px rgba(17, 32, 73, 0.12);
+  box-shadow: 0 16px 45px rgba(7, 34, 79, 0.12);
 }
 
 /* Subtle Shimmer for High-Priority Action Buttons */
