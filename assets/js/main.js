@@ -211,95 +211,239 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ===================================================================
-  // 4. Infrastructure Dynamic Showcase
+  // 4. Ph.D. Programmes Dynamic Showcase
   // ===================================================================
-  const infraItems = document.querySelectorAll('.jnu-infra-item-card');
-  const showcaseImg = document.getElementById('infraShowcaseImg');
-  const showcaseBadge = document.getElementById('infraShowcaseBadge');
-  const showcaseTitle = document.getElementById('infraShowcaseTitle');
-  const showcaseDesc = document.getElementById('infraShowcaseDesc');
+  const phdCards = document.querySelectorAll('.jnu-phd-item-card');
+  const phdShowcaseImg = document.getElementById('phdShowcaseImg');
+  const phdShowcaseBadgeCat = document.getElementById('phdShowcaseBadgeCat');
+  const phdShowcaseBadgeDuration = document.getElementById('phdShowcaseBadgeDuration');
+  const phdShowcaseTitle = document.getElementById('phdShowcaseTitle');
+  const phdShowcaseSubtag = document.getElementById('phdShowcaseSubtag');
+  const phdShowcaseEligibility = document.getElementById('phdShowcaseEligibility');
+  const phdShowcaseSelection = document.getElementById('phdShowcaseSelection');
+  const phdShowcaseNoteBox = document.getElementById('phdShowcaseNoteBox');
+  const phdShowcaseNote = document.getElementById('phdShowcaseNote');
 
-  const infraData = {
+  const phdData = {
     '1': {
-      title: 'Design & Innovation Studio',
-      badge: 'RESEARCH IN ACTION',
-      desc: 'Next-generation prototyping, 3D printing and engineering development spaces equipped with industry-standard toolsets.',
-      image: 'assets/images/infra-design.jpg'
-    },
-    '2': {
-      title: 'Research Laboratories & AI Hub',
-      badge: 'ADVANCED COMPUTING',
-      desc: 'High-end GPU workstations and dedicated AI clusters designed for deep learning, NLP, and computer vision projects.',
+      title: 'Ph.D. Computer Science and Engineering',
+      subtag: 'Programme: Ph.D. Computer Science',
+      category: 'engineering',
+      categoryLabel: 'Engineering & CS',
+      duration: 'Minimum 3 Years',
+      eligibility: 'M.Tech with minimum 55% marks',
+      selection: 'University Entrance Test or Direct Admission for NET-qualified candidates',
+      note: '',
       image: 'assets/images/infra-research.jpg'
     },
+    '2': {
+      title: 'Ph.D. Electronics and Communication',
+      subtag: '',
+      category: 'engineering',
+      categoryLabel: 'Engineering',
+      duration: 'Minimum 3 Years',
+      eligibility: 'M.Tech with minimum 55% marks',
+      selection: 'University Entrance Test or Direct Admission for NET-qualified candidates',
+      note: '',
+      image: 'assets/images/infra-robotics.jpg'
+    },
     '3': {
-      title: 'Digital Learning Hub',
-      badge: 'SMART CLASSROOMS',
-      desc: 'Interactive digital amphitheaters with hybrid telepresence technology connecting global guest lecturers with students.',
+      title: 'Ph.D. in Computer Science',
+      subtag: '',
+      category: 'engineering',
+      categoryLabel: 'Computer Science',
+      duration: '3 Years',
+      eligibility: 'Postgraduate degree with a minimum of 55% marks in the relevant field',
+      selection: 'Entrance Test and Personal Interview. The process may also include a research orientation writing assignment.',
+      note: '',
       image: 'assets/images/infra-digital.jpg'
     },
     '4': {
-      title: 'Biotechnology & Nanotech Lab',
-      badge: 'BIOTECH RESEARCH',
-      desc: 'Specialized sterile chambers, spectrophotometers, and PCR equipment for molecular biology and bio-engineering research.',
-      image: 'assets/images/infra-research.jpg'
+      title: 'Ph.D. Pharmaceutical Sciences',
+      subtag: '',
+      category: 'sciences',
+      categoryLabel: 'Pharmaceutical Sciences',
+      duration: '3 Years',
+      eligibility: 'M.Pharm in any specialisation with a minimum of 55% marks or equivalent CGPA from PCI-recognised institutions/universities.',
+      selection: 'Entrance Exam + Personal Interview',
+      note: '',
+      image: 'assets/images/usp-research.jpg'
     },
     '5': {
-      title: 'Robotics & Automation Center',
-      badge: 'INDUSTRY 4.0 LAB',
-      desc: 'Industrial robotic arms, PLC automation benches, and IoT sensor arrays for Mechatronics and Automation engineering.',
-      image: 'assets/images/infra-robotics.jpg'
+      title: 'Ph.D. English',
+      subtag: '',
+      category: 'arts',
+      categoryLabel: 'Humanities & Arts',
+      duration: 'Minimum 3 Years',
+      eligibility: 'Postgraduation in English',
+      selection: 'Entrance Test + Personal Interview',
+      note: 'Lab and Library fees will be charged separately.',
+      image: 'assets/images/infra-library.jpg'
     },
     '6': {
-      title: 'Engineering Workshop',
-      badge: 'PRECISION FABRICATION',
-      desc: 'Heavy machining, CNC tooling, casting, and advanced welding facilities fostering hands-on practical fabrication skills.',
+      title: 'Ph.D. Business & Management',
+      subtag: '',
+      category: 'arts',
+      categoryLabel: 'Management',
+      duration: 'Minimum 3 Years',
+      eligibility: 'Postgraduation in Management, Commerce and Economics',
+      selection: 'University Entrance Test or Direct Admission for NET-qualified candidates',
+      note: '',
       image: 'assets/images/infra-design.jpg'
     },
     '7': {
-      title: 'High-Performance Computing Center',
-      badge: 'SUPERCOMPUTING LAB',
-      desc: 'Massive parallel computing clusters supporting intensive computational simulation, finite element modeling, and big data.',
-      image: 'assets/images/infra-digital.jpg'
+      title: 'Ph.D. Education',
+      subtag: '',
+      category: 'arts',
+      categoryLabel: 'Education',
+      duration: 'Minimum 3 Years',
+      eligibility: "1-Year/2-Semester or 2-Year/4-Semester Master's Degree Programme (M.A. Education/M.Ed.) with at least 55% marks in aggregate.",
+      selection: 'University Entrance Test or Direct Admission for NET-qualified candidates',
+      note: 'A relaxation of 5% marks is applicable to SC/ST/OBC (Non-Creamy Layer), Differently-Abled, Economically Weaker Section (EWS) and other eligible categories, as per UGC regulations.',
+      image: 'assets/images/student-phd.jpg'
     },
     '8': {
-      title: 'Cyber Security & Forensics Lab',
-      badge: 'THREAT SIMULATION LAB',
-      desc: 'Air-gapped security testbeds for ethical hacking, digital forensics, network vulnerability assessment, and threat hunting.',
-      image: 'assets/images/infra-robotics.jpg'
+      title: 'Ph.D. Life Sciences',
+      subtag: '',
+      category: 'sciences',
+      categoryLabel: 'Life Sciences',
+      duration: '3 Years',
+      eligibility: 'Postgraduation in a relevant field with a minimum of 55% marks. 5% relaxation for SC/ST candidates.',
+      selection: 'Entrance Test + Personal Interview',
+      note: '5% relaxation for SC/ST candidates.',
+      image: 'assets/images/usp-research.jpg'
     },
     '9': {
-      title: 'Central Digital Library',
-      badge: 'KNOWLEDGE COMMONS',
-      desc: 'Over 100,000 volumes, access to IEEE, Springer, and ScienceDirect journals with dedicated quiet research pods.',
-      image: 'assets/images/infra-library.jpg'
+      title: 'Ph.D. Biotechnology',
+      subtag: '',
+      category: 'sciences',
+      categoryLabel: 'Biotechnology',
+      duration: '3 Years',
+      eligibility: 'Postgraduation in a relevant field with a minimum of 55% marks. 5% relaxation for SC/ST candidates.',
+      selection: 'Entrance Test + Personal Interview',
+      note: '5% relaxation for SC/ST candidates.',
+      image: 'assets/images/infra-research.jpg'
     },
     '10': {
-      title: 'Sports Complex & Student Arena',
-      badge: 'CAMPUS LIFE & FITNESS',
-      desc: 'Olympic-size running track, indoor badminton and basketball courts, gymnasium, and sports pavilion for physical wellness.',
-      image: 'assets/images/infra-sports.jpg'
+      title: 'Ph.D. Microbiology',
+      subtag: '',
+      category: 'sciences',
+      categoryLabel: 'Microbiology',
+      duration: '3 Years',
+      eligibility: 'Postgraduation in a relevant field with a minimum of 55% marks. 5% relaxation for SC/ST candidates.',
+      selection: 'Entrance Test + Personal Interview',
+      note: '5% relaxation for SC/ST candidates.',
+      image: 'assets/images/usp-research.jpg'
+    },
+    '11': {
+      title: 'Ph.D. Bioinformatics',
+      subtag: '',
+      category: 'sciences',
+      categoryLabel: 'Bioinformatics',
+      duration: '3 Years',
+      eligibility: 'Postgraduation in a relevant field with a minimum of 55% marks. 5% relaxation for SC/ST candidates.',
+      selection: 'Entrance Test + Personal Interview',
+      note: '5% relaxation for SC/ST candidates.',
+      image: 'assets/images/infra-digital.jpg'
+    },
+    '12': {
+      title: 'Ph.D. Botany',
+      subtag: '',
+      category: 'sciences',
+      categoryLabel: 'Botany',
+      duration: '3 Years',
+      eligibility: 'Postgraduation in a relevant field with a minimum of 55% marks. 5% relaxation for SC/ST candidates.',
+      selection: 'Entrance Test + Personal Interview',
+      note: '5% relaxation for SC/ST candidates.',
+      image: 'assets/images/usp-research.jpg'
+    },
+    '13': {
+      title: 'Ph.D. Zoology',
+      subtag: '',
+      category: 'sciences',
+      categoryLabel: 'Zoology',
+      duration: '3 Years',
+      eligibility: 'Postgraduation in a relevant field with a minimum of 55% marks. 5% relaxation for SC/ST candidates.',
+      selection: 'Entrance Test + Personal Interview',
+      note: '5% relaxation for SC/ST candidates.',
+      image: 'assets/images/infra-research.jpg'
+    },
+    '14': {
+      title: 'Ph.D. Mathematics',
+      subtag: '',
+      category: 'sciences',
+      categoryLabel: 'Mathematics',
+      duration: '3 Years',
+      eligibility: 'Postgraduation in Mathematics with a minimum of 55% marks. 5% relaxation for SC/ST candidates.',
+      selection: 'Entrance Test + Personal Interview',
+      note: '5% relaxation for SC/ST candidates.',
+      image: 'assets/images/infra-digital.jpg'
+    },
+    '15': {
+      title: 'Ph.D. Physics',
+      subtag: '',
+      category: 'sciences',
+      categoryLabel: 'Physics',
+      duration: '3 Years',
+      eligibility: 'Postgraduation in a relevant field with a minimum of 55% marks. 5% relaxation for SC/ST candidates.',
+      selection: 'Entrance Test + Personal Interview',
+      note: '5% relaxation for SC/ST candidates.',
+      image: 'assets/images/infra-research.jpg'
     }
   };
 
-  if (infraItems.length && showcaseImg && showcaseTitle) {
-    infraItems.forEach(card => {
+  function updatePhdShowcase(id) {
+    const data = phdData[id];
+    if (!data) return;
+
+    if (phdShowcaseImg) {
+      phdShowcaseImg.style.opacity = '0.25';
+      setTimeout(() => {
+        phdShowcaseImg.src = data.image;
+        phdShowcaseImg.style.opacity = '1';
+      }, 130);
+    }
+
+    if (phdShowcaseBadgeCat) {
+      phdShowcaseBadgeCat.innerHTML = `<i class="bi bi-mortarboard-fill"></i> ${data.categoryLabel}`;
+    }
+    if (phdShowcaseBadgeDuration) {
+      phdShowcaseBadgeDuration.innerHTML = `<i class="bi bi-clock-fill"></i> ${data.duration}`;
+    }
+    if (phdShowcaseTitle) {
+      phdShowcaseTitle.textContent = data.title;
+    }
+    if (phdShowcaseSubtag) {
+      if (data.subtag) {
+        phdShowcaseSubtag.textContent = data.subtag;
+        phdShowcaseSubtag.style.display = 'inline-block';
+      } else {
+        phdShowcaseSubtag.style.display = 'none';
+      }
+    }
+    if (phdShowcaseEligibility) {
+      phdShowcaseEligibility.textContent = data.eligibility;
+    }
+    if (phdShowcaseSelection) {
+      phdShowcaseSelection.textContent = data.selection;
+    }
+    if (phdShowcaseNoteBox && phdShowcaseNote) {
+      if (data.note) {
+        phdShowcaseNote.textContent = data.note;
+        phdShowcaseNoteBox.style.display = 'flex';
+      } else {
+        phdShowcaseNoteBox.style.display = 'none';
+      }
+    }
+  }
+
+  if (phdCards.length) {
+    phdCards.forEach(card => {
       card.addEventListener('click', function () {
-        const id = this.getAttribute('data-infra-id');
-        const data = infraData[id];
-        if (!data) return;
-
-        infraItems.forEach(c => c.classList.remove('active'));
+        phdCards.forEach(c => c.classList.remove('active'));
         this.classList.add('active');
-
-        showcaseImg.style.opacity = '0.3';
-        setTimeout(() => {
-          showcaseImg.src = data.image;
-          if (showcaseBadge) showcaseBadge.innerHTML = `<i class="bi bi-circle-fill" style="font-size: 6px;"></i> ${data.badge}`;
-          showcaseTitle.textContent = data.title;
-          if (showcaseDesc) showcaseDesc.textContent = data.desc;
-          showcaseImg.style.opacity = '1';
-        }, 150);
+        const id = this.getAttribute('data-phd-id');
+        updatePhdShowcase(id);
       });
     });
   }
