@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (heroCarouselEl && window.bootstrap) {
     const heroCarousel = new bootstrap.Carousel(heroCarouselEl, {
-      interval: 5000,
-      pause: 'hover',
-      wrap: true
+      interval: false,
+      ride: false,
+      wrap: false
     });
 
     // Update custom dots when slide changes
@@ -106,108 +106,134 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ===================================================================
-  // 3. Academic Programs Tabs Switcher
+  // 3. World-Class Infrastructure 5-Card Interactive Carousel
   // ===================================================================
-  const programTabs = document.querySelectorAll('.jnu-program-tab');
-  const contentTitle = document.getElementById('programContentTitle');
-  const contentSub = document.getElementById('programContentSub');
-  const studentImg = document.getElementById('programStudentImg');
-  const studentBadge = document.getElementById('programStudentBadge');
-  const programCtaBtn = document.getElementById('programCtaBtn');
-  const coursesGrid = document.getElementById('programCoursesGrid');
+  const infraStage = document.getElementById('infraCarouselStage');
+  const infraCards = document.querySelectorAll('.jnu-infra-card');
+  const infraPrevBtn = document.getElementById('infraCarouselPrev');
+  const infraNextBtn = document.getElementById('infraCarouselNext');
+  const infraContainer = document.getElementById('infraCarouselContainer');
 
-  const programData = {
-    ug: {
-      title: 'Under Graduate',
-      subtitle: 'Build strong foundations with industry-aligned degree programs.',
-      image: 'assets/images/student-ug.jpg',
-      badge: 'Degree Programs',
-      btnText: 'View Under Graduate programs',
-      courses: [
-        { name: 'B.Tech', dept: 'Engineering & Technology' },
-        { name: 'BBA', dept: 'Management' },
-        { name: 'BCA', dept: 'Computer Applications' },
-        { name: 'B.Sc', dept: 'Science' },
-        { name: 'B.Com', dept: 'Commerce' },
-        { name: 'BA', dept: 'Humanities' }
-      ]
-    },
-    pg: {
-      title: 'Post Graduate',
-      subtitle: "Advance your expertise with master's degrees built for leadership and innovation.",
-      image: 'assets/images/student-pg.jpg',
-      badge: "Master's Programs",
-      btnText: 'View Post Graduate programs',
-      courses: [
-        { name: 'M.Tech', dept: 'CSE / AI & Robotics / VLSI' },
-        { name: 'MBA', dept: 'Business & Tech Analytics' },
-        { name: 'MCA', dept: 'Cloud Computing & DevOps' },
-        { name: 'M.Sc', dept: 'Data Science & Cyber Tech' },
-        { name: 'M.Com', dept: 'Financial Engineering' },
-        { name: 'MA', dept: 'Media & Global Relations' }
-      ]
-    },
-    doc: {
-      title: 'Doctoral Programs',
-      subtitle: 'Conduct high-impact research with fully funded fellowships and state-of-the-art labs.',
-      image: 'assets/images/student-phd.jpg',
-      badge: 'Research Programs',
-      btnText: 'View Doctoral programs',
-      courses: [
-        { name: 'Ph.D.', dept: 'Computer Science & Engineering' },
-        { name: 'Ph.D.', dept: 'Electronics & Communication' },
-        { name: 'Ph.D.', dept: 'Mechanical & Automation' },
-        { name: 'Ph.D.', dept: 'Civil & Smart Infrastructure' },
-        { name: 'Ph.D.', dept: 'Applied Sciences & Nanotech' },
-        { name: 'Ph.D.', dept: 'Management & Tech Innovation' }
-      ]
-    }
-  };
+  if (infraCards.length && infraStage) {
+    let activeIndex = 2; // Default to 150+ Acre & Green Campus (Card index 2) as featured in mockup
+    const totalCards = infraCards.length;
+    let autoPlayTimer = null;
+    let isHovered = false;
 
-  if (programTabs.length && contentTitle && coursesGrid) {
-    programTabs.forEach(tab => {
-      tab.addEventListener('click', function () {
-        const tabKey = this.getAttribute('data-tab');
-        const data = programData[tabKey];
-        if (!data) return;
-
-        programTabs.forEach(t => t.classList.remove('active'));
-        this.classList.add('active');
-
-        const displayCard = document.querySelector('.jnu-program-display-card');
-        if (displayCard) {
-          displayCard.style.opacity = '0.5';
-          displayCard.style.transition = 'opacity 0.2s ease';
+    function renderCarousel() {
+      infraCards.forEach((card, idx) => {
+        card.classList.remove('pos-0', 'pos-1', 'pos-2', 'pos-3', 'pos-4', 'card-active');
+        const diff = (idx - activeIndex + totalCards) % totalCards;
+        card.classList.add(`pos-${diff}`);
+        if (diff === 0) {
+          card.classList.add('card-active');
         }
+      });
+    }
 
-        setTimeout(() => {
-          contentTitle.textContent = data.title;
-          contentSub.textContent = data.subtitle;
-          if (studentImg) studentImg.src = data.image;
-          if (studentBadge) studentBadge.textContent = data.badge;
-          if (programCtaBtn) {
-            programCtaBtn.innerHTML = `<span>${data.btnText}</span> <i class="bi bi-arrow-right"></i>`;
-          }
+    function nextSlide() {
+      activeIndex = (activeIndex + 1) % totalCards;
+      renderCarousel();
+    }
 
-          let coursesHtml = '';
-          data.courses.forEach(c => {
-            coursesHtml += `
-              <div class="col-12 col-sm-6">
-                <div class="jnu-course-chip">
-                  <div class="jnu-course-name">${c.name}</div>
-                  <div class="jnu-course-dept">${c.dept}</div>
-                </div>
-              </div>
-            `;
-          });
-          coursesGrid.innerHTML = coursesHtml;
+    function prevSlide() {
+      activeIndex = (activeIndex - 1 + totalCards) % totalCards;
+      renderCarousel();
+    }
 
-          if (displayCard) {
-            displayCard.style.opacity = '1';
-          }
-        }, 150);
+    function goToSlide(idx) {
+      activeIndex = idx % totalCards;
+      renderCarousel();
+    }
+
+    if (infraNextBtn) {
+      infraNextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoPlay();
+      });
+    }
+
+    if (infraPrevBtn) {
+      infraPrevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoPlay();
+      });
+    }
+
+    // Direct card click interaction
+    infraCards.forEach((card, idx) => {
+      card.addEventListener('click', () => {
+        const diff = (idx - activeIndex + totalCards) % totalCards;
+        if (diff !== 0) {
+          goToSlide(idx);
+          resetAutoPlay();
+        }
       });
     });
+
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    infraStage.addEventListener('touchstart', (e) => {
+      if (e.changedTouches && e.changedTouches[0]) {
+        touchStartX = e.changedTouches[0].screenX;
+      }
+      stopAutoPlay();
+    }, { passive: true });
+
+    infraStage.addEventListener('touchend', (e) => {
+      if (e.changedTouches && e.changedTouches[0]) {
+        touchEndX = e.changedTouches[0].screenX;
+      }
+      handleSwipe();
+      startAutoPlay();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const swipeDistance = touchEndX - touchStartX;
+      if (Math.abs(swipeDistance) > 40) {
+        if (swipeDistance < 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+    }
+
+    // Auto Play with hover pause
+    function startAutoPlay() {
+      stopAutoPlay();
+      if (!isHovered) {
+        autoPlayTimer = setInterval(nextSlide, 6500);
+      }
+    }
+
+    function stopAutoPlay() {
+      if (autoPlayTimer) {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = null;
+      }
+    }
+
+    function resetAutoPlay() {
+      stopAutoPlay();
+      startAutoPlay();
+    }
+
+    if (infraContainer) {
+      infraContainer.addEventListener('mouseenter', () => {
+        isHovered = true;
+        stopAutoPlay();
+      });
+      infraContainer.addEventListener('mouseleave', () => {
+        isHovered = false;
+        startAutoPlay();
+      });
+    }
+
+    // Initial render
+    renderCarousel();
+    startAutoPlay();
   }
 
   // ===================================================================
@@ -482,37 +508,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ===================================================================
-  // 6. FAQ Section: Accordion Plus/Minus Toggle
-  // ===================================================================
-  const faqAccordion = document.getElementById('jnuFaqAccordion');
-  if (faqAccordion) {
-    const faqCollapses = faqAccordion.querySelectorAll('.accordion-collapse');
 
-    faqCollapses.forEach(collapseEl => {
-      collapseEl.addEventListener('show.bs.collapse', function () {
-        const item = this.closest('.jnu-faq-item');
-        if (item) {
-          item.classList.add('active');
-          const icon = item.querySelector('.jnu-faq-toggle-icon i');
-          if (icon) {
-            icon.className = 'bi bi-dash';
-          }
-        }
-      });
-
-      collapseEl.addEventListener('hide.bs.collapse', function () {
-        const item = this.closest('.jnu-faq-item');
-        if (item) {
-          item.classList.remove('active');
-          const icon = item.querySelector('.jnu-faq-toggle-icon i');
-          if (icon) {
-            icon.className = 'bi bi-plus';
-          }
-        }
-      });
-    });
-  }
 
   // ===================================================================
   // 7. Statistics Section: Smooth Animated Counters
@@ -592,6 +588,67 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       revealElements.forEach(el => el.classList.add('jnu-revealed'));
     }
+  }
+
+  // ===================================================================
+  // 9. Why Choose JNU - Doctoral Research Tabs Interactivity
+  // ===================================================================
+  const whyTabs = document.querySelectorAll('.jnu-why-tab');
+  const whyPanels = document.querySelectorAll('.jnu-why-panel');
+  const tabsWrap = document.querySelector('.jnu-why-tabs-wrap');
+
+  if (whyTabs.length && whyPanels.length) {
+    function switchWhyTab(targetTab) {
+      const tabNum = targetTab.getAttribute('data-why-tab');
+      if (!tabNum) return;
+
+      // Update tab buttons
+      whyTabs.forEach(t => {
+        const isActive = t === targetTab;
+        t.classList.toggle('active', isActive);
+        t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+
+      // Update panels
+      whyPanels.forEach(p => {
+        const pId = p.id;
+        const isMatch = pId === 'why-panel-' + tabNum;
+        p.classList.toggle('active', isMatch);
+      });
+
+      // On mobile/tablet, scroll active tab into view smoothly
+      if (tabsWrap && window.innerWidth < 992) {
+        targetTab.scrollIntoView({
+          behavior: 'smooth',
+          inline: 'center',
+          block: 'nearest'
+        });
+      }
+    }
+
+    whyTabs.forEach(tab => {
+      tab.addEventListener('click', () => switchWhyTab(tab));
+
+      // Keyboard arrow navigation
+      tab.addEventListener('keydown', (e) => {
+        const tabList = Array.from(whyTabs);
+        const index = tabList.indexOf(tab);
+        let nextIndex = null;
+
+        if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+          e.preventDefault();
+          nextIndex = (index + 1) % tabList.length;
+        } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+          e.preventDefault();
+          nextIndex = (index - 1 + tabList.length) % tabList.length;
+        }
+
+        if (nextIndex !== null) {
+          tabList[nextIndex].focus();
+          switchWhyTab(tabList[nextIndex]);
+        }
+      });
+    });
   }
 
 });
