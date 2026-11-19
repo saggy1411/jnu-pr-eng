@@ -219,33 +219,14 @@ a {
   border-color: rgba(255, 255, 255, 0.25);
 }
 
-/* Crimson Pulse Indicator Dot */
+/* Status Indicator Dot */
 .jnu-nav-pulse-dot {
-  width: 13px;
-  height: 13px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background-color: #d81b60;
-  box-shadow: 0 0 0 0 rgba(216, 27, 96, 0.7);
+  background-color: var(--berry-pink, #c51857);
   display: inline-block;
   flex-shrink: 0;
-  animation: jnuDotPulse 1.8s infinite;
-}
-
-@keyframes jnuDotPulse {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(216, 27, 96, 0.7);
-  }
-
-  70% {
-    transform: scale(1.05);
-    box-shadow: 0 0 0 6px rgba(216, 27, 96, 0);
-  }
-
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(216, 27, 96, 0);
-  }
 }
 
 .jnu-nav-pill-text {
@@ -359,20 +340,16 @@ a {
   z-index: 1;
 }
 
-/* Dual-Tone Overlay matching exact reference image */
+/* Hero Dark Vignette Overlay */
 .jnu-hero-overlay {
   position: absolute;
   inset: 0;
-  background: var(--jnu-hero-overlay);
+  background: linear-gradient(to top, rgba(7, 34, 79, 0.94) 0%, rgba(7, 34, 79, 0.48) 55%, rgba(7, 34, 79, 0.28) 100%);
   z-index: 2;
-  mix-blend-mode: multiply;
-  opacity: 0.95;
 }
 
 .jnu-hero-gradient-tint {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
+  display: none;
 }
 
 /* Hero Content Layers */
@@ -383,7 +360,7 @@ a {
   min-height: inherit;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 30px 28px;
   width: 100%;
   box-sizing: border-box;
@@ -391,84 +368,7 @@ a {
 
 @media (max-width: 768px) {
   .jnu-hero-content-wrap {
-    padding: 18px 14px;
-  }
-}
-
-/* Top Bar inside Banner: Dots Indicator & Arrow Controls */
-.jnu-hero-topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-/* Slider Dots Indicator */
-.jnu-slider-dots {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(7, 34, 79, 0.45);
-  backdrop-filter: blur(8px);
-  padding: 5px 9px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.jnu-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
-  padding: 0;
-}
-
-.jnu-dot.active {
-  width: 22px;
-  height: 7px;
-  border-radius: 999px;
-  background-color: var(--jnu-accent-pink);
-  box-shadow: 0 0 10px rgba(198, 26, 84, 0.8);
-}
-
-/* Nav Arrow Buttons */
-.jnu-slider-arrows {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.jnu-arrow-btn {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(6px);
-  color: var(--jnu-primary-navy);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: var(--jnu-transition);
-}
-
-.jnu-arrow-btn:hover {
-  background: #FFFFFF;
-  color: var(--jnu-secondary-crimson);
-  transform: scale(1.06);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width: 576px) {
-  .jnu-arrow-btn {
-    width: 28px;
-    height: 28px;
-    font-size: 0.75rem;
+    padding: 22px 18px;
   }
 }
 
@@ -1100,6 +1000,7 @@ a {
   }
 }
 
+
 /* ===================================================================
    Section 3: World-Class Infrastructure (5-Card Interactive Carousel)
 =================================================================== */
@@ -1577,6 +1478,34 @@ a {
   text-align: left;
 }
 
+.jnu-why-eyebrow-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.jnu-why-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--jnu-secondary-crimson, #c51857);
+  margin-bottom: 0;
+}
+
+.jnu-why-main-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  color: var(--jnu-text-secondary, #475569);
+  line-height: 1.6;
+  max-width: 680px;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
 .jnu-why-main-title {
   font-family: var(--font-heading) !important;
   font-size: clamp(2.1rem, 3.6vw, 3rem);
@@ -1625,8 +1554,13 @@ a {
   flex-direction: column;
   gap: 4px;
   cursor: pointer;
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.22s ease,
+              border-color 0.22s ease,
+              background-color 0.22s ease;
   outline: none;
+  position: relative;
+  will-change: transform;
 }
 
 .jnu-why-tab:focus-visible {
@@ -1640,7 +1574,7 @@ a {
   font-weight: 700;
   color: #64748b;
   letter-spacing: 0.5px;
-  transition: color 0.25s ease;
+  transition: color 0.22s ease;
 }
 
 .jnu-why-tab-text {
@@ -1649,24 +1583,47 @@ a {
   font-weight: 700;
   color: var(--navy-blue);
   line-height: 1.25;
-  transition: color 0.25s ease;
+  transition: color 0.22s ease;
 }
 
-.jnu-why-tab:hover:not(.active) {
+/* Pop Effect on Hover & Touch */
+.jnu-why-tab:hover {
+  transform: translateY(-4px) scale(1.025);
+  box-shadow: 0 10px 24px rgba(7, 34, 79, 0.12), 0 2px 6px rgba(197, 24, 87, 0.08);
   border-color: rgba(197, 24, 87, 0.45);
-  box-shadow: 0 4px 14px rgba(7, 34, 79, 0.06);
-  transform: translateX(4px);
 }
 
+.jnu-why-tab:hover .jnu-why-tab-num {
+  color: var(--berry-pink);
+}
+
+/* Tactile Pop on Touch/Click Down */
+.jnu-why-tab:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow: 0 3px 8px rgba(7, 34, 79, 0.1);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+/* Active Selected Tab Card */
 .jnu-why-tab.active {
   background: var(--navy-blue);
   border-color: var(--navy-blue);
-  box-shadow: 0 8px 24px rgba(7, 34, 79, 0.18);
-  transform: none;
+  box-shadow: 0 8px 24px rgba(7, 34, 79, 0.22);
+  transform: translateY(-2px) scale(1.015);
+}
+
+.jnu-why-tab.active:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(7, 34, 79, 0.28);
+}
+
+.jnu-why-tab.active:active {
+  transform: scale(0.97);
+  box-shadow: 0 4px 12px rgba(7, 34, 79, 0.2);
 }
 
 .jnu-why-tab.active .jnu-why-tab-num {
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .jnu-why-tab.active .jnu-why-tab-text {
@@ -1909,8 +1866,16 @@ a {
     scroll-snap-align: start;
   }
 
-  .jnu-why-tab:hover:not(.active) {
-    transform: none;
+  .jnu-why-tab:hover {
+    transform: translateY(-3px) scale(1.02);
+  }
+
+  .jnu-why-tab:active {
+    transform: scale(0.965);
+  }
+
+  .jnu-why-tab.active {
+    transform: translateY(-2px) scale(1.02);
   }
 
   .jnu-why-card-container {
@@ -3124,7 +3089,9 @@ a {
 =========================================== */
 
 .jnu-story-card {
-  border-radius: var(--card-radius, 20px);
+  background-color: #FFFFFF;
+  border: 1px solid var(--card-outer-gray, #e1e4e8);
+  border-radius: var(--card-radius, 16px);
   padding: 26px 26px 22px;
   display: flex;
   flex-direction: column;
@@ -3134,10 +3101,13 @@ a {
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   text-align: left !important;
   min-height: 275px;
+  box-shadow: 0 4px 16px rgba(7, 34, 79, 0.04);
 }
 
 .jnu-story-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  border-color: rgba(197, 24, 87, 0.35);
+  box-shadow: 0 12px 28px rgba(7, 34, 79, 0.08);
 }
 
 /* Card Top: Quote Icon + Rating Stars */
@@ -3151,6 +3121,7 @@ a {
 .jnu-story-quote-svg {
   width: 26px;
   height: 20px;
+  color: var(--berry-pink, #c51857);
   flex-shrink: 0;
   transition: transform 0.25s ease;
 }
@@ -3171,8 +3142,9 @@ a {
 .jnu-story-text {
   font-family: var(--font-body);
   font-size: 0.90rem;
-  line-height: 1.58;
+  line-height: 1.6;
   font-weight: 500;
+  color: #334155;
   margin: 0 0 24px;
   flex: 1 1 auto;
   text-align: left !important;
@@ -3199,6 +3171,7 @@ a {
   width: 3.5px;
   height: 38px;
   border-radius: 2px;
+  background-color: var(--berry-pink, #c51857);
   flex-shrink: 0;
   display: block;
 }
@@ -3214,6 +3187,7 @@ a {
   font-family: var(--font-heading) !important;
   font-size: 0.98rem;
   font-weight: 700;
+  color: var(--navy-blue, #07224f);
   margin: 0;
   line-height: 1.25;
   white-space: nowrap;
@@ -3226,6 +3200,7 @@ a {
   font-family: var(--font-body);
   font-size: 0.80rem;
   font-weight: 500;
+  color: #64748b;
   margin: 0;
   display: block;
   white-space: nowrap;
@@ -3233,162 +3208,6 @@ a {
   text-overflow: ellipsis;
   text-align: left !important;
   line-height: 1.2;
-}
-
-/* Circular Arrow Action Button */
-.jnu-story-arrow-btn {
-  width: 38px;
-  height: 38px;
-  min-width: 38px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  flex-shrink: 0;
-}
-
-/* ==========================================
-   Style 1: Crisp White Card (Cards 2, 4, 6)
-=========================================== */
-
-.jnu-story-card-white {
-  background-color: #FFFFFF;
-  border: 1px solid var(--card-outer-gray, #e1e4e8);
-  box-shadow: 0 4px 20px rgba(7, 34, 79, 0.04);
-}
-
-.jnu-story-card-white:hover {
-  border-color: rgba(197, 24, 87, 0.4);
-  box-shadow: 0 12px 32px rgba(7, 34, 79, 0.08);
-}
-
-.jnu-story-card-white .jnu-story-quote-svg {
-  color: var(--berry-pink, #c51857);
-}
-
-.jnu-story-card-white .jnu-story-text {
-  color: #1e293b;
-}
-
-.jnu-story-card-white .jnu-story-bar {
-  background-color: var(--berry-pink, #c51857);
-}
-
-.jnu-story-card-white .jnu-story-name {
-  color: var(--navy-blue, #07224f);
-}
-
-.jnu-story-card-white .jnu-story-deg {
-  color: var(--navy-blue, #07224f);
-  opacity: 0.85;
-}
-
-.jnu-story-card-white .jnu-story-arrow-btn {
-  background-color: #fdf2f4;
-  color: var(--berry-pink, #c51857);
-}
-
-.jnu-story-card-white:hover .jnu-story-arrow-btn {
-  background-color: var(--berry-pink, #c51857);
-  color: #FFFFFF;
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(197, 24, 87, 0.3);
-}
-
-/* ==========================================
-   Style 2: Deep Navy Card (Cards 1, 3)
-=========================================== */
-
-.jnu-story-card-navy {
-  background-color: var(--navy-blue, #07224f);
-  border: 1px solid var(--navy-blue, #07224f);
-  box-shadow: 0 8px 24px rgba(7, 34, 79, 0.16);
-}
-
-.jnu-story-card-navy:hover {
-  box-shadow: 0 14px 34px rgba(7, 34, 79, 0.28);
-  border-color: rgba(255, 255, 255, 0.25);
-}
-
-.jnu-story-card-navy .jnu-story-quote-svg {
-  color: #FFFFFF;
-}
-
-.jnu-story-card-navy .jnu-story-text {
-  color: rgba(255, 255, 255, 0.95);
-}
-
-.jnu-story-card-navy .jnu-story-bar {
-  background-color: var(--berry-pink, #c51857);
-}
-
-.jnu-story-card-navy .jnu-story-name {
-  color: #FFFFFF;
-}
-
-.jnu-story-card-navy .jnu-story-deg {
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.jnu-story-card-navy .jnu-story-arrow-btn {
-  background-color: #FFFFFF;
-  color: var(--berry-pink, #c51857);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
-}
-
-.jnu-story-card-navy:hover .jnu-story-arrow-btn {
-  background-color: #FFFFFF;
-  color: var(--berry-pink, #c51857);
-  transform: scale(1.1);
-}
-
-/* ==========================================
-   Style 3: Berry Pink Card (Card 5)
-=========================================== */
-
-.jnu-story-card-berry {
-  background-color: var(--berry-pink, #c51857);
-  border: 1px solid var(--berry-pink, #c51857);
-  box-shadow: 0 8px 26px rgba(197, 24, 87, 0.28);
-}
-
-.jnu-story-card-berry:hover {
-  box-shadow: 0 14px 36px rgba(197, 24, 87, 0.42);
-  border-color: rgba(255, 255, 255, 0.35);
-}
-
-.jnu-story-card-berry .jnu-story-quote-svg {
-  color: #FFFFFF;
-}
-
-.jnu-story-card-berry .jnu-story-text {
-  color: #FFFFFF;
-}
-
-.jnu-story-card-berry .jnu-story-bar {
-  background-color: #FFFFFF;
-}
-
-.jnu-story-card-berry .jnu-story-name {
-  color: #FFFFFF;
-}
-
-.jnu-story-card-berry .jnu-story-deg {
-  color: rgba(255, 255, 255, 0.88);
-}
-
-.jnu-story-card-berry .jnu-story-arrow-btn {
-  background-color: #FFFFFF;
-  color: var(--berry-pink, #c51857);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
-}
-
-.jnu-story-card-berry:hover .jnu-story-arrow-btn {
-  background-color: #FFFFFF;
-  color: var(--berry-pink, #c51857);
-  transform: scale(1.1);
 }
 
 /* ==========================================
@@ -3432,11 +3251,6 @@ a {
     font-size: 0.76rem;
   }
 
-  .jnu-story-arrow-btn {
-    width: 34px;
-    height: 34px;
-    min-width: 34px;
-  }
 }
 
 @media (max-width: 575px) {
@@ -3817,36 +3631,16 @@ a {
 .jnu-stats-wrapper {
   position: relative;
   overflow: hidden;
-  border-radius: 20px;
-  background: linear-gradient(105deg, rgba(5, 23, 54, 0.95) 0%, rgba(7, 34, 79, 0.94) 28%, rgba(90, 18, 62, 0.92) 65%, rgba(197, 24, 87, 0.94) 100%), url("../images/campus-bg.jpg") center/cover no-repeat;
-  box-shadow: 0 10px 30px rgba(7, 34, 79, 0.12);
+  border-radius: var(--card-radius, 16px);
+  background: linear-gradient(135deg, #07224f 0%, #0d2e66 100%);
+  box-shadow: 0 8px 24px rgba(7, 34, 79, 0.1);
   padding: 30px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Faded campus architectural texture overlay */
-.jnu-stats-wrapper::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("../images/campus-bg.jpg") center/cover no-repeat;
-  opacity: 0.15;
-  mix-blend-mode: overlay;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Ambient glow */
+.jnu-stats-wrapper::before,
 .jnu-stats-wrapper::after {
-  content: "";
-  position: absolute;
-  top: -30%;
-  right: -10%;
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(197, 24, 87, 0.35) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 1;
+  display: none;
 }
 
 .jnu-stats-wrapper .row {

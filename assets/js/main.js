@@ -7,50 +7,15 @@ document.addEventListener('DOMContentLoaded', function () {
   'use strict';
 
   // ===================================================================
-  // 1. Hero Carousel Slider & Custom Controls
+  // 1. Hero Carousel Setup
   // ===================================================================
   const heroCarouselEl = document.querySelector('#jnuHeroCarousel');
-  const dots = document.querySelectorAll('.jnu-dot');
-  const prevBtn = document.querySelector('#heroPrevBtn');
-  const nextBtn = document.querySelector('#heroNextBtn');
-
   if (heroCarouselEl && window.bootstrap) {
-    const heroCarousel = new bootstrap.Carousel(heroCarouselEl, {
+    new bootstrap.Carousel(heroCarouselEl, {
       interval: false,
       ride: false,
       wrap: false
     });
-
-    // Update custom dots when slide changes
-    heroCarouselEl.addEventListener('slide.bs.carousel', function (e) {
-      dots.forEach((dot, index) => {
-        if (index === e.to) {
-          dot.classList.add('active');
-        } else {
-          dot.classList.remove('active');
-        }
-      });
-    });
-
-    // Custom dots click handling
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', function () {
-        heroCarousel.to(index);
-      });
-    });
-
-    // Arrow navigation
-    if (prevBtn) {
-      prevBtn.addEventListener('click', function () {
-        heroCarousel.prev();
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', function () {
-        heroCarousel.next();
-      });
-    }
   }
 
   // ===================================================================
@@ -260,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function () {
       eligibility: 'M.Tech with minimum 55% marks',
       selection: 'University Entrance Test or Direct Admission for NET-qualified candidates',
       note: '',
-      image: 'assets/images/infra-research.jpg'
+      image: 'assets/images/comp&eng.webp'
     },
     '2': {
       title: 'Ph.D. Electronics and Communication',
@@ -271,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
       eligibility: 'M.Tech with minimum 55% marks',
       selection: 'University Entrance Test or Direct Admission for NET-qualified candidates',
       note: '',
-      image: 'assets/images/infra-robotics.jpg'
+      image: 'assets/images/ElectronicsandComm.webp'
     },
     '3': {
       title: 'Ph.D. in Computer Science',
@@ -282,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function () {
       eligibility: 'Postgraduate degree with a minimum of 55% marks in the relevant field',
       selection: 'Entrance Test and Personal Interview. The process may also include a research orientation writing assignment.',
       note: '',
-      image: 'assets/images/infra-digital.jpg'
+      image: 'assets/images/ComputerScience.webp'
     },
     '4': {
       title: 'Ph.D. Pharmaceutical Sciences',
@@ -293,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function () {
       eligibility: 'M.Pharm in any specialisation with a minimum of 55% marks or equivalent CGPA from PCI-recognised institutions/universities.',
       selection: 'Entrance Exam + Personal Interview',
       note: '',
-      image: 'assets/images/usp-research.jpg'
+      image: 'assets/images/PharmaceuticalSciences.webp'
     },
     '5': {
       title: 'Ph.D. English',
@@ -304,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function () {
       eligibility: 'Postgraduation in English',
       selection: 'Entrance Test + Personal Interview',
       note: 'Lab and Library fees will be charged separately.',
-      image: 'assets/images/infra-library.jpg'
+      image: 'assets/images/English.webp'
     },
     '6': {
       title: 'Ph.D. Business & Management',
@@ -315,7 +280,7 @@ document.addEventListener('DOMContentLoaded', function () {
       eligibility: 'Postgraduation in Management, Commerce and Economics',
       selection: 'University Entrance Test or Direct Admission for NET-qualified candidates',
       note: '',
-      image: 'assets/images/infra-design.jpg'
+      image: 'assets/images/Business&Management.webp'
     },
     '7': {
       title: 'Ph.D. Education',
@@ -326,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function () {
       eligibility: "1-Year/2-Semester or 2-Year/4-Semester Master's Degree Programme (M.A. Education/M.Ed.) with at least 55% marks in aggregate.",
       selection: 'University Entrance Test or Direct Admission for NET-qualified candidates',
       note: 'A relaxation of 5% marks is applicable to SC/ST/OBC (Non-Creamy Layer), Differently-Abled, Economically Weaker Section (EWS) and other eligible categories, as per UGC regulations.',
-      image: 'assets/images/student-phd.jpg'
+      image: 'assets/images/Education.webp'
     },
     '8': {
       title: 'Ph.D. Life Sciences',
@@ -337,7 +302,7 @@ document.addEventListener('DOMContentLoaded', function () {
       eligibility: 'Postgraduation in a relevant field with a minimum of 55% marks. 5% relaxation for SC/ST candidates.',
       selection: 'Entrance Test + Personal Interview',
       note: '5% relaxation for SC/ST candidates.',
-      image: 'assets/images/usp-research.jpg'
+      image: 'assets/images/LifeSciences.webp'
     },
     '9': {
       title: 'Ph.D. Biotechnology',
@@ -348,7 +313,7 @@ document.addEventListener('DOMContentLoaded', function () {
       eligibility: 'Postgraduation in a relevant field with a minimum of 55% marks. 5% relaxation for SC/ST candidates.',
       selection: 'Entrance Test + Personal Interview',
       note: '5% relaxation for SC/ST candidates.',
-      image: 'assets/images/infra-research.jpg'
+      image: 'assets/images/Biotechnology.webp'
     },
     '10': {
       title: 'Ph.D. Microbiology',
@@ -359,7 +324,7 @@ document.addEventListener('DOMContentLoaded', function () {
       eligibility: 'Postgraduation in a relevant field with a minimum of 55% marks. 5% relaxation for SC/ST candidates.',
       selection: 'Entrance Test + Personal Interview',
       note: '5% relaxation for SC/ST candidates.',
-      image: 'assets/images/usp-research.jpg'
+      image: 'assets/images/Microbiology.webp'
     },
     '11': {
       title: 'Ph.D. Bioinformatics',
@@ -370,7 +335,7 @@ document.addEventListener('DOMContentLoaded', function () {
       eligibility: 'Postgraduation in a relevant field with a minimum of 55% marks. 5% relaxation for SC/ST candidates.',
       selection: 'Entrance Test + Personal Interview',
       note: '5% relaxation for SC/ST candidates.',
-      image: 'assets/images/infra-digital.jpg'
+      image: 'assets/images/Bioinformatics.webp'
     },
     '12': {
       title: 'Ph.D. Botany',
@@ -381,7 +346,7 @@ document.addEventListener('DOMContentLoaded', function () {
       eligibility: 'Postgraduation in a relevant field with a minimum of 55% marks. 5% relaxation for SC/ST candidates.',
       selection: 'Entrance Test + Personal Interview',
       note: '5% relaxation for SC/ST candidates.',
-      image: 'assets/images/usp-research.jpg'
+      image: 'assets/images/Botany.webp'
     },
     '13': {
       title: 'Ph.D. Zoology',
@@ -392,7 +357,7 @@ document.addEventListener('DOMContentLoaded', function () {
       eligibility: 'Postgraduation in a relevant field with a minimum of 55% marks. 5% relaxation for SC/ST candidates.',
       selection: 'Entrance Test + Personal Interview',
       note: '5% relaxation for SC/ST candidates.',
-      image: 'assets/images/infra-research.jpg'
+      image: 'assets/images/Zoology.webp'
     },
     '14': {
       title: 'Ph.D. Mathematics',
@@ -403,7 +368,7 @@ document.addEventListener('DOMContentLoaded', function () {
       eligibility: 'Postgraduation in Mathematics with a minimum of 55% marks. 5% relaxation for SC/ST candidates.',
       selection: 'Entrance Test + Personal Interview',
       note: '5% relaxation for SC/ST candidates.',
-      image: 'assets/images/infra-digital.jpg'
+      image: 'assets/images/Mathematics.webp'
     },
     '15': {
       title: 'Ph.D. Physics',
@@ -414,7 +379,7 @@ document.addEventListener('DOMContentLoaded', function () {
       eligibility: 'Postgraduation in a relevant field with a minimum of 55% marks. 5% relaxation for SC/ST candidates.',
       selection: 'Entrance Test + Personal Interview',
       note: '5% relaxation for SC/ST candidates.',
-      image: 'assets/images/infra-research.jpg'
+      image: 'assets/images/Physics.webp'
     }
   };
 
