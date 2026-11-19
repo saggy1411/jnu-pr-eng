@@ -2122,7 +2122,7 @@ a {
 }
 
 .jnu-phd-cards-list {
-  max-height: 682px;
+  max-height: 654px;
   overflow-y: auto;
   padding-right: 6px;
   display: flex;
@@ -2204,7 +2204,7 @@ a {
   border: 1px solid var(--card-outer-gray);
   overflow: hidden;
   box-shadow: 0 14px 36px rgba(7, 34, 79, 0.08);
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -2216,7 +2216,7 @@ a {
 
 .jnu-phd-showcase-media {
   position: relative;
-  height: 390px;
+  height: 342px;
   min-height: 205px;
   overflow: hidden;
   background-color: var(--navy-dark);
