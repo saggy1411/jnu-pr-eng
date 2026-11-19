@@ -561,6 +561,21 @@ document.addEventListener('DOMContentLoaded', function () {
   const whyTabs = document.querySelectorAll('.jnu-why-tab');
   const whyPanels = document.querySelectorAll('.jnu-why-panel');
   const tabsWrap = document.querySelector('.jnu-why-tabs-wrap');
+  const whyCampusImg = document.getElementById('whyCampusImg');
+
+  const whyImages = {
+    '1': 'assets/images/DiverseResearchDomains.webp',
+    '2': 'assets/images/ResearchOrientedLearning.webp',
+    '3': 'assets/images/MultidisciplinaryAcademicEnvironment.webp',
+    '4': 'assets/images/AcademicandResearchDevelopment.webp',
+    '5': 'assets/images/FlexibleResearchExploration.webp'
+  };
+
+  // Preload Why Choose JNU images for instant switching
+  Object.values(whyImages).forEach(src => {
+    const preloadImg = new Image();
+    preloadImg.src = src;
+  });
 
   if (whyTabs.length && whyPanels.length) {
     function switchWhyTab(targetTab) {
@@ -580,6 +595,22 @@ document.addEventListener('DOMContentLoaded', function () {
         const isMatch = pId === 'why-panel-' + tabNum;
         p.classList.toggle('active', isMatch);
       });
+
+      // Update image dynamically with smooth fade
+      if (whyCampusImg) {
+        const newImgSrc = targetTab.getAttribute('data-why-img') || whyImages[tabNum];
+        if (newImgSrc && !whyCampusImg.src.endsWith(newImgSrc)) {
+          whyCampusImg.style.opacity = '0.25';
+          setTimeout(() => {
+            whyCampusImg.src = newImgSrc;
+            const tabTitle = targetTab.querySelector('.jnu-why-tab-text');
+            if (tabTitle) {
+              whyCampusImg.alt = tabTitle.textContent.trim() + ' - Jaipur National University';
+            }
+            whyCampusImg.style.opacity = '1';
+          }, 120);
+        }
+      }
 
       // On mobile/tablet, scroll active tab into view smoothly
       if (tabsWrap && window.innerWidth < 992) {
