@@ -432,9 +432,253 @@ document.addEventListener('DOMContentLoaded', function () {
     phdCards.forEach(card => {
       card.addEventListener('click', function () {
         phdCards.forEach(c => c.classList.remove('active'));
-        this.classList.add('active');
-        const id = this.getAttribute('data-phd-id');
+        card.classList.add('active');
+        const id = card.getAttribute('data-phd-id');
         updatePhdShowcase(id);
+      });
+    });
+  }
+
+  
+  // ===================================================================
+  // 4b. Medical Sciences Programmes Dynamic Showcase
+  // ===================================================================
+  const medCards = document.querySelectorAll('.jnu-med-item-card');
+  const medShowcaseImg = document.getElementById('medShowcaseImg');
+  const medShowcaseBadgeCat = document.getElementById('medShowcaseBadgeCat');
+  const medShowcaseBadgeDuration = document.getElementById('medShowcaseBadgeDuration');
+  const medShowcaseTitle = document.getElementById('medShowcaseTitle');
+  const medShowcaseSubtag = document.getElementById('medShowcaseSubtag');
+  const medShowcaseEligibility = document.getElementById('medShowcaseEligibility');
+  const medShowcaseSelection = document.getElementById('medShowcaseSelection');
+
+  const medData = {
+    '1': {
+      title: 'MD Anatomy',
+      subtag: 'Specialisation: Pre-Clinical Sciences',
+      categoryLabel: 'Medical Sciences',
+      duration: '3 Years',
+      eligibility: 'MBBS degree recognized by NMC/MCI with completed compulsory rotatory internship.',
+      selection: 'NEET-PG Merit Ranking & Centralized State/National Counselling.',
+      image: 'assets/images/aton.webp'
+    },
+    '2': {
+      title: 'MD Physiology',
+      subtag: 'Specialisation: Pre-Clinical Sciences',
+      categoryLabel: 'Medical Sciences',
+      duration: '3 Years',
+      eligibility: 'MBBS degree recognized by NMC/MCI with completed compulsory rotatory internship.',
+      selection: 'NEET-PG Merit Ranking & Centralized Counselling.',
+      image: 'assets/images/phycho.webp'
+    },
+    '3': {
+      title: 'MD Pathology',
+      subtag: 'Specialisation: Diagnostic & Laboratory Medicine',
+      categoryLabel: 'Medical Sciences',
+      duration: '3 Years',
+      eligibility: 'MBBS degree recognized by NMC/MCI with completed compulsory rotatory internship.',
+      selection: 'NEET-PG Merit Ranking & Centralized Counselling.',
+      image: 'assets/images/Microbiology.webp'
+    },
+    '4': {
+      title: 'MD Biochemistry',
+      subtag: 'Specialisation: Clinical & Molecular Medicine',
+      categoryLabel: 'Medical Sciences',
+      duration: '3 Years',
+      eligibility: 'MBBS degree recognized by NMC/MCI with completed compulsory rotatory internship.',
+      selection: 'NEET-PG Merit Ranking & Centralized Counselling.',
+      image: 'assets/images/Bioinformatics.webp'
+    },
+    '5': {
+      title: 'MD Pharmacology',
+      subtag: 'Specialisation: Clinical Pharmacology & Therapeutics',
+      categoryLabel: 'Medical Sciences',
+      duration: '3 Years',
+      eligibility: 'MBBS degree recognized by NMC/MCI with completed compulsory rotatory internship.',
+      selection: 'NEET-PG Merit Ranking & Centralized Counselling.',
+      image: 'assets/images/pharmac.webp'
+    },
+    '6': {
+      title: 'MD Forensic Medicine',
+      subtag: 'Specialisation: Forensic Medicine & Toxicology',
+      categoryLabel: 'Medical Sciences',
+      duration: '3 Years',
+      eligibility: 'MBBS degree recognized by NMC/MCI with completed compulsory rotatory internship.',
+      selection: 'NEET-PG Merit Ranking & Centralized Counselling.',
+      image: 'assets/images/foren.webp'
+    },
+    '7': {
+      title: 'MD Community Medicine',
+      subtag: 'Specialisation: Preventive & Social Medicine',
+      categoryLabel: 'Medical Sciences',
+      duration: '3 Years',
+      eligibility: 'MBBS degree recognized by NMC/MCI with completed compulsory rotatory internship.',
+      selection: 'NEET-PG Merit Ranking & Centralized Counselling.',
+      image: 'assets/images/ResearchOrientedLearning.webp'
+    },
+    '8': {
+      title: 'MD General Medicine',
+      subtag: 'Specialisation: Internal & Clinical Medicine',
+      categoryLabel: 'Clinical Sciences',
+      duration: '3 Years',
+      eligibility: 'MBBS degree recognized by NMC/MCI with completed compulsory rotatory internship.',
+      selection: 'NEET-PG Merit Ranking & Centralized Counselling.',
+      image: 'assets/images/genMec.webp'
+    },
+    '9': {
+      title: 'MD Pediatrics',
+      subtag: 'Specialisation: Child Health & Neonatology',
+      categoryLabel: 'Clinical Sciences',
+      duration: '3 Years',
+      eligibility: 'MBBS degree recognized by NMC/MCI with completed compulsory rotatory internship.',
+      selection: 'NEET-PG Merit Ranking & Centralized Counselling.',
+      image: 'assets/images/LifeSciences.webp'
+    },
+    '10': {
+      title: 'MD Respiratory Medicine',
+      subtag: 'Specialisation: Pulmonology & Chest Medicine',
+      categoryLabel: 'Clinical Sciences',
+      duration: '3 Years',
+      eligibility: 'MBBS degree recognized by NMC/MCI with completed compulsory rotatory internship.',
+      selection: 'NEET-PG Merit Ranking & Centralized Counselling.',
+      image: 'assets/images/respiratory.webp'
+    },
+    '11': {
+      title: 'MD Psychiatry',
+      subtag: 'Specialisation: Mental Health & Behavioral Sciences',
+      categoryLabel: 'Clinical Sciences',
+      duration: '3 Years',
+      eligibility: 'MBBS degree recognized by NMC/MCI with completed compulsory rotatory internship.',
+      selection: 'NEET-PG Merit Ranking & Centralized Counselling.',
+      image: 'assets/images/psychiat.webp'
+    },
+    '12': {
+      title: 'MD Skin and VD',
+      subtag: 'Specialisation: Dermatology, Venereology & Leprosy',
+      categoryLabel: 'Clinical Sciences',
+      duration: '3 Years',
+      eligibility: 'MBBS degree recognized by NMC/MCI with completed compulsory rotatory internship.',
+      selection: 'NEET-PG Merit Ranking & Centralized Counselling.',
+      image: 'assets/images/skin.webp'
+    },
+    '13': {
+      title: 'MS General Surgery',
+      subtag: 'Specialisation: Operative & Surgical Sciences',
+      categoryLabel: 'Surgical Sciences',
+      duration: '3 Years',
+      eligibility: 'MBBS degree recognized by NMC/MCI with completed compulsory rotatory internship.',
+      selection: 'NEET-PG Merit Ranking & Centralized Counselling.',
+      image: 'assets/images/gener.webp'
+    },
+    '14': {
+      title: 'MS Orthopedics',
+      subtag: 'Specialisation: Orthopedic Surgery & Trauma',
+      categoryLabel: 'Surgical Sciences',
+      duration: '3 Years',
+      eligibility: 'MBBS degree recognized by NMC/MCI with completed compulsory rotatory internship.',
+      selection: 'NEET-PG Merit Ranking & Centralized Counselling.',
+      image: 'assets/images/ortho.webp'
+    },
+    '15': {
+      title: 'MS ENT',
+      subtag: 'Specialisation: Otorhinolaryngology (ENT)',
+      categoryLabel: 'Surgical Sciences',
+      duration: '3 Years',
+      eligibility: 'MBBS degree recognized by NMC/MCI with completed compulsory rotatory internship.',
+      selection: 'NEET-PG Merit Ranking & Centralized Counselling.',
+      image: 'assets/images/ent.webp'
+    },
+    '16': {
+      title: 'MS Ophthalmology',
+      subtag: 'Specialisation: Ophthalmic Surgery & Eye Care',
+      categoryLabel: 'Surgical Sciences',
+      duration: '3 Years',
+      eligibility: 'MBBS degree recognized by NMC/MCI with completed compulsory rotatory internship.',
+      selection: 'NEET-PG Merit Ranking & Centralized Counselling.',
+      image: 'assets/images/ophtham.webp'
+    },
+    '17': {
+      title: 'MS Obstetrics & Gynecology',
+      subtag: 'Specialisation: Maternal Health & Gynecological Surgery',
+      categoryLabel: 'Surgical Sciences',
+      duration: '3 Years',
+      eligibility: 'MBBS degree recognized by NMC/MCI with completed compulsory rotatory internship.',
+      selection: 'NEET-PG Merit Ranking & Centralized Counselling.',
+      image: 'assets/images/obstet.webp'
+    },
+    '18': {
+      title: 'MD Anaesthesia',
+      subtag: 'Specialisation: Critical Care & Pain Medicine',
+      categoryLabel: 'Clinical Sciences',
+      duration: '3 Years',
+      eligibility: 'MBBS degree recognized by NMC/MCI with completed compulsory rotatory internship.',
+      selection: 'NEET-PG Merit Ranking & Centralized Counselling.',
+      image: 'assets/images/anaest.webp'
+    },
+    '19': {
+      title: 'MD Radiodiagnosis',
+      subtag: 'Specialisation: Diagnostic Imaging & Interventional Radiology',
+      categoryLabel: 'Clinical Sciences',
+      duration: '3 Years',
+      eligibility: 'MBBS degree recognized by NMC/MCI with completed compulsory rotatory internship.',
+      selection: 'NEET-PG Merit Ranking & Centralized Counselling.',
+      image: 'assets/images/rodio.webp'
+    },
+    '20': {
+      title: 'MD Emergency Medicine',
+      subtag: 'Specialisation: Acute Care & Trauma Management',
+      categoryLabel: 'Clinical Sciences',
+      duration: '3 Years',
+      eligibility: 'MBBS degree recognized by NMC/MCI with completed compulsory rotatory internship.',
+      selection: 'NEET-PG Merit Ranking & Centralized Counselling.',
+      image: 'assets/images/emerg.webp'
+    }
+  };
+
+  function updateMedShowcase(id) {
+    const data = medData[id];
+    if (!data) return;
+
+    if (medShowcaseImg) {
+      medShowcaseImg.style.opacity = '0.25';
+      setTimeout(() => {
+        medShowcaseImg.src = data.image;
+        medShowcaseImg.style.opacity = '1';
+      }, 130);
+    }
+
+    if (medShowcaseBadgeCat) {
+      medShowcaseBadgeCat.innerHTML = `<i class="bi bi-heart-pulse-fill"></i> ${data.categoryLabel}`;
+    }
+    if (medShowcaseBadgeDuration) {
+      medShowcaseBadgeDuration.innerHTML = `<i class="bi bi-clock-fill"></i> ${data.duration}`;
+    }
+    if (medShowcaseTitle) {
+      medShowcaseTitle.textContent = data.title;
+    }
+    if (medShowcaseSubtag) {
+      if (data.subtag) {
+        medShowcaseSubtag.textContent = data.subtag;
+        medShowcaseSubtag.style.display = 'inline-block';
+      } else {
+        medShowcaseSubtag.style.display = 'none';
+      }
+    }
+    if (medShowcaseEligibility) {
+      medShowcaseEligibility.textContent = data.eligibility;
+    }
+    if (medShowcaseSelection) {
+      medShowcaseSelection.textContent = data.selection;
+    }
+  }
+
+  if (medCards.length) {
+    medCards.forEach(card => {
+      card.addEventListener('click', function () {
+        medCards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        const id = card.getAttribute('data-med-id');
+        updateMedShowcase(id);
       });
     });
   }

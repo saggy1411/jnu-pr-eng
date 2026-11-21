@@ -61,11 +61,12 @@
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
 }
 
 body {
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
   margin: 0;
   padding: 0;
   font-family: var(--font-body);
@@ -2114,16 +2115,73 @@ a {
   margin-top: 18px;
 }
 
+
+/* ===================================================================
+   Sticky Left Column & Sticky Showcase Cards for Programmes
+=================================================================== */
+.jnu-sticky-col {
+  transform: none !important;
+  transition: none !important;
+}
+
+.jnu-sticky-side-wrap,
+.jnu-sticky-showcase-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .jnu-sticky-col {
+    display: block;
+    align-self: stretch;
+  }
+
+  .jnu-sticky-side-wrap {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 24px;
+    z-index: 10;
+    width: 100%;
+    transform: none !important;
+  }
+
+  .jnu-sticky-showcase-wrap {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 24px;
+    z-index: 10;
+    width: 100%;
+    transform: none !important;
+  }
+
+  .jnu-phd-showcase-card,
+  .jnu-med-showcase-card {
+    width: 100%;
+    transform: none !important;
+  }
+
+  .jnu-phd-cards-list,
+  .jnu-med-cards-list {
+    max-height: none !important;
+    overflow-y: visible !important;
+    padding-right: 0;
+  }
+}
+
 /* ===================================================================
    Ph.D. Programmes Section Styles
 =================================================================== */
-.jnu-phd-column-wrap {
+.jnu-phd-column-wrap,
+.jnu-med-column-wrap {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-.jnu-phd-cards-list {
+.jnu-phd-cards-list,
+.jnu-med-cards-list {
   max-height: 654px;
   overflow-y: auto;
   padding-right: 6px;
@@ -2134,25 +2192,30 @@ a {
   scrollbar-color: rgba(197, 24, 87, 0.35) rgba(7, 34, 79, 0.04);
 }
 
-.jnu-phd-cards-list::-webkit-scrollbar {
+.jnu-phd-cards-list::-webkit-scrollbar,
+.jnu-med-cards-list::-webkit-scrollbar {
   width: 5px;
 }
 
-.jnu-phd-cards-list::-webkit-scrollbar-track {
+.jnu-phd-cards-list::-webkit-scrollbar-track,
+.jnu-med-cards-list::-webkit-scrollbar-track {
   background: rgba(7, 34, 79, 0.04);
   border-radius: 10px;
 }
 
-.jnu-phd-cards-list::-webkit-scrollbar-thumb {
+.jnu-phd-cards-list::-webkit-scrollbar-thumb,
+.jnu-med-cards-list::-webkit-scrollbar-thumb {
   background: rgba(197, 24, 87, 0.35);
   border-radius: 10px;
 }
 
-.jnu-phd-cards-list::-webkit-scrollbar-thumb:hover {
+.jnu-phd-cards-list::-webkit-scrollbar-thumb:hover,
+.jnu-med-cards-list::-webkit-scrollbar-thumb:hover {
   background: var(--berry-pink);
 }
 
-.jnu-phd-item-card {
+.jnu-phd-item-card,
+.jnu-med-item-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2165,27 +2228,31 @@ a {
   text-align: left !important;
 }
 
-.jnu-phd-item-card:hover {
+.jnu-phd-item-card:hover,
+.jnu-med-item-card:hover {
   transform: translateX(3px);
   border-color: var(--berry-pink);
   box-shadow: 0 4px 12px rgba(7, 34, 79, 0.05);
 }
 
-.jnu-phd-item-card.active {
+.jnu-phd-item-card.active,
+.jnu-med-item-card.active {
   background: linear-gradient(135deg, #1f3d6f 0%, var(--badge-pink) 100%);
   color: #FFFFFF;
   border-color: var(--berry-pink);
   box-shadow: 0 6px 16px rgba(197, 24, 87, 0.28);
 }
 
-.jnu-phd-item-info {
+.jnu-phd-item-info,
+.jnu-med-item-info {
   display: flex;
   flex-direction: column;
   gap: 2px;
   text-align: left !important;
 }
 
-.jnu-phd-item-meta {
+.jnu-phd-item-meta,
+.jnu-med-item-meta {
   font-family: var(--font-body);
   font-size: 0.72rem;
   color: var(--jnu-text-muted);
@@ -2195,12 +2262,14 @@ a {
   gap: 4px;
 }
 
-.jnu-phd-item-card.active .jnu-phd-item-meta {
+.jnu-phd-item-card.active .jnu-phd-item-meta,
+.jnu-med-item-card.active .jnu-med-item-meta {
   color: rgba(255, 255, 255, 0.9);
 }
 
 /* Right Showcase Card */
-.jnu-phd-showcase-card {
+.jnu-phd-showcase-card,
+.jnu-med-showcase-card {
   background-color: #FFFFFF;
   border-radius: var(--card-radius);
   border: 1px solid var(--card-outer-gray);
@@ -2212,19 +2281,29 @@ a {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.jnu-phd-showcase-card:hover {
+.jnu-phd-showcase-card:hover,
+.jnu-med-showcase-card:hover {
   box-shadow: 0 18px 44px rgba(7, 34, 79, 0.12);
 }
 
-.jnu-phd-showcase-media {
+.jnu-phd-showcase-media,
+.jnu-med-showcase-media {
   position: relative;
-  height: 342px;
-  min-height: 205px;
+  height: 230px;
+  min-height: 180px;
   overflow: hidden;
   background-color: var(--navy-dark);
 }
 
-.jnu-phd-showcase-img {
+@media (min-width: 1400px) {
+  .jnu-phd-showcase-media,
+  .jnu-med-showcase-media {
+    height: 255px;
+  }
+}
+
+.jnu-phd-showcase-img,
+.jnu-med-showcase-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -2232,11 +2311,13 @@ a {
   transition: opacity 0.25s ease, transform 0.6s ease;
 }
 
-.jnu-phd-showcase-card:hover .jnu-phd-showcase-img {
+.jnu-phd-showcase-card:hover .jnu-phd-showcase-img,
+.jnu-med-showcase-card:hover .jnu-med-showcase-img {
   transform: scale(1.04);
 }
 
-.jnu-phd-media-overlay {
+.jnu-phd-media-overlay,
+.jnu-med-media-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(5, 23, 54, 0.92) 0%, rgba(7, 34, 79, 0.3) 50%, rgba(7, 34, 79, 0.45) 100%);
@@ -2247,14 +2328,16 @@ a {
   align-items: flex-start;
 }
 
-.jnu-phd-badges-row {
+.jnu-phd-badges-row,
+.jnu-med-badges-row {
   display: flex;
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
 }
 
-.jnu-phd-badge-pill {
+.jnu-phd-badge-pill,
+.jnu-med-badge-pill {
   font-family: var(--font-heading);
   font-size: 0.7rem;
   font-weight: 700;
@@ -2269,24 +2352,28 @@ a {
   width: fit-content;
 }
 
-.jnu-phd-badge-pill.badge-berry {
+.jnu-phd-badge-pill.badge-berry,
+.jnu-med-badge-pill.badge-berry {
   background: rgba(197, 24, 87, 0.92);
   color: #FFFFFF;
 }
 
-.jnu-phd-badge-pill.badge-navy {
+.jnu-phd-badge-pill.badge-navy,
+.jnu-med-badge-pill.badge-navy {
   background: rgba(7, 34, 79, 0.85);
   color: #FFFFFF;
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-.jnu-phd-badge-pill.badge-ugc {
+.jnu-phd-badge-pill.badge-ugc,
+.jnu-med-badge-pill.badge-ugc {
   background: rgba(13, 56, 124, 0.9);
   color: #FFFFFF;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.jnu-phd-showcase-body {
+.jnu-phd-showcase-body,
+.jnu-med-showcase-body {
   padding: 18px 20px;
   display: flex;
   flex-direction: column;
@@ -2295,12 +2382,14 @@ a {
   justify-content: flex-start;
 }
 
-.jnu-phd-header-wrap {
+.jnu-phd-header-wrap,
+.jnu-med-header-wrap {
   text-align: left !important;
   margin-bottom: 2px;
 }
 
-.jnu-phd-subtag {
+.jnu-phd-subtag,
+.jnu-med-subtag {
   display: inline-block;
   font-family: var(--font-heading);
   font-size: 0.72rem;
@@ -2311,7 +2400,8 @@ a {
   margin-bottom: 2px;
 }
 
-.jnu-phd-showcase-title {
+.jnu-phd-showcase-title,
+.jnu-med-showcase-title {
   font-family: var(--font-heading) !important;
   font-size: 1.25rem;
   font-weight: 800;
@@ -2321,7 +2411,8 @@ a {
   text-align: left !important;
 }
 
-.jnu-phd-detail-box {
+.jnu-phd-detail-box,
+.jnu-med-detail-box {
   background-color: #F8FAFC;
   border: 1px solid var(--card-outer-gray);
   border-radius: 12px;
@@ -2330,7 +2421,8 @@ a {
   margin-bottom: 0;
 }
 
-.jnu-phd-detail-lbl {
+.jnu-phd-detail-lbl,
+.jnu-med-detail-lbl {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -2343,7 +2435,8 @@ a {
   margin-bottom: 3px;
 }
 
-.jnu-phd-detail-text {
+.jnu-phd-detail-text,
+.jnu-med-detail-text {
   font-family: var(--font-body);
   font-size: 0.81rem;
   color: var(--navy-dark);
@@ -2353,7 +2446,8 @@ a {
   text-align: left !important;
 }
 
-.jnu-phd-note-box {
+.jnu-phd-note-box,
+.jnu-med-note-box {
   display: flex;
   align-items: flex-start;
   gap: 8px;
@@ -2376,12 +2470,14 @@ a {
   flex-shrink: 0;
 }
 
-.jnu-phd-btn-wrap {
+.jnu-phd-btn-wrap,
+.jnu-med-btn-wrap {
   margin-top: auto;
   padding-top: 6px;
 }
 
-.jnu-phd-apply-btn {
+.jnu-phd-apply-btn,
+.jnu-med-apply-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2399,7 +2495,8 @@ a {
   box-shadow: 0 4px 14px rgba(7, 34, 79, 0.18);
 }
 
-.jnu-phd-apply-btn:hover {
+.jnu-phd-apply-btn:hover,
+.jnu-med-apply-btn:hover {
   background: linear-gradient(135deg, var(--berry-pink) 0%, var(--badge-pink) 100%);
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(197, 24, 87, 0.32);
@@ -2407,9 +2504,20 @@ a {
 }
 
 @media (max-width: 991px) {
-  .jnu-phd-cards-list {
-    max-height: 440px;
+  .jnu-sticky-side-wrap,
+  .jnu-sticky-showcase-wrap,
+  .jnu-phd-showcase-card,
+  .jnu-med-showcase-card {
+    position: static !important;
+    top: auto !important;
+  }
+
+  .jnu-phd-cards-list,
+  .jnu-med-cards-list {
+    max-height: 440px !important;
+    overflow-y: auto !important;
     margin-bottom: 24px;
+    padding-right: 6px;
   }
 }
 
@@ -3102,7 +3210,7 @@ a {
   position: relative;
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   text-align: left !important;
-  min-height: 275px;
+  min-height: 238px;
   box-shadow: 0 4px 16px rgba(7, 34, 79, 0.04);
 }
 
@@ -3266,186 +3374,6 @@ a {
     margin-bottom: 16px;
   }
 }
-
-/* ==========================================
-   JNU ACADEMIC SKILLING PARTNERS
-=========================================== */
-
-.academic-partners-section {
-  --jnu-magenta: #e50051;
-  --jnu-navy: #192747;
-
-  position: relative;
-  overflow: hidden;
-  padding: 55px 0;
-  background: #ffffff;
-}
-
-/* Section heading */
-
-.academic-partners-title {
-  margin-bottom: 35px !important;
-  color: var(--jnu-navy);
-  font-size: clamp(22px, 2.4vw, 32px);
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.academic-partners-title::after {
-  content: "";
-  display: block;
-  width: 55px;
-  height: 3px;
-  margin: 15px auto 0;
-  background: var(--jnu-magenta);
-  border-radius: 10px;
-}
-
-/* Marquee viewport */
-
-.academic-marquee-row {
-  width: 100%;
-  overflow: hidden;
-
-  -webkit-mask-image: linear-gradient(to right,
-      transparent,
-      #000 5%,
-      #000 95%,
-      transparent);
-
-  mask-image: linear-gradient(to right,
-      transparent,
-      #000 5%,
-      #000 95%,
-      transparent);
-}
-
-/* Moving track */
-
-.academic-marquee-track {
-  display: flex;
-  align-items: center;
-  width: max-content;
-  animation: academicPartnersMove 35s linear infinite;
-  will-change: transform;
-}
-
-/* Pause animation on hover */
-
-.academic-marquee-row:hover .academic-marquee-track {
-  animation-play-state: paused;
-}
-
-/* Logo cards */
-
-.academic-partner-card {
-  flex: 0 0 190px;
-  height: 115px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 20px;
-  padding: 20px;
-
-  background: #ffffff;
-  border: 1px solid rgba(25, 39, 71, 0.08);
-  border-radius: 14px;
-  box-shadow: 0 5px 20px rgba(25, 39, 71, 0.05);
-
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.academic-partner-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(229, 0, 81, 0.4);
-  box-shadow: 0 10px 25px rgba(25, 39, 71, 0.1);
-}
-
-/* Logo sizing */
-
-.academic-partner-card img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  max-height: 72px;
-  object-fit: contain;
-  object-position: center;
-}
-
-/* Seamless movement: duplicate set follows original */
-
-@keyframes academicPartnersMove {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-/* Tablet */
-
-@media (max-width: 991.98px) {
-  .academic-partners-section {
-    padding: 40px 0;
-  }
-
-  .academic-partner-card {
-    flex-basis: 160px;
-    height: 100px;
-    margin-right: 15px;
-    padding: 17px;
-  }
-}
-
-/* Mobile */
-
-@media (max-width: 575.98px) {
-  .academic-partners-section {
-    padding: 32px 0;
-  }
-
-  .academic-partners-title {
-    padding: 0 15px;
-    font-size: 21px;
-    letter-spacing: 0.5px;
-  }
-
-  .academic-partner-card {
-    flex-basis: 135px;
-    height: 82px;
-    margin-right: 12px;
-    padding: 13px;
-    border-radius: 11px;
-  }
-
-  .academic-partner-card img {
-    max-height: 55px;
-  }
-
-  .academic-marquee-track {
-    animation-duration: 28s;
-  }
-}
-
-/* Accessibility */
-
-@media (prefers-reduced-motion: reduce) {
-  .academic-marquee-track {
-    animation: none;
-  }
-
-  .academic-marquee-row {
-    overflow-x: auto;
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
-}
-
 
 /* ===================================================================
    Footer Section (Modern Card Layout Matching Reference)
@@ -3814,7 +3742,17 @@ a {
 
 .jnu-revealed {
   opacity: 1 !important;
-  transform: translateY(0) !important;
+  transform: none !important;
+}
+
+/* Ensure sticky sidebars never retain transforms that trap viewport stickiness */
+.jnu-sticky-col,
+.jnu-sticky-col.jnu-reveal,
+.jnu-sticky-side-wrap,
+.jnu-sticky-showcase-wrap,
+.jnu-phd-showcase-card,
+.jnu-med-showcase-card {
+  transform: none !important;
 }
 
 /* Ensure above-the-fold Hero Section is immediately visible without wait */
